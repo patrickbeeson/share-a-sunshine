@@ -1,0 +1,28 @@
+
+<form action="/charge" method="POST">
+    {{ form.csrf_token }}
+    <label for="recipient_name">{{ form.recipient_name.label }}</label>
+    {{ form.recipient_name }}
+    <label for="recipient_email">{{ form.recipient_email.label }}</label>
+    {{ form.recipient_email }}
+    <label for="shipping_street_address_1">{{ form.shipping_street_address_1.label }}</label>
+    {{ form.shipping_street_address_1 }}
+    <label for="shipping_street_address_2">{{ form.shipping_street_address_2.label }}</label>
+    {{ form.shipping_street_address_2 }}
+    <label for="shipping_city">{{ form.shipping_city.label }}</label>
+    {{ form.shipping_city }}
+    <label for="shipping_state">{{ form.shipping_state.label }}</label>
+    {{ form.shipping_state }}
+    <label for="shipping_zip">{{ form.shipping_zip.label }}</label>
+    {{ form.shipping_zip }}
+    <label for="purchaser_name">{{ form.purchaser_name.label }}</label>
+    {{ form.purchaser_name }}
+    <label for="message">{{ form.personal_message.label }}</label>
+    {{ form.personal_message }}
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ key }}"
+            data-description="Share the Sunshine"
+            data-amount="500">
+    </script>
+
+</form>

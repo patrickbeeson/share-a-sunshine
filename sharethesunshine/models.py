@@ -1,5 +1,3 @@
-import datetime
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
@@ -8,43 +6,34 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sharethesunshine.db'
 db = SQLAlchemy(app)
 
 
-class Product(db.Model):
-	__tablename__ = 'product'
-	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	name = db.Column(db.String(80))
-	description = db.Column(db.Text)
-	is_active = db.Column(db.Boolean, default=True, nullable=True)
-
-	def __init__(self, name, description, is_active):
-		self.name = name
-		self.description = description
-		self.is_active = is_active
-
-	def __repr__(self):
-		return '<Product %r>' % self.name
-
 class Purchase(db.Model):
-	__tablename__ = 'purchase'
-	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-	product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
-	product = db.relationship('Product')
-	quantity = db.Column(db.Integer)
-	sold_at = db.Column(db.DateTime, default=datetime.datetime.now)
-	recipient_name = db.Column(db.String(250))
-	receipient_email = db.Column(db.String(100))
-	receipient_address = db.Column(db.Text)
-	purchaser_name = db.Column(db.String(250))
-	purchaser_email = db.Column(db.String(100))
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    recipient_name = db.Column(db.String(250))
+    receipient_email = db.Column(db.String(100))
+    shipping_street_address_1 = db.Column(db.String(250))
+    shipping_street_address_2 = db.Column(db.String(250))
+    shipping_city = db.Column(db.String(250))
+    shipping_state = db.Column(db.String(2))
+    shipping_zip = db.Column(db.Integer)
+    purchaser_name = db.Column(db.String(250))
+    #purchaser_email = db.Column(db.String(100))
+    personal_message = db.Column(db.Text)
 
-	def __init__(self, product, quantity, sold_at, recipient_name, receipient_email, receipient_address, purchaser_name, purchaser_email)
-		self.product = product
-		self.quantity = quantity
-		self.sold_at = sold_at
-		self.recipient_name = recipient_name
-		self.receipient_email = receipient_email
-		self.receipient_address = receipient_address
-		self.purchaser_name = purchaser_name
-		self.purchaser_email = purchaser_email
+    def __init__(self, recipient_name,
+                 receipient_email, shipping_street_address_1,
+                 shipping_street_address_2, shipping_city,
+                 shipping_state, shipping_zip, purchaser_name,
+                 purchaser_email, personal_message):
+        self.recipient_name = recipient_name
+        self.receipient_email = receipient_email
+        self.receipient_street_address_1 = shipping_street_address_1
+        self.receipient_street_address_2 = shipping_street_address_2
+        self.shipping_city = shipping_city
+        self.shipping_state = shipping_state
+        self.shipping_zip = shipping_zip
+        self.purchaser_name = purchaser_name
+        self.purchaser_email = purchaser_email
+        self.personal_message = personal_message
 
-	def __repr__(self):
-		return '{} bought by {}'.format(self.product.name, self.purchaser_email)
+    def __repr__(self):
+        return '<Purchase %r>' % self.id
