@@ -16,7 +16,7 @@ class Purchase(db.Model):
     shipping_state = db.Column(db.String(2))
     shipping_zip = db.Column(db.Integer)
     purchaser_name = db.Column(db.String(250))
-    #purchaser_email = db.Column(db.String(100))
+    purchaser_email = db.Column(db.String(100))
     personal_message = db.Column(db.Text)
 
     def __init__(self, recipient_name,
@@ -26,8 +26,8 @@ class Purchase(db.Model):
                  purchaser_email, personal_message):
         self.recipient_name = recipient_name
         self.receipient_email = receipient_email
-        self.receipient_street_address_1 = shipping_street_address_1
-        self.receipient_street_address_2 = shipping_street_address_2
+        self.shipping_street_address_1 = shipping_street_address_1
+        self.shipping_street_address_2 = shipping_street_address_2
         self.shipping_city = shipping_city
         self.shipping_state = shipping_state
         self.shipping_zip = shipping_zip
@@ -37,3 +37,18 @@ class Purchase(db.Model):
 
     def __repr__(self):
         return '<Purchase %r>' % self.id
+
+
+class Testimonial(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    author = db.Column(db.String(100))
+    testimonial = db.Column(db.Text)
+    salutation = db.Column(db.String(100))
+
+    def __init__(self, author, testimonial, salutation):
+        self.author = author
+        self.testimonial = testimonial
+        self.salutation = salutation
+
+    def __repr__(self):
+        return '<Testimonial %r>' %self.id

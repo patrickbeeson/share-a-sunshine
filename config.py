@@ -9,23 +9,25 @@ _cwd = dirname(abspath(__file__))
 # Email address for the 'from' field of the generated email
 # MAIL_FROM = 
 
+ADMINS = ['pbeeson@thevariable.com']
+
 # Email server address
-# MAIL_SERVER = 
+MAIL_SERVER = 'smtp.webfaction.com'
 
 # Email server username
-# MAIL_USERNAME = 
+MAIL_USERNAME = 'patrickbeeson_mail'
 
 # Email server password
-# MAIL_PASSWORD = 
+MAIL_PASSWORD = '6ElevenBicycleC0'
 
 # Email server port
-# MAIL_PORT = 
+MAIL_PORT = 465
 
 # Use SSL for email? 
-# MAIL_USE_SSL = 
+MAIL_USE_SSL = True
 
 # Website address, for use in Stripe purchases and in email
-# SITE_ADDRESS = 
+#SITE_ADDRESS = http://sharethesunshine.com
 
 # Database URI for SQLAlchmey (Default: 'sqlite+pysqlite3:///sqlite3.db')
 # SQLALCHEMY_DATABASE_URI = 'sqlite+pysqlite:///sqlite3.db'

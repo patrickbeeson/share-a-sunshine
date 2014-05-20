@@ -1,28 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Share the Sunshine</title>
 
-<form action="/charge" method="POST">
-    {{ form.csrf_token }}
-    <label for="recipient_name">{{ form.recipient_name.label }}</label>
-    {{ form.recipient_name }}
-    <label for="recipient_email">{{ form.recipient_email.label }}</label>
-    {{ form.recipient_email }}
-    <label for="shipping_street_address_1">{{ form.shipping_street_address_1.label }}</label>
-    {{ form.shipping_street_address_1 }}
-    <label for="shipping_street_address_2">{{ form.shipping_street_address_2.label }}</label>
-    {{ form.shipping_street_address_2 }}
-    <label for="shipping_city">{{ form.shipping_city.label }}</label>
-    {{ form.shipping_city }}
-    <label for="shipping_state">{{ form.shipping_state.label }}</label>
-    {{ form.shipping_state }}
-    <label for="shipping_zip">{{ form.shipping_zip.label }}</label>
-    {{ form.shipping_zip }}
-    <label for="purchaser_name">{{ form.purchaser_name.label }}</label>
-    {{ form.purchaser_name }}
-    <label for="message">{{ form.personal_message.label }}</label>
-    {{ form.personal_message }}
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="{{ key }}"
-            data-description="Share the Sunshine"
-            data-amount="500">
-    </script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-</form>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="branding">
+                <h1><a href="/">Share the Sunshine</a></h1>
+            </div>
+
+            <div class="content_main">
+                <div class="product_description">
+                    <h2>At Long Last, A Greeting Card You Can Drink</h2>
+
+                    <p>Need to tell a friend you give a hoot about 'em? Well, of course, you could send a card that ends up in the rubbish. Or flowers that die the next day. But you’re a helluva lot more thoughtful and creative than that.</p>
+
+                    <p>Which is why you're gonna send a can of Buck O'Hairen's Legendary Sunshine to that special someone. It's the most delicious way to say "Good luck," "I love you to the moon," or "Sorry your parrot stopped talking." Packed with electrolytes, energy and its signature Ginger Berry flavor, Sunshine is the pick-me-up that can brighten anyone's day.</p>
+
+                    <div class="product_specs">
+                        <h3>For just 5 bucks</h3>
+                        <p>We'll hand-pack and ship to your friend:
+                            <ul>
+                                <li>One 8.4-ounce can of Buck O'Hairen's Legendary Sunshine</li>
+                                <li>A 4-inch round limited edition Sunshine sticker</li>
+                                <li>Your personalized message printed right on the box</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product_spotlight">
+
+                </div>
+
+                <div class="testimonials">
+                    <h3>All-Time Favorites</h3>
+                    <ul class="testimonial_list">
+                    {% for testimonial in testimonials %}
+                        <li class="testimonial">
+                            <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
+                            <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
+                            <span class="testimonial_author">{{ testimonial.author|safe }}</span>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content_order">
+                <h2>Alright then, let's get started</h2>
+
+                <form action="/buy" method="POST">
+                    {{ form.csrf_token }}
+
+                    {{ form.recipient_name.label }}
+                    {{ form.recipient_name }}
+                    <span class="help-block">{{ form.recipient_name.description|safe }}</span>
+
+                    {{ form.recipient_email.label }}
+                    {{ form.recipient_email }}
+
+                    {{ form.shipping_street_address_1.label }}
+                    {{ form.shipping_street_address_1 }}
+
+                    {{ form.shipping_street_address_2.label }}
+                    {{ form.shipping_street_address_2 }}
+
+                    {{ form.shipping_city.label }}
+                    {{ form.shipping_city }}
+
+                    {{ form.shipping_state.label }}
+                    {{ form.shipping_state }}
+
+                    {{ form.shipping_zip.label }}
+                    {{ form.shipping_zip }}
+
+                    {{ form.personal_message.label }}
+                    {{ form.personal_message }}
+                    <span class="help-block">{{ form.personal_message.description|safe }}</span>
+
+                    {{ form.purchaser_name.label }}
+                    {{ form.purchaser_name }}
+                    <span class="help-block">{{ form.purchaser_name.description|safe }}</span>
+
+                    {{ form.purchaser_email.label }}
+                    {{ form.purchaser_email }}
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ key }}"
+                            data-description="Share the Sunshine"
+                            data-email=""
+                            data-label="Share the Sunshine"
+                            data-amount="500">
+                    </script>
+                </form>
+            </div>
+            <footer>
+                <ul class="social">
+                    <li class="facebook">Facebook</li>
+                    <li class="twitter">Twitter</li>
+                </ul>
+            </footer>
+        </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <!--<script src="static/js/main.js"></script>-->
+<script type="text/javascript">
+    $(function() {
+        $('.stripe-button-el').click(function(event) {
+            var email = $('input#purchaser_email').val();        
+            $('.stripe-button').attr('data-email', email)
+        });
+    });
+</script>
+    </body>
+</html>
