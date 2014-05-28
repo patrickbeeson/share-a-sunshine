@@ -1221,7 +1221,8 @@ blockquote {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
-blockquote.pull-right {
+blockquote.pull-right,
+#home nav[role="navigation"] blockquote.navbar-collapse {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -1231,15 +1232,21 @@ blockquote.pull-right {
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
   blockquote.pull-right footer:before,
+  #home nav[role="navigation"] blockquote.navbar-collapse footer:before,
   blockquote.pull-right small:before,
-  blockquote.pull-right .small:before {
+  #home nav[role="navigation"] blockquote.navbar-collapse small:before,
+  blockquote.pull-right .small:before,
+  #home nav[role="navigation"] blockquote.navbar-collapse .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
   blockquote.pull-right footer:after,
+  #home nav[role="navigation"] blockquote.navbar-collapse footer:after,
   blockquote.pull-right small:after,
-  blockquote.pull-right .small:after {
+  #home nav[role="navigation"] blockquote.navbar-collapse small:after,
+  blockquote.pull-right .small:after,
+  #home nav[role="navigation"] blockquote.navbar-collapse .small:after {
     content: '\00A0 \2014'; }
 
 blockquote:before,
@@ -2832,7 +2839,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right {
+  .dropdown-menu.pull-right, #home nav[role="navigation"] .dropdown-menu.navbar-collapse {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -2898,7 +2905,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, #home nav[role="navigation"] .navbar-collapse > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4082,7 +4089,7 @@ a.thumbnail.active {
 
 .media > .pull-left {
   margin-right: 10px; }
-.media > .pull-right {
+.media > .pull-right, #home nav[role="navigation"] .media > .navbar-collapse {
   margin-left: 10px; }
 
 .media-list {
@@ -5002,7 +5009,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, #home nav[role="navigation"] .navbar-collapse {
   float: right !important; }
 
 .pull-left {
@@ -5219,6 +5226,13 @@ button.close {
   background-color: #fff9f2;
   min-height: 2000px;
   padding-top: 70px; }
+  #home nav[role="navigation"] .navbar-collapse {
+    font-family: council_regular-webfont;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase; }
+    #home nav[role="navigation"] .navbar-collapse a {
+      color: white; }
   #home .branding h1 {
     background: url("../images/logo.png") no-repeat;
     background-size: 940px 179px;

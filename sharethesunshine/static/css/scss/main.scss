@@ -28,6 +28,18 @@
 
             }
         }
+
+        .navbar-collapse {
+            @extend .pull-right;
+            font-family: council_regular-webfont;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            a {
+                color: white;
+            }
+        }
     }
 
     .branding {
