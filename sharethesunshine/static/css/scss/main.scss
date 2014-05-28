@@ -55,40 +55,56 @@
             top: 50px;
         }
 
+        .product_lead {
+            @extend .col-md-12;
+            font-family: council_regular-webfont;
+            color: $sts_dk_canvas;
+            font-size: 82px;
+            font-weight: normal;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            margin-bottom: 50px;
+        }
+
         .product_description {
             @extend .col-md-6;
-
-            h2 {
-                font-family: council_regular-webfont;
-                color: $sts_dk_canvas;
-                font-size: 82px;
-                font-weight: normal;
-                margin-top: 0;
-            }
 
             p {
                 font-family: $sts_body;
                 font-weight: bold;
                 font-size: 15px;
+                line-height: 1.8em;
             }
 
             .product_specs {
+                @extend .text-center;
+                position: relative;
+                margin-top: 50px;
+                
 
                 h3 {
                     @extend .text-hide;
-                    background: url("../images/price_logo.png") no-repeat;
+                    background: url("../images/price_logo.png") no-repeat center center;
                     background-size: 471px 194px;
                     height: 194px;
                 }
 
-                p {
+                .spec_lead {
+                    
+                    position: absolute;
                     font-family: a_love_of_thunder-webfont;
                     font-size: 16px;
+                    top: 90px;
+                    left: 155px;
                 }
 
                 ul {
+                    @extend .list-unstyled;
+                    margin-top: 25px;
 
                     li {
+                        margin-bottom: 25px;
                         font-family: a_love_of_thunder-webfont;
                         font-size: 16px;
                     }
@@ -108,15 +124,12 @@
             @extend .col-md-12;
 
             h3 {
+                @extend .text-center;
                 font-family: a_love_of_thunder-webfont;
                 font-size: 24px;
             }
 
-            ul {
-                @extend .list-unstyled;
-            }
-
-            span {
+            .testimonial_salutation, .testimonial_text, .testimonial_author {
                 font-family: $sts_body;
                 font-weight: bold;
                 font-size: 15px;

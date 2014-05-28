@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Share the Sunshine | share.drinkthesunshine.com</title>
 
-        <link href="static/css/main.css" media="screen, projection" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/main.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,22 +40,21 @@
             </div>
 
             <div class="content_main">
-                <div class="product_description">
-                    <h2>At Long Last,<br>A Greeting Card You Can Drink</h2>
+                <h2 class="product_lead">At Long Last,<br>A Greeting Card You Can Drink</h2>
 
+                <div class="product_description">
                     <p>Need to tell a friend you give a hoot about 'em? Well, of course, you could send a card that ends up in the rubbish. Or flowers that die the next day. But you’re a helluva lot more thoughtful and creative than that.</p>
 
                     <p>Which is why you're gonna send a can of Buck O'Hairen's Legendary Sunshine to that special someone. It's the most delicious way to say "Good luck," "I love you to the moon," or "Sorry your parrot stopped talking." Packed with electrolytes, energy and its signature Ginger Berry flavor, Sunshine is the pick-me-up that can brighten anyone's day.</p>
 
                     <div class="product_specs">
                         <h3>For just 5 bucks</h3>
-                        <p>We'll hand-pack and ship to your friend:
-                            <ul>
-                                <li>One 8.4-ounce can of Buck O'Hairen's Legendary Sunshine</li>
-                                <li>A 4-inch round limited edition Sunshine sticker</li>
-                                <li>Your personalized message printed right on the box</li>
-                            </ul>
-                        </p>
+                        <p class="spec_lead">We'll hand-pack and ship<br>to your friend:</p>
+                        <ul>
+                            <li>One 8.4-ounce can of Buck O'Hairen's<br>Legendary Sunshine</li>
+                            <li>A 4-inch round limited edition<br>Sunshine sticker</li>
+                            <li>Your personalized message printed<br>right on the box</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -65,15 +64,23 @@
 
                 <div class="testimonials">
                     <h3>All-Time Favorites</h3>
-                    <ul class="testimonial_list">
-                    {% for testimonial in testimonials %}
-                        <li class="testimonial">
-                            <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
-                            <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
-                            <span class="testimonial_author">{{ testimonial.author|safe }}</span>
-                        </li>
-                    {% endfor %}
-                    </ul>
+                    <div id="testimonial_carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for testimonial in testimonials %}
+                            <div class="item active">
+                                <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
+                                <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
+                                <span class="testimonial_author">{{ testimonial.author|safe }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <a class="left" href="#testimonial_carousel" data-slide="prev">
+                            <img src="{{ url_for('static', filename='images/arrow_left.png') }}" alt="">
+                        </a>
+                        <a class="right" href="#testimonial_carousel" data-slide="next">
+                            <img src="{{ url_for('static', filename='images/arrow_right.png') }}" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -146,15 +153,15 @@
             </div>
             <footer>
                 <ul class="social">
-                    <li class="facebook">Facebook</li>
-                    <li class="twitter">Twitter</li>
+                    <li class="facebook"><a href="https://www.facebook.com/DrinkSunshine"><img src="{{ url_for('static', filename='images/facebook_icon.png') }}" alt="facebook"></a></li>
+                    <li class="twitter"><a href="https://twitter.com/sunshinedrink"><img src="{{ url_for('static', filename='images/twitter_icon.png') }}" alt="twitter"></a></li>
                 </ul>
             </footer>
         </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/bootstrap.js') }}"
     <!--<script src="static/js/main.js"></script>-->
 <script type="text/javascript">
     $(function() {
