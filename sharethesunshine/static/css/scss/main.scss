@@ -45,11 +45,11 @@
     .branding {
 
         h1 {
-            background: url("../images/logo.png") no-repeat;
+            background: url("../images/logo.png") no-repeat center center;
             background-size: 940px 179px;
             //width: 940px;
             height: 179px;
-            @extend .text-hide;
+            @extend .text-hide,;
         }
     }
 
@@ -162,7 +162,7 @@
             }
 
             .carousel {
-                height: 250px;
+                min-height: 250px;
             }
 
             h3 {
@@ -189,19 +189,20 @@
 
             .left {
                 @extend %carousel_controls;
-                top: 60px;
+                top: 65px;
                 left: 0px;
             }
 
             .right {
                 @extend %carousel_controls;
-                top: 60px;
+                top: 65px;
                 right: 0px;
             }
         }
     }
 
     .content_order {
+        @extend .row;
 
         h2 {
             @extend .text-hide;
@@ -229,6 +230,90 @@
                 top: 50px;
                 right: 0;
             }
+        }
+
+        form {
+
+            label {
+                @extend .text-hide;
+            }
+
+            .required {
+                color: $sts_required_red;
+            }
+
+            .help_text {
+                color: $sts_gray;
+                font-family: $sts_body;
+                font-size: 13px;
+            }
+
+            .field_grouper {
+
+                h3 {
+                    font-family: $sts_body;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            }
+
+            %field_grouper {
+                @extend .col-md-6;
+            }
+
+            #recipient, {
+                @extend %field_grouper;
+            }
+
+            #recipient_address, {
+                @extend %field_grouper;
+                
+            }
+
+            #message, {
+                @extend %field_grouper;
+            }
+
+            #purchaser, {
+                @extend %field_grouper;
+            }
+
+            #submit {
+                @extend .col-md-6, .col-md-offset-3, .text-center;
+                margin-top: 50px;
+            }
+
+            .stripe-button-el {
+                background-image: none;
+                background: black;
+
+                span {
+                    color: $sts_body;
+                    //background: url("../images/add_to_wagon_btn.png") no-repeat;
+                    background: black;
+                    @include background-image(linear-gradient(#333 0, black 50%, transparent 50%));
+                }
+            }
+        }
+    }
+
+    footer {
+        position: relative;
+        padding-bottom: 100px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: url("../images/form_border_bg.png") repeat-x;
+            height: 6px;
+            width: 100%;
+            top: 0px;
+        }
+
+        .social {
+            @extend .list-unstyled, .list-inline, .text-center;
+            margin-top: 50px;
+            padding-top: 50px;
         }
     }
 }

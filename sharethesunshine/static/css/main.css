@@ -1061,7 +1061,7 @@ mark,
 .text-right, #home nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, #home .content_main .product_description .product_specs, #home .content_main .testimonials h3 {
+.text-center, #home .content_main .product_description .product_specs, #home .content_main .testimonials h3, #home .content_order form #submit, #home footer .social {
   text-align: center; }
 
 .text-justify {
@@ -1148,13 +1148,13 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .list-inline, #home .content_main .product_description .product_specs ul {
+.list-unstyled, .list-inline, #home footer .social, #home .content_main .product_description .product_specs ul {
   padding-left: 0;
   list-style: none; }
 
-.list-inline {
+.list-inline, #home footer .social {
   margin-left: -5px; }
-  .list-inline > li {
+  .list-inline > li, #home footer .social > li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px; }
@@ -1334,16 +1334,16 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row, #home .content_main {
+.row, #home .content_main, #home .content_order {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, #home .content_main:before, .row:after, #home .content_main:after {
+  .row:before, #home .content_main:before, #home .content_order:before, .row:after, #home .content_main:after, #home .content_order:after {
     content: " ";
     display: table; }
-  .row:after, #home .content_main:after {
+  .row:after, #home .content_main:after, #home .content_order:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1662,7 +1662,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials {
     float: left; }
 
   .col-md-1 {
@@ -1680,7 +1680,7 @@ pre {
   .col-md-5 {
     width: 41.66667%; }
 
-  .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight {
+  .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit {
     width: 50%; }
 
   .col-md-7 {
@@ -1788,7 +1788,7 @@ pre {
   .col-md-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-md-offset-3 {
+  .col-md-offset-3, #home .content_order form #submit {
     margin-left: 25%; }
 
   .col-md-offset-4 {
@@ -5024,7 +5024,7 @@ button.close {
 .invisible {
   visibility: hidden; }
 
-.text-hide, #home .branding h1, #home .content_main .product_description .product_specs h3, #home .content_order h2 {
+.text-hide, #home .branding h1, #home .content_main .product_description .product_specs h3, #home .content_order h2, #home .content_order form label {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -5234,7 +5234,7 @@ button.close {
     #home nav[role="navigation"] .navbar-collapse a {
       color: white; }
   #home .branding h1 {
-    background: url("../images/logo.png") no-repeat;
+    background: url("../images/logo.png") no-repeat center center;
     background-size: 940px 179px;
     height: 179px; }
   #home .content_main {
@@ -5306,7 +5306,7 @@ button.close {
         left: 0px;
         width: 100%; }
       #home .content_main .testimonials .carousel {
-        height: 250px; }
+        min-height: 250px; }
       #home .content_main .testimonials h3 {
         font-family: a_love_of_thunder-webfont;
         font-size: 24px;
@@ -5322,10 +5322,10 @@ button.close {
       #home .content_main .testimonials .left, #home .content_main .testimonials .right {
         position: absolute; }
       #home .content_main .testimonials .left {
-        top: 60px;
+        top: 65px;
         left: 0px; }
       #home .content_main .testimonials .right {
-        top: 60px;
+        top: 65px;
         right: 0px; }
   #home .content_order h2 {
     background: url("../images/lets_get_started_text.png") no-repeat center;
@@ -5348,3 +5348,36 @@ button.close {
       width: 25%;
       top: 50px;
       right: 0; }
+  #home .content_order form .required {
+    color: #b20f0f; }
+  #home .content_order form .help_text {
+    color: #75787c;
+    font-family: courier, serif;
+    font-size: 13px; }
+  #home .content_order form .field_grouper h3 {
+    font-family: courier, serif;
+    font-size: 16px;
+    font-weight: bold; }
+  #home .content_order form #submit {
+    margin-top: 50px; }
+  #home .content_order form .stripe-button-el {
+    background-image: none;
+    background: black; }
+    #home .content_order form .stripe-button-el span {
+      color: courier, serif;
+      background: black;
+      background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
+      background-image: linear-gradient(to   , black 50%, transparent 50%); }
+  #home footer {
+    position: relative;
+    padding-bottom: 100px; }
+    #home footer:before {
+      content: "";
+      position: absolute;
+      background: url("../images/form_border_bg.png") repeat-x;
+      height: 6px;
+      width: 100%;
+      top: 0px; }
+    #home footer .social {
+      margin-top: 50px;
+      padding-top: 50px; }

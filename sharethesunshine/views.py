@@ -62,6 +62,8 @@ def buy():
 
     # Try and validate the form on submission
     if form.validate_on_submit():
+        # Grab the email address entered into Stripe, and send it to the form field for that data
+        form.purchaser_email.data = request.form['stripeEmail']
         new_purchase = Purchase(
             form.recipient_name.data,
             form.recipient_email.data,
