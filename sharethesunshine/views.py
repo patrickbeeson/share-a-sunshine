@@ -1,3 +1,5 @@
+import uuid
+
 from flask import Flask, render_template, request, flash
 from flask_mail import Message, Mail
 from flask_sqlalchemy import SQLAlchemy
@@ -58,12 +60,14 @@ def buy():
             description='Share the Sunshine')
     # Present new template if there is a problem charging the card
     except stripe.CardError:
+        #print stripe.CardError
         return render_template('charge_error.html')
 
     # Try and validate the form on submission
     if form.validate_on_submit():
         # Grab the email address entered into Stripe, and send it to the form field for that data
         form.purchaser_email.data = request.form['stripeEmail']
+
         new_purchase = Purchase(
             form.recipient_name.data,
             form.recipient_email.data,
@@ -74,7 +78,8 @@ def buy():
             form.shipping_zip.data,
             form.purchaser_name.data,
             form.purchaser_email.data,
-            form.personal_message.data
+            form.personal_message.data,
+            #uuid=str(uuid.uuid4())
         )
         # Send valid data to the database
         db.session.add(new_purchase)
