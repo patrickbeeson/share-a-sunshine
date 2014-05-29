@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="product_spotlight">
-                    <img src="http://placehold.it/600x600" alt="">
+                    <img src="{{ url_for('static', filename='images/sunshine_product.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
                 </div>
 
                 <div class="testimonials">
@@ -67,7 +67,7 @@
                     <div id="testimonial_carousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             {% for testimonial in testimonials %}
-                            <div class="item active">
+                            <div class="item{% if loop.first %} active{% endif %}">
                                 <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
                                 <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
                                 <span class="testimonial_author">{{ testimonial.author|safe }}</span>
@@ -158,11 +158,9 @@
                 </ul>
             </footer>
         </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ url_for('static', filename='scripts/bootstrap.js') }}"></script>
-    <script src="static/js/main.js"></script>
+    <script src="{{ url_for('static', filename='scripts/bootstrap/transition.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/bootstrap/carousel.js') }}"></script>
 <script type="text/javascript">
     $(function() {
         $('.stripe-button-el').click(function(event) {

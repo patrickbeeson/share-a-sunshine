@@ -134,11 +134,42 @@
 
         .testimonials {
             @extend .col-md-12;
+            position: relative;
+            margin-top: 100px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                @include background-image(url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png"));
+                background-position: top left, top right;
+                background-repeat: no-repeat, no-repeat;
+                height: 70px;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                @include background-image(url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png"));
+                background-position: bottom left, bottom right;
+                background-repeat: no-repeat, no-repeat;
+                height: 70px;
+                bottom: 0px;
+                left: 0px;
+                width: 100%;
+            }
+
+            .carousel {
+                height: 250px;
+            }
 
             h3 {
                 @extend .text-center;
                 font-family: a_love_of_thunder-webfont;
                 font-size: 24px;
+                margin-bottom: 50px;
             }
 
             .testimonial_salutation, .testimonial_text, .testimonial_author {
@@ -147,6 +178,25 @@
                 font-size: 15px;
                 display: block;
                 padding: 0 100px;
+                line-height: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            %carousel_controls {
+                position: absolute;
+
+            }
+
+            .left {
+                @extend %carousel_controls;
+                top: 60px;
+                left: 0px;
+            }
+
+            .right {
+                @extend %carousel_controls;
+                top: 60px;
+                right: 0px;
             }
         }
     }

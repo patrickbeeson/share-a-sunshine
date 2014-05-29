@@ -5280,15 +5280,53 @@ button.close {
           margin-bottom: 25px;
           font-family: a_love_of_thunder-webfont;
           font-size: 16px; }
-    #home .content_main .testimonials h3 {
-      font-family: a_love_of_thunder-webfont;
-      font-size: 24px; }
-    #home .content_main .testimonials .testimonial_salutation, #home .content_main .testimonials .testimonial_text, #home .content_main .testimonials .testimonial_author {
-      font-family: courier, serif;
-      font-weight: bold;
-      font-size: 15px;
-      display: block;
-      padding: 0 100px; }
+    #home .content_main .testimonials {
+      position: relative;
+      margin-top: 100px; }
+      #home .content_main .testimonials:before {
+        content: "";
+        position: absolute;
+        background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
+        background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
+        background-position: top left, top right;
+        background-repeat: no-repeat, no-repeat;
+        height: 70px;
+        top: 0px;
+        left: 0px;
+        width: 100%; }
+      #home .content_main .testimonials:after {
+        content: "";
+        position: absolute;
+        background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
+        background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
+        background-position: bottom left, bottom right;
+        background-repeat: no-repeat, no-repeat;
+        height: 70px;
+        bottom: 0px;
+        left: 0px;
+        width: 100%; }
+      #home .content_main .testimonials .carousel {
+        height: 250px; }
+      #home .content_main .testimonials h3 {
+        font-family: a_love_of_thunder-webfont;
+        font-size: 24px;
+        margin-bottom: 50px; }
+      #home .content_main .testimonials .testimonial_salutation, #home .content_main .testimonials .testimonial_text, #home .content_main .testimonials .testimonial_author {
+        font-family: courier, serif;
+        font-weight: bold;
+        font-size: 15px;
+        display: block;
+        padding: 0 100px;
+        line-height: 1.8em;
+        margin-bottom: 25px; }
+      #home .content_main .testimonials .left, #home .content_main .testimonials .right {
+        position: absolute; }
+      #home .content_main .testimonials .left {
+        top: 60px;
+        left: 0px; }
+      #home .content_main .testimonials .right {
+        top: 60px;
+        right: 0px; }
   #home .content_order h2 {
     background: url("../images/lets_get_started_text.png") no-repeat center;
     background-size: 413px 92px;
