@@ -27,12 +27,11 @@ class PurchaseForm(Form):
                                 validators=[DataRequired('Please enter the recipient\'s zip code.')])
     purchaser_name = TextField('Your name',
                                description='Note: Your name will appear on the outside of the box with your personalized message. If you\'d like to cheer up someone anonymously, leave this field blank.')
-    purchaser_email = EmailField('Your email',
-                                 description='Used for order confirmation',
-                                 validators=[DataRequired('Please enter your email address.'),
-                                 email('Please enter a valid email address.')]
-                                 )
+    #purchaser_email = EmailField('Your email',
+    #                             description='Used for order confirmation',
+    #                             validators=[DataRequired('Please enter your email address.'),
+    #                             email('Please enter a valid email address.')]
+    #                             )
     personal_message = TextAreaField('Personalized message',
                                      description='140 characters max',
-                                     validators=[DataRequired('Please enter a message.'),
-                                     Length(max=140)])
+                                     validators=[DataRequired('Please enter a message.'), Length(max=140)])

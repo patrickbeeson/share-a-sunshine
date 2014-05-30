@@ -10,10 +10,9 @@ db = SQLAlchemy(app)
 
 class Purchase(db.Model):
     __tablename__ = 'purchase'
-    #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     uuid = db.Column(db.String, primary_key=True)
     recipient_name = db.Column(db.String(250))
-    receipient_email = db.Column(db.String(100))
+    recipient_email = db.Column(db.String(100))
     shipping_street_address_1 = db.Column(db.String(250))
     shipping_street_address_2 = db.Column(db.String(250))
     shipping_city = db.Column(db.String(250))
@@ -25,13 +24,13 @@ class Purchase(db.Model):
     sold_at = db.Column(db.DateTime, default=datetime.datetime.now)
 
     def __init__(self, uuid, recipient_name,
-                 receipient_email, shipping_street_address_1,
+                 recipient_email, shipping_street_address_1,
                  shipping_street_address_2, shipping_city,
                  shipping_state, shipping_zip, purchaser_name,
                  purchaser_email, personal_message, sold_at):
         self.uuid = uuid
         self.recipient_name = recipient_name
-        self.receipient_email = receipient_email
+        self.recipient_email = recipient_email
         self.shipping_street_address_1 = shipping_street_address_1
         self.shipping_street_address_2 = shipping_street_address_2
         self.shipping_city = shipping_city
@@ -42,11 +41,15 @@ class Purchase(db.Model):
         self.personal_message = personal_message
         self.sold_at = sold_at
 
+    def sell_date(self):
+        return self.sold_at.date()
+
     def __repr__(self):
-        return '<Purchase %r>' % self.id
+        return '<Purchase %r>' % self.sold_at
 
 
 class Testimonial(db.Model):
+    __tablename__ = 'testimonial'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     author = db.Column(db.String(100))
     testimonial = db.Column(db.Text)

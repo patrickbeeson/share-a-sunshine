@@ -1,4 +1,5 @@
 import uuid
+import datetime
 
 from flask import Flask, render_template, request, flash
 from flask_mail import Message, Mail
@@ -60,35 +61,35 @@ def buy():
             description='Share the Sunshine')
     # Present new template if there is a problem charging the card
     except stripe.CardError:
-        #print stripe.CardError
         return render_template('charge_error.html')
 
     # Try and validate the form on submission
     if form.validate_on_submit():
         # Grab the email address entered into Stripe, and send it to the form field for that data
-        form.purchaser_email.data = request.form['stripeEmail']
+        #form.purchaser_email.data = request.form['stripeEmail']
 
-        new_purchase = Purchase(
-            form.recipient_name.data,
-            form.recipient_email.data,
-            form.shipping_street_address_1.data,
-            form.shipping_street_address_2.data,
-            form.shipping_city.data,
-            form.shipping_state.data,
-            form.shipping_zip.data,
-            form.purchaser_name.data,
-            form.purchaser_email.data,
-            form.personal_message.data,
-            #uuid=str(uuid.uuid4())
+        purchase = Purchase(
+            uuid=str(uuid.uuid4()),
+            recipient_name=form.recipient_name.data,
+            recipient_email=form.recipient_email.data,
+            shipping_street_address_1=form.shipping_street_address_1.data,
+            shipping_street_address_2=form.shipping_street_address_2.data,
+            shipping_city=form.shipping_city.data,
+            shipping_state=form.shipping_state.data,
+            shipping_zip=form.shipping_zip.data,
+            purchaser_name=form.purchaser_name.data,
+            purchaser_email=email,
+            personal_message=form.personal_message.data,
+            sold_at=datetime.datetime.now()
         )
         # Send valid data to the database
-        db.session.add(new_purchase)
+        db.session.add(purchase)
         db.session.commit()
 
         # Send the purchaser an email using the purchaser_email value
         mail_html = render_template(
             'email.html',
-            purchase=new_purchase
+            purchase=purchase
             )
 
         message = Message(
@@ -101,9 +102,9 @@ def buy():
             conn.send(message)
 
         # Send the user to the thanks template to view their order summary
-        return render_template('thanks.html', purchase=new_purchase, amount=amount)
-    else:
-        return render_template('submission_error.html')
+        return render_template('thanks.html', purchase=purchase, amount=amount)
+    #else:
+    #    return render_template('submission_error.html')
 
 
 @app.errorhandler(404)
