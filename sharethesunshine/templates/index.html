@@ -36,7 +36,7 @@
 
         <div class="content_wrap">
             <div class="branding">
-                <h1><a href="/">Share the Sunshine</a></h1>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Share the Sunshine">
             </div>
 
             <div class="content_main">
@@ -48,7 +48,8 @@
                     <p>Which is why you're gonna send a can of Buck O'Hairen's Legendary Sunshine to that special someone. It's the most delicious way to say "Good luck," "I love you to the moon," or "Sorry your parrot stopped talking." Packed with electrolytes, energy and its signature Ginger Berry flavor, Sunshine is the pick-me-up that can brighten anyone's day.</p>
 
                     <div class="product_specs">
-                        <h3>For just 5 bucks</h3>
+                        <h3>For just five bucks</h3>
+                        <img src="{{ url_for('static', filename='images/price_logo.png') }}" alt="For just five bucks" class="responsive_header">
                         <p class="spec_lead">We'll hand-pack and ship<br>to your friend:</p>
                         <ul>
                             <li>One 8.4-ounce can of Buck O'Hairen's<br>Legendary Sunshine</li>
@@ -59,7 +60,24 @@
                 </div>
 
                 <div class="product_spotlight">
-                    <img src="{{ url_for('static', filename='images/sunshine_product.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
+                    <div id="product_carousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="{{ url_for('static', filename='images/sunshine_product.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
+                            </div>
+                            <div class="item">
+                                <img src="{{ url_for('static', filename='images/sunshine_product_rear.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
+                            </div>
+                        </div>
+                        <a class="product_left" href="#product_carousel" data-slide="prev">
+                            <img src="{{ url_for('static', filename='images/see_more_arrow_left.png') }}" alt="">
+                        </a>
+                        <p class="see_more">See more</p>
+                        <a class="product_right" href="#product_carousel" data-slide="next">
+                            <img src="{{ url_for('static', filename='images/see_more_arrow_right.png') }}" alt="">
+                        </a>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/sunshine_product.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped." class="mobile_product_spotlight">
                 </div>
 
                 <div class="testimonials">
@@ -74,10 +92,10 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <a class="left" href="#testimonial_carousel" data-slide="prev">
+                        <a class="testimonial_left" href="#testimonial_carousel" data-slide="prev">
                             <img src="{{ url_for('static', filename='images/arrow_left.png') }}" alt="">
                         </a>
-                        <a class="right" href="#testimonial_carousel" data-slide="next">
+                        <a class="testimonial_right" href="#testimonial_carousel" data-slide="next">
                             <img src="{{ url_for('static', filename='images/arrow_right.png') }}" alt="">
                         </a>
                     </div>
@@ -86,6 +104,7 @@
 
             <div class="content_order">
                 <h2>Alright then, let's get started</h2>
+                <img src="{{ url_for('static', filename='images/lets_get_started_text.png') }}" alt="Alright then, let's get started" class="responsive_header">
 
                 <form action="/buy" method="POST" id="purchase_form">
                     {{ form.csrf_token }}

@@ -909,7 +909,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, #home .branding img, #home .content_main .product_description .product_specs .responsive_header, #home .content_main .product_spotlight img, #home .content_order .responsive_header {
+.img-responsive, #home .content_main .product_spotlight img {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -1061,7 +1061,7 @@ mark,
 .text-right, #home nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, #home .content_main .product_description .product_specs, #home .content_main .product_spotlight, #home .content_main .testimonials h3, #home .content_order form #submit, #home footer .social {
+.text-center, #home .content_main .product_description .product_specs, #home .content_main .testimonials h3, #home .content_order form #submit, #home footer .social {
   text-align: center; }
 
 .text-justify {
@@ -1343,7 +1343,7 @@ pre {
   .row:after, #home .content_main:after, #home .content_order:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, #home .content_main .product_lead, #home .content_main .testimonials, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1506,7 +1506,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, #home .content_main .product_lead, #home .content_main .testimonials {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
 
   .col-sm-1 {
@@ -1524,7 +1524,7 @@ pre {
   .col-sm-5 {
     width: 41.66667%; }
 
-  .col-sm-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit {
+  .col-sm-6 {
     width: 50%; }
 
   .col-sm-7 {
@@ -1542,7 +1542,7 @@ pre {
   .col-sm-11 {
     width: 91.66667%; }
 
-  .col-sm-12, #home .content_main .product_lead, #home .content_main .testimonials {
+  .col-sm-12 {
     width: 100%; }
 
   .col-sm-pull-0 {
@@ -1632,7 +1632,7 @@ pre {
   .col-sm-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-sm-offset-3, #home .content_order form #submit {
+  .col-sm-offset-3 {
     margin-left: 25%; }
 
   .col-sm-offset-4 {
@@ -1662,7 +1662,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials {
     float: left; }
 
   .col-md-1 {
@@ -1680,7 +1680,7 @@ pre {
   .col-md-5 {
     width: 41.66667%; }
 
-  .col-md-6 {
+  .col-md-6, #home .content_main .product_description, #home .content_main .product_spotlight, #home .content_order form #recipient, #home .content_order form #recipient_address, #home .content_order form #message, #home .content_order form #purchaser, #home .content_order form #submit {
     width: 50%; }
 
   .col-md-7 {
@@ -1698,7 +1698,7 @@ pre {
   .col-md-11 {
     width: 91.66667%; }
 
-  .col-md-12 {
+  .col-md-12, #home .content_main .product_lead, #home .content_main .testimonials {
     width: 100%; }
 
   .col-md-pull-0 {
@@ -1788,7 +1788,7 @@ pre {
   .col-md-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-md-offset-3 {
+  .col-md-offset-3, #home .content_order form #submit {
     margin-left: 25%; }
 
   .col-md-offset-4 {
@@ -5004,7 +5004,7 @@ button.close {
 .clearfix:after {
   clear: both; }
 
-.center-block, #home .branding img, #home .content_main .product_description .product_specs .responsive_header, #home .content_order .responsive_header {
+.center-block {
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -5024,7 +5024,7 @@ button.close {
 .invisible {
   visibility: hidden; }
 
-.text-hide, #home .content_main .product_description .product_specs h3, #home .content_order h2, #home .content_order form label {
+.text-hide, #home .branding h1, #home .content_main .product_description .product_specs h3, #home .content_order h2, #home .content_order form label {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -5040,7 +5040,7 @@ button.close {
 
 @-ms-viewport {
   width: device-width; }
-.visible-xs, #home .content_main .product_description .product_specs .responsive_header, #home .content_main .product_spotlight .mobile_product_spotlight, #home .content_order .responsive_header, .visible-sm, .visible-md, .visible-lg {
+.visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important; }
 
 .visible-xs-block,
@@ -5058,20 +5058,17 @@ button.close {
   display: none !important; }
 
 @media (max-width: 767px) {
-  .visible-xs, #home .content_main .product_description .product_specs .responsive_header, #home .content_main .product_spotlight .mobile_product_spotlight, #home .content_order .responsive_header {
+  .visible-xs {
     display: block !important; }
 
-  table.visible-xs, #home .content_main .product_description .product_specs table.responsive_header, #home .content_main .product_spotlight table.mobile_product_spotlight, #home .content_order table.responsive_header {
+  table.visible-xs {
     display: table; }
 
-  tr.visible-xs, #home .content_main .product_description .product_specs tr.responsive_header, #home .content_main .product_spotlight tr.mobile_product_spotlight, #home .content_order tr.responsive_header {
+  tr.visible-xs {
     display: table-row !important; }
 
-  th.visible-xs, #home .content_main .product_description .product_specs th.responsive_header, #home .content_main .product_spotlight th.mobile_product_spotlight, #home .content_order th.responsive_header,
-  td.visible-xs,
-  #home .content_main .product_description .product_specs td.responsive_header,
-  #home .content_main .product_spotlight td.mobile_product_spotlight,
-  #home .content_order td.responsive_header {
+  th.visible-xs,
+  td.visible-xs {
     display: table-cell !important; } }
 @media (max-width: 767px) {
   .visible-xs-block {
@@ -5161,7 +5158,7 @@ button.close {
     display: inline-block !important; } }
 
 @media (max-width: 767px) {
-  .hidden-xs, #home .content_main .product_description .product_specs h3, #home .content_main .product_spotlight .carousel, #home .content_main .testimonials, #home .content_order h2 {
+  .hidden-xs {
     display: none !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
@@ -5236,14 +5233,10 @@ button.close {
     text-transform: uppercase; }
     #home nav[role="navigation"] .navbar-collapse a {
       color: white; }
-  #home .branding {
-    /*h1 {
-        //background: url("../images/logo.png") no-repeat center center;
-        //background-size: 940px 179px;
-        //width: 940px;
-        //height: 179px;
-        //@extend .text-hide;
-    }*/ }
+  #home .branding h1 {
+    background: url("../images/logo.png") no-repeat center center;
+    background-size: 940px 179px;
+    height: 179px; }
   #home .content_main {
     position: relative;
     padding-top: 100px; }
@@ -5257,16 +5250,12 @@ button.close {
     #home .content_main .product_lead {
       font-family: council_regular-webfont;
       color: #86754d;
-      font-size: 42px;
+      font-size: 82px;
       font-weight: normal;
       margin-top: 0;
       text-transform: uppercase;
       letter-spacing: 10px;
-      margin-bottom: 25px; }
-      @media (min-width: 768px) {
-        #home .content_main .product_lead {
-          font-size: 82px;
-          margin-bottom: 50px; } }
+      margin-bottom: 50px; }
     #home .content_main .product_description p {
       font-family: courier, serif;
       font-weight: bold;
@@ -5282,53 +5271,15 @@ button.close {
       #home .content_main .product_description .product_specs .spec_lead {
         position: absolute;
         font-family: a_love_of_thunder-webfont;
-        font-size: 14px;
-        top: 48px;
-        left: 48px; }
-        @media (min-width: 768px) {
-          #home .content_main .product_description .product_specs .spec_lead {
-            top: 60px;
-            left: 55px;
-            font-size: 16px; } }
-        @media (min-width: 992px) {
-          #home .content_main .product_description .product_specs .spec_lead {
-            top: 90px;
-            left: 155px;
-            font-size: 16px; } }
+        font-size: 16px;
+        top: 90px;
+        left: 155px; }
       #home .content_main .product_description .product_specs ul {
         margin-top: 25px; }
         #home .content_main .product_description .product_specs ul li {
           margin-bottom: 25px;
           font-family: a_love_of_thunder-webfont;
           font-size: 16px; }
-    #home .content_main .product_spotlight {
-      position: relative; }
-      #home .content_main .product_spotlight .carousel-inner {
-        margin-bottom: 25px;
-        min-height: 530px; }
-        @media (min-width: 992px) {
-          #home .content_main .product_spotlight .carousel-inner {
-            min-height: 850px; } }
-      #home .content_main .product_spotlight .see_more {
-        font-family: council_regular-webfont;
-        color: black;
-        text-transform: uppercase;
-        font-size: 24px;
-        letter-spacing: 5px; }
-      #home .content_main .product_spotlight .product_left, #home .content_main .product_spotlight .product_right, #home .content_main .product_spotlight .testimonials .testimonial_left, #home .content_main .testimonials .product_spotlight .testimonial_left, #home .content_main .product_spotlight .testimonials .testimonial_right, #home .content_main .testimonials .product_spotlight .testimonial_right {
-        position: absolute; }
-      #home .content_main .product_spotlight .product_left {
-        bottom: 10px;
-        left: -10px; }
-        @media (min-width: 992px) {
-          #home .content_main .product_spotlight .product_left {
-            left: 50px; } }
-      #home .content_main .product_spotlight .product_right {
-        bottom: 10px;
-        left: 225px; }
-        @media (min-width: 992px) {
-          #home .content_main .product_spotlight .product_right {
-            left: 375px; } }
     #home .content_main .testimonials {
       position: relative;
       margin-top: 100px; }
@@ -5354,7 +5305,7 @@ button.close {
         bottom: 0px;
         left: 0px;
         width: 100%; }
-      #home .content_main .testimonials .carousel-inner {
+      #home .content_main .testimonials .carousel {
         min-height: 250px; }
       #home .content_main .testimonials h3 {
         font-family: a_love_of_thunder-webfont;
@@ -5368,12 +5319,12 @@ button.close {
         padding: 0 100px;
         line-height: 1.8em;
         margin-bottom: 25px; }
-      #home .content_main .testimonials .product_spotlight .product_left, #home .content_main .product_spotlight .testimonials .product_left, #home .content_main .testimonials .product_spotlight .product_right, #home .content_main .product_spotlight .testimonials .product_right, #home .content_main .testimonials .testimonial_left, #home .content_main .testimonials .testimonial_right {
+      #home .content_main .testimonials .left, #home .content_main .testimonials .right {
         position: absolute; }
-      #home .content_main .testimonials .testimonial_left {
+      #home .content_main .testimonials .left {
         top: 65px;
         left: 0px; }
-      #home .content_main .testimonials .testimonial_right {
+      #home .content_main .testimonials .right {
         top: 65px;
         right: 0px; }
   #home .content_order h2 {
@@ -5397,11 +5348,6 @@ button.close {
       width: 25%;
       top: 50px;
       right: 0; }
-  #home .content_order .responsive_header {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-left: 15px;
-    padding-right: 15px; }
   #home .content_order form .required {
     color: #b20f0f; }
   #home .content_order form .help_text {
