@@ -32,7 +32,7 @@ mail.init_app(app)
 def home():
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
-    return render_template('index.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
+    return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
 
 
 @app.route('/buy', methods=['POST'])

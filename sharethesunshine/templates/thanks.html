@@ -1,64 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Thanks for your order! | Share the Sunshine</title>
+{% extends "base.html" %}
 
-        <link href="{{ url_for('static', filename='css/main.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
+{% block title %}Thanks for sharing Sunshine! | Share the Sunshine{% endblock title %}
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body id="home">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="mailto:info@sharethesunshine.com">Contact</a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </nav>
+{% block page %}thanks{% endblock page %}
 
-        <div class="content_wrap">
-            <div class="branding">
-                <h1><a href="/">Share the Sunshine</a></h1>
-            </div>
+{% block content %}
+<h2 class="product_lead">Thanks for your order!</h2>
 
-            <div class="content_main">
-                <h2 class="product_lead">Thanks!</h2>
+<div class="product_description">
+    <p>{{ purchase.recipient_name }} will be getting a delicious can of Sunshine at {{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} in {{ purchase.shipping_city }}, {{ purchase.shipping_state }}.</p>
+    <p>{% if purchase.purchaser_name %}You told us to include your name ({{ purchase.purchaser_name }}){% else %}You told us not to include your name{% endif %} with this personal message:</p>
+    <p class="personal_message">{{ purchase.personal_message }}</p>
+    <p><b>NOTE:</b> You will receive an email confirmation of this order. Your order number is: {{ purchase.uuid }}</p>
+</div>
 
-                <div class="product_description">
-                    <p>Thank you for sharing the Sunshine!</p>
-
-                    <p>You will receive an email receipt detailing your order.</p>
-
-                </div>
-
-            </div>
-
-            <footer>
-                <ul class="social">
-                    <li class="facebook"><a href="https://www.facebook.com/DrinkSunshine"><img src="{{ url_for('static', filename='images/facebook_icon.png') }}" alt="facebook"></a></li>
-                    <li class="twitter"><a href="https://twitter.com/sunshinedrink"><img src="{{ url_for('static', filename='images/twitter_icon.png') }}" alt="twitter"></a></li>
-                </ul>
-            </footer>
-        </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    
-    </body>
-</html>
+{% endblock content %}

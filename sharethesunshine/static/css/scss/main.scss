@@ -7,7 +7,7 @@
 
 // Main styles
 
-#home {
+body {
     @include background(url("../images/mountains_bg.png"));
     background-position: center;
     background-repeat: no-repeat;
@@ -35,9 +35,15 @@
             font-size: 16px;
             letter-spacing: 3px;
             text-transform: uppercase;
+            border: none;
+            box-shadow: none;
 
             a {
                 color: white;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -48,13 +54,13 @@
             @extend .img-responsive, .center-block;
         }
 
-        /*h1 {
-            //background: url("../images/logo.png") no-repeat center center;
-            //background-size: 940px 179px;
-            //width: 940px;
-            //height: 179px;
-            //@extend .text-hide;
-        }*/
+        .standard_header {
+            @extend .hidden-xs, .hidden-sm;
+        }
+
+        .responsive_header {
+            @extend .visible-xs, .visible-sm;
+        }
     }
 
     .content_main {
@@ -100,44 +106,32 @@
 
             .product_specs {
                 @extend .text-center;
-                position: relative;
                 margin-top: 50px;
-                
-                h3 {
-                    @extend .text-hide, .hidden-xs;
-                    background: url("../images/price_logo.png") no-repeat center center;
-                    background-size: 471px 194px;
-                    height: 194px;
+
+                .standard_header {
+                    @extend .img-responsive, .hidden-sm, .hidden-xs, .center-block;
                 }
 
                 .responsive_header {
-                    @extend .visible-xs, .center-block, .img-responsive;
+                    @extend .visible-xs, .visible-sm, .center-block, .img-responsive, .center-block;
+                    margin-bottom: 25px;
                 }
 
                 .spec_lead {
-                    
-                    position: absolute;
+                    @extend .hidden-sm, .text-center;
                     font-family: a_love_of_thunder-webfont;
-                    font-size: 14px;
-                    top: 48px;
-                    left: 48px;
-
-                    @media (min-width: $screen-sm-min) {
-                        top: 60px;
-                        left: 55px;
-                        font-size: 16px;
-                    }
+                    font-size: 16px;
+                    margin-top: 10px;
 
                     @media (min-width: $screen-md-min) {
-                        top: 90px;
-                        left: 155px;
-                        font-size: 16px;
+                        position: relative;
+                        top: -100px;
+                        margin-top: 0;
                     }
                 }
 
                 ul {
                     @extend .list-unstyled;
-                    margin-top: 25px;
 
                     li {
                         margin-bottom: 25px;
@@ -283,7 +277,7 @@
         @extend .row;
 
         h2 {
-            @extend .text-hide, .hidden-xs;
+            @extend .text-hide, .hidden-xs, .hidden-sm;
             background: url("../images/lets_get_started_text.png") no-repeat center;
             background-size: 413px 92px;
             height: 92px;
@@ -311,7 +305,7 @@
         }
 
         .responsive_header {
-            @extend .visible-xs, .center-block, .img-responsive;
+            @extend .visible-xs, .visible-sm, .center-block, .img-responsive;
             margin-top: 50px;
             margin-bottom: 50px;
             padding-left: 15px;
