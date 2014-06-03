@@ -1,27 +1,26 @@
 import uuid
 import datetime
 
-from flask import Flask, render_template, request, flash
+from flask import render_template, request
 from flask_mail import Message, Mail
-from flask_sqlalchemy import SQLAlchemy
 
 import stripe
 
-from sharethesunshine import app
+from . import app
 
 from .models import Purchase, Testimonial, db
 from .forms import PurchaseForm
 
 stripe_keys = {
-    'secret_key': 'sk_test_HsuAieq5wo8ZSAm3lEushARi',
-    'publishable_key': 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
+    'secret_key': app.config['STRIPE_SECRET_KEY'],
+    'publishable_key': app.config['STRIPE_PUBLIC_KEY']
 }
 
 stripe.api_key = stripe_keys['secret_key']
 
-app.config['MAIL_SERVER'] = 'smtp.webfaction.com'
-app.config['MAIL_USERNAME'] = 'patrickbeeson_mail'
-app.config['MAIL_PASSWORD'] = '6ElevenBicycleC0'
+app.config['MAIL_SERVER']
+app.config['MAIL_USERNAME']
+app.config['MAIL_PASSWORD']
 
 mail = Mail()
 
@@ -38,6 +37,7 @@ def home():
 @app.route('/buy', methods=['POST'])
 def buy():
     form = PurchaseForm()
+    testimonials = Testimonial.query.limit(3).all()
 
     # Cost of Sunshine in cents
     amount = 500
@@ -46,25 +46,23 @@ def buy():
     # Get the token from the Stripe Checkout form
     stripe_token = request.form['stripeToken']
 
-    # Create the Stripe customer
-    customer = stripe.Customer.create(
-        email=email,
-        card=stripe_token
-    )
-
-    # Try to charge the card via Stripe
-    try:
-        charge = stripe.Charge.create(
-            customer=customer.id,
-            amount=amount,
-            currency='usd',
-            description='Share the Sunshine')
-    # Present new template if there is a problem charging the card
-    except stripe.CardError:
-        return render_template('charge_error.html')
-
     # Try and validate the form on submission
     if form.validate_on_submit():
+        # Create the Stripe customer
+        customer = stripe.Customer.create(
+            email=email,
+            card=stripe_token
+        )
+        # Try to charge the card via Stripe
+        try:
+            charge = stripe.Charge.create(
+                customer=customer.id,
+                amount=amount,
+                currency='usd',
+                description='Share the Sunshine')
+        # Present new template if there is a problem charging the card
+        except stripe.CardError:
+            return render_template('charge_error.html')
         # Grab the email address entered into Stripe, and send it to the form field for that data
         #form.purchaser_email.data = request.form['stripeEmail']
 
@@ -94,8 +92,8 @@ def buy():
 
         message = Message(
             html=mail_html,
-            subject='Thank you for sharing Sunshine!',
-            sender='noreply@sharethesunshine.com',
+            subject='You\'ve shared Sunshine. Everyone is happy.',
+            sender='noreply@share.drinkthesunshine.com',
             recipients=[email])
 
         with mail.connect() as conn:
@@ -103,8 +101,7 @@ def buy():
 
         # Send the user to the thanks template to view their order summary
         return render_template('thanks.html', purchase=purchase, amount=amount)
-    #else:
-    #    return render_template('submission_error.html')
+    return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
 
 
 @app.errorhandler(404)

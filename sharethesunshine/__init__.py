@@ -2,10 +2,14 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config.from_object('config')
 
-app.secret_key = '\x03V\x96\xb6{#\x9f\x14K\xef{\x86Z\x14\xafZK/-\x84\xb0O\xcd\x13'
+app.config['SECRET_KEY']
 
-import sharethesunshine.views
+db = SQLAlchemy(app)
+
+from sharethesunshine import views
+from .util import assets
 
 if __name__ == '__main__':
     app.run()

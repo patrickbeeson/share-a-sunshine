@@ -1,7 +1,7 @@
 from flask_wtf import Form
 from wtforms import TextField, TextAreaField, IntegerField
 from wtforms.fields.html5 import EmailField
-from wtforms.validators import email, DataRequired, Length
+from wtforms.validators import DataRequired, Length
 
 
 class PurchaseForm(Form):
@@ -10,7 +10,7 @@ class PurchaseForm(Form):
                                validators=[DataRequired('Please enter the receipient\'s full name.')])
     recipient_email = EmailField('Recipient\'s email',
                                  description='Email',
-                                 validators=[email('Please enter a valid email address.')])
+                                 )
     shipping_street_address_1 = TextField('Street address 1',
                                           description='Street Address 1',
                                           validators=[DataRequired('Please enter the recipient\'s street address.')])
@@ -34,4 +34,4 @@ class PurchaseForm(Form):
     #                             )
     personal_message = TextAreaField('Personalized message',
                                      description='140 characters max',
-                                     validators=[DataRequired('Please enter a message.'), Length(max=140)])
+                                     validators=[DataRequired('Please enter a message.'), Length(message='Please reduce your message to 140 characters or less.', max=140)])

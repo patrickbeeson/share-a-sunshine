@@ -12,11 +12,21 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-color: $sts_canvas;
-    min-height: 2000px;
     padding-top: 70px;
     
     .content_wrap {
         @extend .container;
+    }
+
+    #form_errors {
+        @extend .alert, .alert-danger, .alert-dismissable;
+        font-family: $sts_body;
+        font-weight: bold;
+        font-size: 15px;
+
+        a {
+            @extend .alert-link;
+        }
     }
 
     nav[role="navigation"] {
@@ -275,6 +285,17 @@ body {
 
     .content_order {
         @extend .row;
+
+        #form_error_messages {
+            @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center;
+
+            li {
+                font-family: $sts_body;
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 1.8em;
+            }
+        }
 
         h2 {
             @extend .text-hide, .hidden-xs, .hidden-sm;

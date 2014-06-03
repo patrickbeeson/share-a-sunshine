@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock title %}</title>
-
-        <link href="{{ url_for('static', filename='css/main.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
+        {% assets "css_all" %}
+        <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
+        {% endassets %}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,10 +36,13 @@
         </nav>
 
         <div class="content_wrap">
-
+            {% block form_errors %}
+            {% endblock %}
             <div class="branding">
+                <a href="/" title="Share the Sunshine">
                 <img class="standard_header" src="{{ url_for('static', filename='images/logo.png') }}" alt="Share the Sunshine">
                 <img src="{{ url_for('static', filename='images/logo_mobile.png') }}" alt="Share the Sunshine" class="responsive_header">
+                </a>
             </div>
 
             <div class="content_main">
@@ -55,9 +59,12 @@
         </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='scripts/bootstrap/transition.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/bootstrap/carousel.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/bootstrap/collapse.js') }}"></script>
+    {% assets "js_all" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+    <script>
+        $('#personal_message').limit('140','#charsleft');
+    </script>
     
     </body>
 </html>

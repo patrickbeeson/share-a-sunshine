@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Thanks for sharing Sunshine! | Share the Sunshine{% endblock title %}
+{% block title %}Thanks for sharing the sunshine | Share the Sunshine{% endblock title %}
 
 {% block page %}thanks{% endblock page %}
 
 {% block content %}
-<h2 class="product_lead">Thanks for your order!</h2>
+<h2 class="product_lead">Thanks for your order</h2>
 
 <div class="product_description">
-    <p>{{ purchase.recipient_name }} will be getting a delicious can of Sunshine at {{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} in {{ purchase.shipping_city }}, {{ purchase.shipping_state }}.</p>
-    <p>{% if purchase.purchaser_name %}You told us to include your name ({{ purchase.purchaser_name }}){% else %}You told us not to include your name{% endif %} with this personal message:</p>
-    <p class="personal_message">{{ purchase.personal_message }}</p>
-    <p><b>NOTE:</b> You will receive an email confirmation of this order. Your order number is: {{ purchase.uuid }}</p>
+    {% if purchase.purchaser_name %}<p>{{ purchase.purchaser_name }},</p>{% endif %}
+    
+    <p>A golden hued Sunshine can was recently dipped into The Well of Unbelievable Awesomeness and loving placed into a custom package at your direction.</p>
+
+    <p>The box is currently following the sunrays to <b>{{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} {{ purchase.shipping_city }}, {{ purchase.shipping_state }}</b> (one of our favorite places in the world!) where <b>{{ purchase.recipient_name }}</b> will soon have their day brightened with 8.4 ounces of bubbly goodness.</p>
+
+    <p>{% if purchase.purchaser_name %}{{ purchase.purchaser_name }}, you{% else %}You{% endif %} are a great American for having the heart to tell <b>{{ purchase.recipient_name }}</b>: <b>"{{ purchase.personal_message }}"</b> Finer words have never been written. Our computer wept at reading your prose.</p>
+
+    <p>For your records, your order number is: <b>{{ purchase.uuid }}</b>. A number we will never forget. It was the best one we've ever had the good fortune of fulfilling; truly our pleasure.</p>
+
+    <p>Thanks for sharing the Sunshine.</p>
+
 </div>
 
 {% endblock content %}

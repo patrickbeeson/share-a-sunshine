@@ -1061,7 +1061,7 @@ mark,
 .text-right, body nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, body .content_main .product_description .product_specs, body .content_main .product_description .product_specs .spec_lead, body .content_main .product_spotlight, body .content_main .testimonials h3, body .content_order form #submit, body footer .social {
+.text-center, body .content_main .product_description .product_specs, body .content_main .product_description .product_specs .spec_lead, body .content_main .product_spotlight, body .content_main .testimonials h3, body .content_order #form_error_messages, body .content_order form #submit, body footer .social {
   text-align: center; }
 
 .text-justify {
@@ -1148,7 +1148,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .list-inline, body footer .social, body .content_main .product_description .product_specs ul {
+.list-unstyled, .list-inline, body footer .social, body .content_main .product_description .product_specs ul, body .content_order #form_error_messages {
   padding-left: 0;
   list-style: none; }
 
@@ -1343,7 +1343,7 @@ pre {
   .row:after, body .content_main:after, body .content_order:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, body .content_main .product_description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, body .content_main .product_lead, body .content_main .testimonials, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, body .content_main .product_description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, body .content_main .product_lead, body .content_main .testimonials, body .content_order #form_error_messages, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1506,7 +1506,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, body .content_main .product_description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, body .content_main .product_lead, body .content_main .testimonials {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, body .content_main .product_description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, body .content_main .product_lead, body .content_main .testimonials, body .content_order #form_error_messages {
     float: left; }
 
   .col-sm-1 {
@@ -1542,7 +1542,7 @@ pre {
   .col-sm-11 {
     width: 91.66667%; }
 
-  .col-sm-12, body .content_main .product_lead, body .content_main .testimonials {
+  .col-sm-12, body .content_main .product_lead, body .content_main .testimonials, body .content_order #form_error_messages {
     width: 100%; }
 
   .col-sm-pull-0 {
@@ -3931,25 +3931,27 @@ a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #428bca; }
 
-.alert {
+.alert, body #form_errors, body .content_order #form_error_messages {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px; }
-  .alert h4 {
+  .alert h4, body #form_errors h4, body .content_order #form_error_messages h4 {
     margin-top: 0;
     color: inherit; }
-  .alert .alert-link {
+  .alert .alert-link, body #form_errors .alert-link, body .content_order #form_error_messages .alert-link, body #form_errors a, body .content_order #form_error_messages #form_errors a, body #form_errors .content_order #form_error_messages a {
     font-weight: bold; }
-  .alert > p,
-  .alert > ul {
+  .alert > p, body #form_errors > p, body .content_order #form_error_messages > p,
+  .alert > ul,
+  body #form_errors > ul,
+  body .content_order #form_error_messages > ul {
     margin-bottom: 0; }
-  .alert > p + p {
+  .alert > p + p, body #form_errors > p + p, body .content_order #form_error_messages > p + p {
     margin-top: 5px; }
 
-.alert-dismissable {
+.alert-dismissable, body #form_errors {
   padding-right: 35px; }
-  .alert-dismissable .close {
+  .alert-dismissable .close, body #form_errors .close {
     position: relative;
     top: -2px;
     right: -21px;
@@ -3961,7 +3963,7 @@ a.thumbnail.active {
   color: #3c763d; }
   .alert-success hr {
     border-top-color: #c9e2b3; }
-  .alert-success .alert-link {
+  .alert-success .alert-link, .alert-success body #form_errors a, body #form_errors .alert-success a {
     color: #2b542c; }
 
 .alert-info {
@@ -3970,7 +3972,7 @@ a.thumbnail.active {
   color: #31708f; }
   .alert-info hr {
     border-top-color: #a6e1ec; }
-  .alert-info .alert-link {
+  .alert-info .alert-link, .alert-info body #form_errors a, body #form_errors .alert-info a {
     color: #245269; }
 
 .alert-warning {
@@ -3979,16 +3981,16 @@ a.thumbnail.active {
   color: #8a6d3b; }
   .alert-warning hr {
     border-top-color: #f7e1b5; }
-  .alert-warning .alert-link {
+  .alert-warning .alert-link, .alert-warning body #form_errors a, body #form_errors .alert-warning a {
     color: #66512c; }
 
-.alert-danger {
+.alert-danger, body #form_errors, body .content_order #form_error_messages {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442; }
-  .alert-danger hr {
+  .alert-danger hr, body #form_errors hr, body .content_order #form_error_messages hr {
     border-top-color: #e4b9c0; }
-  .alert-danger .alert-link {
+  .alert-danger .alert-link, body #form_errors .alert-link, body .content_order #form_error_messages .alert-link, body #form_errors a, body .content_order #form_error_messages #form_errors a, body #form_errors .content_order #form_error_messages a {
     color: #843534; }
 
 @keyframes progress-bar-stripes {
@@ -5231,8 +5233,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #fff9f2;
-  min-height: 2000px;
   padding-top: 70px; }
+  body #form_errors {
+    font-family: courier, serif;
+    font-weight: bold;
+    font-size: 15px; }
   body nav[role="navigation"] .navbar-collapse {
     font-family: council_regular-webfont;
     font-size: 16px;
@@ -5364,6 +5369,11 @@ body {
       body .content_main .testimonials .testimonial_right {
         top: 65px;
         right: 0px; }
+  body .content_order #form_error_messages li {
+    font-family: courier, serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.8em; }
   body .content_order h2 {
     background: url("../images/lets_get_started_text.png") no-repeat center;
     background-size: 413px 92px;

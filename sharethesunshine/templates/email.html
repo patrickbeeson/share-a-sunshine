@@ -1,7 +1,13 @@
-Thank you for sharing Sunshine!
+{% if purchase.purchaser_name %}<p>{{ purchase.purchaser_name }},</p>{% endif %}
 
-Here is your order summary:
-{{ purchase.recipient_name }}
-<ul>
-    <li>Receipient name: {{ purchase.recipient_name }}</li>
-</ul>
+<p>Thanks for Sharing the Sunshine!</p>
+
+<p>A golden hued Sunshine can was recently dipped into The Well of Unbelievable Awesomeness and loving placed into a custom package at your direction.</p>
+
+<p>The box is currently following the sunrays to <b>{{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} {{ purchase.shipping_city }}, {{ purchase.shipping_state }}</b> (one of our favorite places in the world!) where <b>{{ purchase.recipient_name }}</b> will soon have their day brightened with 8.4 ounces of bubbly goodness.</p>
+
+<p>{% if purchase.purchaser_name %}{{ purchase.purchaser_name }}, you{% else %}You{% endif %} are a great American for having the heart to tell <b>{{ purchase.recipient_name }}</b>: <b>"{{ purchase.personal_message }}"</b> Finer words have never been written. Our computer wept at reading your prose.</p>
+
+<p>For your records, your order number is: <b>{{ purchase.uuid }}</b>. A number we will never forget. It was the best one we’ve ever had the good fortune of fulfilling; truly our pleasure.</p>
+
+<p>Thanks for sharing the Sunshine.</p>

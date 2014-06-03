@@ -4,6 +4,15 @@
 
 {% block page %}home{% endblock page %}
 
+{% block form_errors %}
+            {% if form.errors %}
+            <div id="form_errors">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>WARNING!</strong> Your contact form had some errors. Please <a href="#purchase_form">check your submission</a>, and try again.
+            </div>
+            {% endif %}
+{% endblock form_errors %}
+
 {% block content %}
 <h2 class="product_lead">At Long Last,<br>A Greeting Card You Can Drink</h2>
 
@@ -71,19 +80,59 @@
                 <h2>Alright then, let's get started</h2>
                 <img src="{{ url_for('static', filename='images/lets_get_started_text_mobile.png') }}" alt="Alright then, let's get started" class="responsive_header">
 
+                {% if form.errors %}
+                <ul id="form_error_messages">
+                {% for message in form.recipient_name.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.recipient_email.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.shipping_street_address_1.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.shipping_street_address_2.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.shipping_city.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.shipping_state.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.shipping_zip.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.purchaser_name.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+
+                {% for message in form.personal_message.errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+                </ul>
+                {% endif %}
+
                 <form action="/buy" method="POST" id="purchase_form">
                     {{ form.csrf_token }}
 
                     <div class="field_grouper" id="recipient">
                         <h3>Recipient's Name<span class="required">*</span> &amp; Email:</h3>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.recipient_name.errors %} has-error{% endif %}">
                             {{ form.recipient_name.label }}
                             {{ form.recipient_name(class_='form-control') }}
                             <span class="help_text">{{ form.recipient_name.description|safe }}</span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.recipient_email.errors %} has-error{% endif %}">
                                 {{ form.recipient_email.label }}
                                 {{ form.recipient_email(class_='form-control') }}
                                 <span class="help_text">{{ form.recipient_email.description|safe }}</span>
@@ -93,31 +142,31 @@
                     
                         <h3>Recipient's Address:<span class="required">*</span></h3>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.shipping_street_address_1.errors %} has-error{% endif %}">
                             {{ form.shipping_street_address_1.label }}
                             {{ form.shipping_street_address_1(class_='form-control') }}
                             <span class="help_text">{{ form.shipping_street_address_1.description|safe }}</span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.shipping_street_address_2.errors %} has-error{% endif %}">
                             {{ form.shipping_street_address_2.label }}
                             {{ form.shipping_street_address_2(class_='form-control') }}
                             <span class="help_text">{{ form.shipping_street_address_2.description|safe }}</span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.shipping_city.errors %} has-error{% endif %}">
                             {{ form.shipping_city.label }}
                             {{ form.shipping_city(class_='form-control') }}
                             <span class="help_text">{{ form.shipping_city.description|safe }}</span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.shipping_state.errors %} has-error{% endif %}">
                             {{ form.shipping_state.label }}
                             {{ form.shipping_state(class_='form-control') }}
                             <span class="help_text">{{ form.shipping_state.description|safe }}</span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{% if form.shipping_zip.errors %} has-error{% endif %}">
                             {{ form.shipping_zip.label }}
                             {{ form.shipping_zip(class_='form-control') }}
                             <span class="help_text">{{ form.shipping_zip.description|safe }}</span>
@@ -126,34 +175,28 @@
 
                     <div class="field_grouper" id="message">
                         <h3>Personalized Message:<span class="required">*</span></h3>
-                        <div class="form-group">
+                        <div class="form-group{% if form.personal_message.errors %} has-error{% endif %}">
                             {{ form.personal_message.label }}
                             {{ form.personal_message(class_='form-control', rows='21') }}
-                            <span class="help_text">{{ form.personal_message.description|safe }}</span>
+                            <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span>
                         </div>
                     </div>
 
                     <div class="field_grouper" id="purchaser">
                         <h3>From:</h3>
                     
-                        <div class="form-group">
+                        <div class="form-group{% if form.purchaser_name.errors %} has-error{% endif %}">
                             {{ form.purchaser_name.label }}
                             {{ form.purchaser_name(class_='form-control') }}
                             <span class="help_text">{{ form.purchaser_name.description|safe }}</span>
                         </div>
-
-                        {#<div class="form-group">
-                            {{ form.purchaser_email.label }}
-                            {{ form.purchaser_email(class_='form-control') }}
-                            <span class="help_text">{{ form.purchaser_email.description|safe }}</span><span class="required">*</span>
-                        </div>#}
                     </div>
 
                     <div class="field_grouper" id="submit">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-image=""
+                            data-image="http://drinkthesunshine.com/static/img/logo.png"
                             data-key="{{ key }}"
-                            data-description="Share the Sunshine"
+                            data-description="1 can of Sunshine ($5.00)"
                             data-email=""
                             data-label="Share the Sunshine"
                             data-allow-remember-me="false"
