@@ -34,7 +34,7 @@ def home():
     return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
 
 
-@app.route('/buy', methods=['POST'])
+@app.route('/buy/', methods=['POST'])
 def buy():
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
@@ -102,6 +102,11 @@ def buy():
         # Send the user to the thanks template to view their order summary
         return render_template('thanks.html', purchase=purchase, amount=amount)
     return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
+
+
+@app.route('/terms/')
+def terms():
+    return render_template('terms.html',)
 
 
 @app.errorhandler(404)

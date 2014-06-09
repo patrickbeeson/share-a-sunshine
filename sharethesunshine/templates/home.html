@@ -43,11 +43,11 @@
                                 <img src="{{ url_for('static', filename='images/sunshine_product_rear.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
                             </div>
                         </div>
-                        <a class="product_left" href="#product_carousel" data-slide="prev">
+                        <a class="product_left controls" href="#product_carousel" data-slide="prev">
                             <img src="{{ url_for('static', filename='images/see_more_arrow_left.png') }}" alt="">
                         </a>
                         <p class="see_more">See more</p>
-                        <a class="product_right" href="#product_carousel" data-slide="next">
+                        <a class="product_right controls" href="#product_carousel" data-slide="next">
                             <img src="{{ url_for('static', filename='images/see_more_arrow_right.png') }}" alt="">
                         </a>
                     </div>
@@ -56,7 +56,7 @@
 
                 <div class="testimonials">
                     <h3>All-Time Favorites</h3>
-                    <div id="testimonial_carousel" class="carousel slide" data-ride="carousel">
+                    <div id="testimonial_carousel" class="carousel slide">
                         <div class="carousel-inner">
                             {% for testimonial in testimonials %}
                             <div class="item{% if loop.first %} active{% endif %}">
@@ -66,10 +66,10 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <a class="testimonial_left" href="#testimonial_carousel" data-slide="prev">
+                        <a class="testimonial_left controls" href="#testimonial_carousel" data-slide="prev">
                             <img src="{{ url_for('static', filename='images/arrow_left.png') }}" alt="">
                         </a>
-                        <a class="testimonial_right" href="#testimonial_carousel" data-slide="next">
+                        <a class="testimonial_right controls" href="#testimonial_carousel" data-slide="next">
                             <img src="{{ url_for('static', filename='images/arrow_right.png') }}" alt="">
                         </a>
                     </div>
@@ -120,7 +120,7 @@
                 </ul>
                 {% endif %}
 
-                <form action="/buy" method="POST" id="purchase_form">
+                <form action="/buy/" method="POST" id="purchase_form">
                     {{ form.csrf_token }}
 
                     <div class="field_grouper" id="recipient">

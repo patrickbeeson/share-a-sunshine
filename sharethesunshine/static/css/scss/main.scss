@@ -87,6 +87,18 @@ body {
             top: 50px;
         }
 
+        .controls {
+
+            &:hover img {
+                opacity: 0.5;
+            }
+
+            img {
+                opacity: 1;
+                @include transition (opacity 0.2s ease-in-out);
+            }
+        }
+
         .product_lead {
             @extend .col-sm-12;
             font-family: council_regular-webfont;
@@ -415,6 +427,48 @@ body {
             @extend .list-unstyled, .list-inline, .text-center;
             margin-top: 50px;
             padding-top: 50px;
+
+            li {
+
+                a {
+
+                    &:hover img {
+                        opacity: 0.5;
+                    }
+
+                    img {
+                        opacity: 1;
+                        @include transition (opacity 0.2s ease-in-out);
+
+                    }
+                }
+            }
         }
+
+        p {
+            @extend .text-center, .small;
+            font-family: $sts_body;
+            font-weight: bold;
+            line-height: 1.8em;
+
+            a {
+                color: $sts_dk_canvas;
+
+                &:hover {
+                    color: $sts_dk_canvas;
+                }
+            }
+        }
+    }
+}
+
+// Terms and Conditions
+#terms {
+
+    li {
+        font-family: $sts_body;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.8em;
     }
 }

@@ -964,19 +964,43 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.1;
   color: inherit; }
   h1 small,
-  h1 .small, h2 small,
-  h2 .small, h3 small,
-  h3 .small, h4 small,
-  h4 .small, h5 small,
-  h5 .small, h6 small,
+  h1 .small,
+  h1 body footer p,
+  body footer h1 p, h2 small,
+  h2 .small,
+  h2 body footer p,
+  body footer h2 p, h3 small,
+  h3 .small,
+  h3 body footer p,
+  body footer h3 p, h4 small,
+  h4 .small,
+  h4 body footer p,
+  body footer h4 p, h5 small,
+  h5 .small,
+  h5 body footer p,
+  body footer h5 p, h6 small,
   h6 .small,
+  h6 body footer p,
+  body footer h6 p,
   .h1 small,
-  .h1 .small, .h2 small,
-  .h2 .small, .h3 small,
-  .h3 .small, .h4 small,
-  .h4 .small, .h5 small,
-  .h5 .small, .h6 small,
-  .h6 .small {
+  .h1 .small,
+  .h1 body footer p,
+  body footer .h1 p, .h2 small,
+  .h2 .small,
+  .h2 body footer p,
+  body footer .h2 p, .h3 small,
+  .h3 .small,
+  .h3 body footer p,
+  body footer .h3 p, .h4 small,
+  .h4 .small,
+  .h4 body footer p,
+  body footer .h4 p, .h5 small,
+  .h5 .small,
+  .h5 body footer p,
+  body footer .h5 p, .h6 small,
+  .h6 .small,
+  .h6 body footer p,
+  body footer .h6 p {
     font-weight: normal;
     line-height: 1;
     color: #999999; }
@@ -987,14 +1011,26 @@ h3, .h3 {
   margin-top: 20px;
   margin-bottom: 10px; }
   h1 small,
-  h1 .small, .h1 small,
+  h1 .small,
+  h1 body footer p,
+  body footer h1 p, .h1 small,
   .h1 .small,
+  .h1 body footer p,
+  body footer .h1 p,
   h2 small,
-  h2 .small, .h2 small,
+  h2 .small,
+  h2 body footer p,
+  body footer h2 p, .h2 small,
   .h2 .small,
+  .h2 body footer p,
+  body footer .h2 p,
   h3 small,
-  h3 .small, .h3 small,
-  .h3 .small {
+  h3 .small,
+  h3 body footer p,
+  body footer h3 p, .h3 small,
+  .h3 .small,
+  .h3 body footer p,
+  body footer .h3 p {
     font-size: 65%; }
 
 h4, .h4,
@@ -1003,14 +1039,26 @@ h6, .h6 {
   margin-top: 10px;
   margin-bottom: 10px; }
   h4 small,
-  h4 .small, .h4 small,
+  h4 .small,
+  h4 body footer p,
+  body footer h4 p, .h4 small,
   .h4 .small,
+  .h4 body footer p,
+  body footer .h4 p,
   h5 small,
-  h5 .small, .h5 small,
+  h5 .small,
+  h5 body footer p,
+  body footer h5 p, .h5 small,
   .h5 .small,
+  .h5 body footer p,
+  body footer .h5 p,
   h6 small,
-  h6 .small, .h6 small,
-  .h6 .small {
+  h6 .small,
+  h6 body footer p,
+  body footer h6 p, .h6 small,
+  .h6 .small,
+  .h6 body footer p,
+  body footer .h6 p {
     font-size: 75%; }
 
 h1, .h1 {
@@ -1044,7 +1092,8 @@ p {
       font-size: 21px; } }
 
 small,
-.small {
+.small,
+body footer p {
   font-size: 85%; }
 
 cite {
@@ -1061,7 +1110,7 @@ mark,
 .text-right, body nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, body .content_main .product_description .product_specs, body .content_main .product_description .product_specs .spec_lead, body .content_main .product_spotlight, body .content_main .testimonials h3, body .content_order #form_error_messages, body .content_order form #submit, body footer .social {
+.text-center, body .content_main .product_description .product_specs, body .content_main .product_description .product_specs .spec_lead, body .content_main .product_spotlight, body .content_main .testimonials h3, body .content_order #form_error_messages, body .content_order form #submit, body footer .social, body footer p {
   text-align: center; }
 
 .text-justify {
@@ -1210,14 +1259,18 @@ blockquote {
     margin-bottom: 0; }
   blockquote footer,
   blockquote small,
-  blockquote .small {
+  blockquote .small,
+  blockquote body footer p,
+  body footer blockquote p {
     display: block;
     font-size: 80%;
     line-height: 1.42857;
     color: #999999; }
     blockquote footer:before,
     blockquote small:before,
-    blockquote .small:before {
+    blockquote .small:before,
+    blockquote body footer p:before,
+    body footer blockquote p:before {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
@@ -1231,22 +1284,34 @@ body nav[role="navigation"] blockquote.navbar-collapse {
   .blockquote-reverse footer:before,
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
+  .blockquote-reverse body footer p:before,
+  body footer .blockquote-reverse p:before,
   blockquote.pull-right footer:before,
   body nav[role="navigation"] blockquote.navbar-collapse footer:before,
   blockquote.pull-right small:before,
   body nav[role="navigation"] blockquote.navbar-collapse small:before,
   blockquote.pull-right .small:before,
-  body nav[role="navigation"] blockquote.navbar-collapse .small:before {
+  body nav[role="navigation"] blockquote.navbar-collapse .small:before,
+  blockquote.pull-right body footer p:before,
+  body footer blockquote.pull-right p:before,
+  body nav[role="navigation"] blockquote.navbar-collapse footer p:before,
+  body footer nav[role="navigation"] blockquote.navbar-collapse p:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
+  .blockquote-reverse body footer p:after,
+  body footer .blockquote-reverse p:after,
   blockquote.pull-right footer:after,
   body nav[role="navigation"] blockquote.navbar-collapse footer:after,
   blockquote.pull-right small:after,
   body nav[role="navigation"] blockquote.navbar-collapse small:after,
   blockquote.pull-right .small:after,
-  body nav[role="navigation"] blockquote.navbar-collapse .small:after {
+  body nav[role="navigation"] blockquote.navbar-collapse .small:after,
+  blockquote.pull-right body footer p:after,
+  body footer blockquote.pull-right p:after,
+  body nav[role="navigation"] blockquote.navbar-collapse footer p:after,
+  body footer nav[role="navigation"] blockquote.navbar-collapse p:after {
     content: '\00A0 \2014'; }
 
 blockquote:before,
@@ -5259,6 +5324,13 @@ body {
       height: 6px;
       width: 100%;
       top: 50px; }
+    body .content_main .controls:hover img {
+      opacity: 0.5; }
+    body .content_main .controls img {
+      opacity: 1;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
     body .content_main .product_lead {
       font-family: council_regular-webfont;
       color: #86754d;
@@ -5433,3 +5505,24 @@ body {
     body footer .social {
       margin-top: 50px;
       padding-top: 50px; }
+      body footer .social li a:hover img {
+        opacity: 0.5; }
+      body footer .social li a img {
+        opacity: 1;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out; }
+    body footer p {
+      font-family: courier, serif;
+      font-weight: bold;
+      line-height: 1.8em; }
+      body footer p a {
+        color: #86754d; }
+        body footer p a:hover {
+          color: #86754d; }
+
+#terms li {
+  font-family: courier, serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.8em; }
