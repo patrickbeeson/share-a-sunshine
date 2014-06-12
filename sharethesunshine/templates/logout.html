@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Logout of API Access | share.drinkthesunshine.com{% endblock title %}
+
+{% block page %}auth{% endblock page %}
+
+{% block flash_messages %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div id="flash_messages">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    </div>
+    {% endif %}
+{% endwith %}
+{% endblock flash_messages %}
+
+{% block content %}
+<h2 class="lead">API Access Logout</h2>
+
+<div class="description">
+    <p>Need more API access? Please <a href="/login">log in</a> again.</p>
+</div>
+{% endblock %}

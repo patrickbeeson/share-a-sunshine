@@ -1,10 +1,18 @@
 from flask_wtf import Form
-from wtforms import TextField, TextAreaField, IntegerField
+from wtforms import TextField, TextAreaField, IntegerField, PasswordField, SubmitField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Length
 
 
+class LoginForm(Form):
+    """ Form class for user login """
+    email = TextField('email', validators=[DataRequired('Please enter an email address.')])
+    password = PasswordField('password', validators=[DataRequired('Please enter a password')])
+    submit = SubmitField('Log In')
+
+
 class PurchaseForm(Form):
+    """ Form class for purchase """
     recipient_name = TextField('Recipient\'s name',
                                description='First Last',
                                validators=[DataRequired('Please enter the receipient\'s full name.')])
@@ -27,11 +35,6 @@ class PurchaseForm(Form):
                                 validators=[DataRequired('Please enter the recipient\'s zip code.')])
     purchaser_name = TextField('Your name',
                                description='Note: Your name will appear on the outside of the box with your personalized message. If you\'d like to cheer up someone anonymously, leave this field blank.')
-    #purchaser_email = EmailField('Your email',
-    #                             description='Used for order confirmation',
-    #                             validators=[DataRequired('Please enter your email address.'),
-    #                             email('Please enter a valid email address.')]
-    #                             )
     personal_message = TextAreaField('Personalized message',
                                      description='140 characters max',
                                      validators=[DataRequired('Please enter a message.'), Length(message='Please reduce your message to 140 characters or less.', max=140)])

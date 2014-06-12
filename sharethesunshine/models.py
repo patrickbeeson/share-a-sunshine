@@ -1,6 +1,6 @@
 import datetime
 
-from flask import Flask
+from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
 
 from . import app
@@ -9,8 +9,49 @@ app.config['SQLALCHEMY_DATABASE_URI']
 db = SQLAlchemy(app)
 
 
+class User(UserMixin, db.Model):
+    """ An administrative user of this application. """
+    __tablename__ = 'users'
+    email = db.Column(db.String(255), primary_key=True)
+    password = db.Column(db.String)
+    authenticated = db.Column(db.Boolean, default=False)
+
+    def is_active(self):
+        """ True, as all users are active. """
+        return True
+
+    def get_id(self):
+        """Return the email address to satify Flask-Login's requirements."""
+        return self.email
+
+    def is_authenticated(self):
+        """ Return True if the user is authenticated. """
+        return self.authenticated
+
+    def is_anonymous(self):
+        """ False, as anonymous users aren't supported. """
+        return False
+
+    def __repr__(self):
+        return '<User %r>' % self.email
+
+
+class Product(db.Model):
+    """ A product for sale """
+    __tablename__ = 'products'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(100))
+    description = db.Column(db.String(250))
+    is_active = db.Column(db.Boolean, default=True, nullable=True)
+    price = db.Column(db.Float)
+
+    def __repr__(self):
+        return '<product %r>' % self.name
+
+
 class Purchase(db.Model):
-    __tablename__ = 'purchase'
+    """ A purchase """
+    __tablename__ = 'purchases'
     uuid = db.Column(db.String, primary_key=True)
     recipient_name = db.Column(db.String(250))
     recipient_email = db.Column(db.String(100))
@@ -23,24 +64,9 @@ class Purchase(db.Model):
     purchaser_email = db.Column(db.String(100))
     personal_message = db.Column(db.Text)
     sold_at = db.Column(db.DateTime, default=datetime.datetime.now)
-
-    def __init__(self, uuid, recipient_name,
-                 recipient_email, shipping_street_address_1,
-                 shipping_street_address_2, shipping_city,
-                 shipping_state, shipping_zip, purchaser_name,
-                 purchaser_email, personal_message, sold_at):
-        self.uuid = uuid
-        self.recipient_name = recipient_name
-        self.recipient_email = recipient_email
-        self.shipping_street_address_1 = shipping_street_address_1
-        self.shipping_street_address_2 = shipping_street_address_2
-        self.shipping_city = shipping_city
-        self.shipping_state = shipping_state
-        self.shipping_zip = shipping_zip
-        self.purchaser_name = purchaser_name
-        self.purchaser_email = purchaser_email
-        self.personal_message = personal_message
-        self.sold_at = sold_at
+    quantity = db.Column(db.Integer, default=1)
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
+    product = db.relationship(Product)
 
     def sell_date(self):
         return self.sold_at.date()
@@ -50,16 +76,12 @@ class Purchase(db.Model):
 
 
 class Testimonial(db.Model):
-    __tablename__ = 'testimonial'
+    """ A testimonial for a product sold. """
+    __tablename__ = 'testimonials'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     author = db.Column(db.String(100))
     testimonial = db.Column(db.Text)
     salutation = db.Column(db.String(100))
 
-    def __init__(self, author, testimonial, salutation):
-        self.author = author
-        self.testimonial = testimonial
-        self.salutation = salutation
-
     def __repr__(self):
-        return '<Testimonial %r>' %self.id
+        return '<Testimonial %r>' % self.id

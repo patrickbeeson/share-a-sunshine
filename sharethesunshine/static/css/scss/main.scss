@@ -29,6 +29,13 @@ body {
         }
     }
 
+    #flash_messages {
+        @extend .alert, .alert-info;
+        font-family: $sts_body;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
     nav[role="navigation"] {
 
         .nav {
@@ -99,7 +106,7 @@ body {
             }
         }
 
-        .product_lead {
+        .lead {
             @extend .col-sm-12;
             font-family: council_regular-webfont;
             color: $sts_dk_canvas;
@@ -116,7 +123,7 @@ body {
             }
         }
 
-        .product_description {
+        .description {
             @extend .col-sm-6;
 
             p {
@@ -374,20 +381,20 @@ body {
                 @extend .col-sm-6;
             }
 
-            #recipient, {
+            #recipient {
                 @extend %field_grouper;
             }
 
-            #recipient_address, {
+            #recipient_address {
                 @extend %field_grouper;
                 
             }
 
-            #message, {
+            #message {
                 @extend %field_grouper;
             }
 
-            #purchaser, {
+            #purchaser {
                 @extend %field_grouper;
             }
 
@@ -458,6 +465,48 @@ body {
                     color: $sts_dk_canvas;
                 }
             }
+        }
+    }
+}
+
+#auth {
+    @extend .row;
+
+    .description {
+        width: 100%;
+    }
+    
+
+    #form_error_messages {
+        @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center, .center-block;
+
+        li {
+            font-family: $sts_body;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1.8em;
+        }
+    }
+
+    form {
+        width: 50%;
+
+        label {
+            font-family: $sts_body;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        %field_grouper {
+            @extend .col-sm-6;
+        }
+
+        #auth_fields {
+            @extend %field_grouper;
+        }
+
+        #submit {
+            @extend .pull-right;
         }
     }
 }

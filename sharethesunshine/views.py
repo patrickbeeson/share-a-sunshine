@@ -1,15 +1,24 @@
 import uuid
 import datetime
 
-from flask import render_template, request
+from flask import render_template, request, redirect, flash
 from flask_mail import Message, Mail
+from flask_restless import APIManager, ProcessingException
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
+from flask_bcrypt import Bcrypt
 
 import stripe
 
 from . import app
 
-from .models import Purchase, Testimonial, db
-from .forms import PurchaseForm
+from .models import Product, Purchase, Testimonial, User, db
+from .forms import PurchaseForm, LoginForm
+
+login_manager = LoginManager()
+bcrypt = Bcrypt()
+
+manager = APIManager(app, flask_sqlalchemy_db=db)
+#manager.create_api(Purchase, methods=['GET'])
 
 stripe_keys = {
     'secret_key': app.config['STRIPE_SECRET_KEY'],
@@ -23,28 +32,72 @@ app.config['MAIL_USERNAME']
 app.config['MAIL_PASSWORD']
 
 mail = Mail()
-
 mail.init_app(app)
+
+@login_manager.user_loader
+def user_loader(user_id):
+    """Given *user_id*, return the associated User object.
+
+    :param unicode user_id: user_id (email) user to retrieve
+    """
+    return User.query.get(user_id)
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    """ For GET requests, display the login form. For POSTS, login the current user
+    by processing the form """
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.get(form.email.data)
+        if user:
+            if bcrypt.check_password_hash(user.password, form.password.data):
+                user.authenticated = True
+                db.session.add(user)
+                db.session.commit()
+                login_user(user, remember=True)
+                return redirect('/api/purchases', code=302)
+    return render_template("login.html", form=form)
+
+
+@app.route("/logout", methods=["GET"])
+@login_required
+def logout():
+    """ Logout the current user """
+    user = current_user
+    user.authenticated = False
+    db.session.add(user)
+    db.session.commit()
+    logout_user()
+    flash('You have been logged out.')
+    return render_template("logout.html")
 
 
 @app.route('/')
 def home():
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
-    return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
+    return render_template('home.html',
+                           form=form,
+                           testimonials=testimonials,
+                           key=stripe_keys['publishable_key'])
 
 
-@app.route('/buy/', methods=['POST'])
+@app.route('/buy', methods=['POST'])
 def buy():
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
+    # Set product to Sunshine since that's our only product for now
+    product = Product.query.filter_by(name='sunshine').first()
 
-    # Cost of Sunshine in cents
-    amount = 500
+    # Get our price in dollars and turn it to cents
+    amount = int(product.price * 100)
     # Get the purchaser email from the Stripe Checkout form
     email = request.form['stripeEmail']
     # Get the token from the Stripe Checkout form
     stripe_token = request.form['stripeToken']
+    # Set quanity to one since that's all folks can buy currently
+    quantity = 1
 
     # Try and validate the form on submission
     if form.validate_on_submit():
@@ -59,12 +112,10 @@ def buy():
                 customer=customer.id,
                 amount=amount,
                 currency='usd',
-                description='Share the Sunshine')
+                description=product.description)
         # Present new template if there is a problem charging the card
         except stripe.CardError:
             return render_template('charge_error.html')
-        # Grab the email address entered into Stripe, and send it to the form field for that data
-        #form.purchaser_email.data = request.form['stripeEmail']
 
         purchase = Purchase(
             uuid=str(uuid.uuid4()),
@@ -78,7 +129,9 @@ def buy():
             purchaser_name=form.purchaser_name.data,
             purchaser_email=email,
             personal_message=form.personal_message.data,
-            sold_at=datetime.datetime.now()
+            sold_at=datetime.datetime.now(),
+            quantity=quantity,
+            product=product
         )
         # Send valid data to the database
         db.session.add(purchase)
@@ -104,7 +157,15 @@ def buy():
     return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
 
 
-@app.route('/terms/')
+def auth_func(**kw):
+    if not current_user.is_authenticated():
+        raise ProcessingException(description='Not Authorized', code=401)
+
+
+manager.create_api(Purchase, preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
+
+
+@app.route('/terms')
 def terms():
     return render_template('terms.html',)
 

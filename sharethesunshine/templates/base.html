@@ -36,8 +36,10 @@
         </nav>
 
         <div class="content_wrap">
+            {% block flash_messages %}
+            {% endblock flash_messages %}
             {% block form_errors %}
-            {% endblock %}
+            {% endblock form_errors %}
             <div class="branding">
                 <a href="/" title="Share the Sunshine">
                 <img class="standard_header" src="{{ url_for('static', filename='images/logo.png') }}" alt="Share the Sunshine">
