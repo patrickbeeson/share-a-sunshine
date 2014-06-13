@@ -1419,7 +1419,7 @@ pre {
   .row:after, body .content_main:after, body .content_order:after, #auth:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, body .content_main .description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, body .content_main .product_spotlight, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1582,7 +1582,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, body .content_main .description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, body .content_main .product_spotlight, .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages {
     float: left; }
 
   .col-sm-1 {
@@ -1597,10 +1597,10 @@ pre {
   .col-sm-4 {
     width: 33.33333%; }
 
-  .col-sm-5 {
+  .col-sm-5, body .content_main .product_spotlight {
     width: 41.66667%; }
 
-  .col-sm-6, body .content_main .description, body .content_main .product_spotlight, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields {
+  .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields {
     width: 50%; }
 
   .col-sm-7 {
@@ -1702,7 +1702,7 @@ pre {
   .col-sm-offset-0 {
     margin-left: 0%; }
 
-  .col-sm-offset-1 {
+  .col-sm-offset-1, body .content_main .product_spotlight {
     margin-left: 8.33333%; }
 
   .col-sm-offset-2 {
@@ -5120,7 +5120,7 @@ button.close {
 
 @-ms-viewport {
   width: device-width; }
-.visible-xs, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_order .responsive_header, .visible-md, .visible-lg {
+.visible-xs, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-md, .visible-lg {
   display: none !important; }
 
 .visible-xs-block,
@@ -5167,19 +5167,20 @@ button.close {
     display: inline-block !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_order .responsive_header {
+  .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
     display: block !important; }
 
-  table.visible-sm, body .branding table.responsive_header, body .content_main .description .product_specs table.responsive_header, body .content_order table.responsive_header {
+  table.visible-sm, body .branding table.responsive_header, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
     display: table; }
 
-  tr.visible-sm, body .branding tr.responsive_header, body .content_main .description .product_specs tr.responsive_header, body .content_order tr.responsive_header {
+  tr.visible-sm, body .branding tr.responsive_header, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
     display: table-row !important; }
 
-  th.visible-sm, body .branding th.responsive_header, body .content_main .description .product_specs th.responsive_header, body .content_order th.responsive_header,
+  th.visible-sm, body .branding th.responsive_header, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
   td.visible-sm,
   body .branding td.responsive_header,
   body .content_main .description .product_specs td.responsive_header,
+  body .content_main .product_spotlight td.mobile_product_spotlight,
   body .content_order td.responsive_header {
     display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -5248,7 +5249,7 @@ button.close {
   .hidden-xs, body .branding .standard_header, body .content_main .description .product_specs .standard_header, body .content_main .product_spotlight .carousel, body .content_main .testimonials, body .content_order h2 {
     display: none !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
-  .hidden-sm, body .branding .standard_header, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .spec_lead, body .content_order h2 {
+  .hidden-sm, body .branding .standard_header, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .spec_lead, body .content_main .product_spotlight .carousel, body .content_order h2 {
     display: none !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
@@ -5311,7 +5312,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #fff9f2;
-  padding-top: 70px; }
+  padding-top: 100px; }
+  @media (min-width: 1200px) {
+    body .content_wrap {
+      max-width: 992px; } }
   body #form_errors {
     font-family: courier, serif;
     font-weight: bold;
@@ -5387,10 +5391,10 @@ body {
       position: relative; }
       body .content_main .product_spotlight .carousel-inner {
         margin-bottom: 25px;
-        min-height: 530px; }
+        min-height: 450px; }
         @media (min-width: 992px) {
           body .content_main .product_spotlight .carousel-inner {
-            min-height: 850px; } }
+            min-height: 600px; } }
       body .content_main .product_spotlight .see_more {
         font-family: council_regular-webfont;
         color: black;
@@ -5401,16 +5405,13 @@ body {
         position: absolute; }
       body .content_main .product_spotlight .product_left {
         bottom: 10px;
-        left: -10px; }
-        @media (min-width: 992px) {
-          body .content_main .product_spotlight .product_left {
-            left: 50px; } }
+        left: 0px; }
       body .content_main .product_spotlight .product_right {
         bottom: 10px;
         left: 225px; }
         @media (min-width: 992px) {
           body .content_main .product_spotlight .product_right {
-            left: 375px; } }
+            left: 255px; } }
     body .content_main .testimonials {
       position: relative;
       margin-top: 100px; }
@@ -5467,7 +5468,9 @@ body {
     background: url("../images/lets_get_started_text.png") no-repeat center;
     background-size: 413px 92px;
     height: 92px;
-    position: relative; }
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px; }
     body .content_order h2:before {
       content: "";
       position: absolute;
@@ -5506,7 +5509,7 @@ body {
     background: black; }
     body .content_order form .stripe-button-el span {
       color: courier, serif;
-      background: black;
+      background-color: black;
       background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
       background-image: linear-gradient(to   , black 50%, transparent 50%); }
   body footer {

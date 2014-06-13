@@ -5,9 +5,9 @@
 {% block page %}thanks{% endblock page %}
 
 {% block content %}
-<h2 class="product_lead">Thanks for your order</h2>
+<h2 class="lead">Thanks for your order</h2>
 
-<div class="product_description">
+<div class="description">
     {% if purchase.purchaser_name %}<p>{{ purchase.purchaser_name }},</p>{% endif %}
     
     <p>A golden hued Sunshine can was recently dipped into The Well of Unbelievable Awesomeness and loving placed into a custom package at your direction.</p>
@@ -22,4 +22,24 @@
 
 </div>
 
+<div id="share_purchase">
+    <h3>Spread the Sunshine</h3>
+    <p>Share your purchase on Twitter or Facebook:</p>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://share.drinkthesunshine.com" data-text="I just shared the Sunshine!" data-via="sunshinedrink" data-size="large" data-count="none" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <div class="fb-share-button" data-href="http://share.drinkthesunshine.com" data-width="76" data-type="button"></div>
+</div>
+
 {% endblock content %}
+
+{% block facebook_js %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=246107415422357&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock facebook_js %}
