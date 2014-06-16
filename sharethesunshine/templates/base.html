@@ -4,11 +4,37 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Wanna make someone's day? Send 'em a can of Sunshine, pronto! To say good lick, thanks, miss your pretty smile, or just because.">
         <title>{% block title %}{% endblock title %}</title>
         {% assets "css_all" %}
         <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
         {% endassets %}
 
+        {% block facebook_meta %}
+        <meta property="og:site_name" content="Share the Sunshine">
+        <meta property="og:title" content="I just shared the Sunshine. Keep the positive energy going.">
+        <meta property="og:url" content="http://share.drinkthesunshine.com">
+        <meta property="og:description" content="Wanna make someone's day? Send 'em a can of Sunshine-in the mail! It's the tastiest way to say howdy, good luck, thanks or miss your pretty smile.">
+        <meta property="og:image" content="{{ url_for('static', filename='images/share_the_sunshine_fb.png') }}">
+        {% endblock facebook_meta %}
+
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='images/apple-touch-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='images/apple-touch-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='images/apple-touch-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='images/apple-touch-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='images/apple-touch-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='images/apple-touch-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='images/apple-touch-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='images/apple-touch-icon-152x152.png') }}">
+
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-196x196.png') }}" sizes="196x196">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-160x160.png') }}" sizes="160x160">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-96x96.png') }}" sizes="96x96">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-16x16.png') }}" sizes="16x16">
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon-32x32.png') }}" sizes="32x32">
+
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{ url_for('static', filename='images/mstile-144x144.png') }}">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>

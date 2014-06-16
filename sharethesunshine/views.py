@@ -18,7 +18,6 @@ login_manager = LoginManager()
 bcrypt = Bcrypt()
 
 manager = APIManager(app, flask_sqlalchemy_db=db)
-#manager.create_api(Purchase, methods=['GET'])
 
 stripe_keys = {
     'secret_key': app.config['STRIPE_SECRET_KEY'],
@@ -33,6 +32,7 @@ app.config['MAIL_PASSWORD']
 
 mail = Mail()
 mail.init_app(app)
+
 
 @login_manager.user_loader
 def user_loader(user_id):
@@ -75,6 +75,7 @@ def logout():
 
 @app.route('/')
 def home():
+    """ The homepage """
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
     return render_template('home.html',
@@ -85,6 +86,7 @@ def home():
 
 @app.route('/buy', methods=['POST'])
 def buy():
+    """ Handle the form submission (i.e. purchase) """
     form = PurchaseForm()
     testimonials = Testimonial.query.limit(3).all()
     # Set product to Sunshine since that's our only product for now
@@ -154,27 +156,37 @@ def buy():
 
         # Send the user to the thanks template to view their order summary
         return render_template('thanks.html', purchase=purchase, amount=amount)
-    return render_template('home.html', form=form, testimonials=testimonials, key=stripe_keys['publishable_key'])
+    return render_template(
+        'home.html',
+        form=form,
+        testimonials=testimonials,
+        key=stripe_keys['publishable_key'])
 
 
 def auth_func(**kw):
+    """ Send a 401 if user isn't logged in """
     if not current_user.is_authenticated():
         raise ProcessingException(description='Not Authorized', code=401)
 
-
-manager.create_api(Purchase, preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
+""" Only logged in users can view the API for purchases """
+manager.create_api(
+    Purchase,
+    preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
 
 
 @app.route('/terms')
 def terms():
+    """ Terms and conditions """
     return render_template('terms.html',)
 
 
 @app.errorhandler(404)
 def page_not_found(error):
+    """ 404 page """
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
+    """ 500 page """
     return render_template('500.html'), 500

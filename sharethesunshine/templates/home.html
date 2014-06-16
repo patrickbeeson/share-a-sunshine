@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Share the Sunshine | share.drinkthesunshine.com{% endblock title %}
+{% block title %}Share the Sunshine. Send goodliness to a friend. | share.drinkthesunshine.com{% endblock title %}
 
 {% block page %}home{% endblock page %}
 
@@ -194,7 +194,7 @@
 
                     <div class="field_grouper" id="submit">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-image="http://drinkthesunshine.com/static/img/logo.png"
+                            data-image="{{ url_for('static', filename='images/sunshine_logo.png') }}"
                             data-key="{{ key }}"
                             data-description="1 can of Sunshine ($5.00)"
                             data-email=""

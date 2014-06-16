@@ -508,10 +508,43 @@ body {
 // Terms and Conditions
 #terms {
 
-    li {
-        font-family: $sts_body;
-        font-weight: bold;
-        font-size: 15px;
-        line-height: 1.8em;
+    .description {
+        li {
+            font-family: $sts_body;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1.8em;
+        }
     }
+}
+
+// Thanks and purchase confirmation
+#thanks {
+
+    #share_purchase {
+        @extend .col-sm-12, .text-center;
+        clear: both;
+
+        h3 {
+            font-family: a_love_of_thunder-webfont;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-family: $sts_body;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1.8em;
+        }
+
+        ul {
+            @extend .list-unstyled, .list-inline;
+
+            li {
+                vertical-align: top;
+            }
+        }
+    }
+
 }
