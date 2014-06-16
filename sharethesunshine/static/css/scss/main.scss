@@ -522,14 +522,9 @@ body {
 #thanks {
 
     #share_purchase {
-        @extend .col-sm-12, .text-center;
+        @extend .col-sm-6;
         clear: both;
-
-        h3 {
-            font-family: a_love_of_thunder-webfont;
-            font-size: 24px;
-            margin-bottom: 25px;
-        }
+        margin-top: 25px;
 
         p {
             font-family: $sts_body;

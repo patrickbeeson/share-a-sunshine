@@ -2,6 +2,6 @@
 *.DS_Store
 config.py
 sharethesunshine/static/.sass-cache
-instance
 sharethesunshine/static/.webassets-cache
 sharethesunshine/static/gen
+sharethesunshine/sharethesunshine.db
