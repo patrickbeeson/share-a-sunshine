@@ -31,5 +31,5 @@ def deploy():
         require('hosts', provided_by=[prod])
         require('remote_app_dir', provided_by=[prod])
         #commit()
-        run("cd %s; git pull" % env.remote_app_dir)
+        run("cd %s; git pull origin master" % env.remote_app_dir)
     print 'Code has been deployed to production'
