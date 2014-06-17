@@ -128,13 +128,13 @@
 
                         <div class="form-group{% if form.recipient_name.errors %} has-error{% endif %}">
                             {{ form.recipient_name.label }}
-                            {{ form.recipient_name(class_='form-control') }}
+                            {{ form.recipient_name(class_='form-control', maxlength='250') }}
                             <span class="help_text">{{ form.recipient_name.description|safe }}</span>
                         </div>
 
                         <div class="form-group{% if form.recipient_email.errors %} has-error{% endif %}">
                                 {{ form.recipient_email.label }}
-                                {{ form.recipient_email(class_='form-control') }}
+                                {{ form.recipient_email(class_='form-control', maxlength='100') }}
                                 <span class="help_text">{{ form.recipient_email.description|safe }}</span>
                         </div>
 
@@ -144,31 +144,31 @@
 
                         <div class="form-group{% if form.shipping_street_address_1.errors %} has-error{% endif %}">
                             {{ form.shipping_street_address_1.label }}
-                            {{ form.shipping_street_address_1(class_='form-control') }}
+                            {{ form.shipping_street_address_1(class_='form-control', maxlength='250') }}
                             <span class="help_text">{{ form.shipping_street_address_1.description|safe }}</span>
                         </div>
 
                         <div class="form-group{% if form.shipping_street_address_2.errors %} has-error{% endif %}">
                             {{ form.shipping_street_address_2.label }}
-                            {{ form.shipping_street_address_2(class_='form-control') }}
+                            {{ form.shipping_street_address_2(class_='form-control', maxlength='250') }}
                             <span class="help_text">{{ form.shipping_street_address_2.description|safe }}</span>
                         </div>
 
                         <div class="form-group{% if form.shipping_city.errors %} has-error{% endif %}">
                             {{ form.shipping_city.label }}
-                            {{ form.shipping_city(class_='form-control') }}
+                            {{ form.shipping_city(class_='form-control', maxlength='250') }}
                             <span class="help_text">{{ form.shipping_city.description|safe }}</span>
                         </div>
 
                         <div class="form-group{% if form.shipping_state.errors %} has-error{% endif %}">
                             {{ form.shipping_state.label }}
-                            {{ form.shipping_state(class_='form-control') }}
+                            {{ form.shipping_state(class_='form-control', maxlength='2') }}
                             <span class="help_text">{{ form.shipping_state.description|safe }}</span>
                         </div>
 
                         <div class="form-group{% if form.shipping_zip.errors %} has-error{% endif %}">
                             {{ form.shipping_zip.label }}
-                            {{ form.shipping_zip(class_='form-control') }}
+                            {{ form.shipping_zip(class_='form-control', maxlength='9') }}
                             <span class="help_text">{{ form.shipping_zip.description|safe }}</span>
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                     
                         <div class="form-group{% if form.purchaser_name.errors %} has-error{% endif %}">
                             {{ form.purchaser_name.label }}
-                            {{ form.purchaser_name(class_='form-control') }}
+                            {{ form.purchaser_name(class_='form-control', maxlength='250') }}
                             <span class="help_text">{{ form.purchaser_name.description|safe }}</span>
                         </div>
                     </div>
