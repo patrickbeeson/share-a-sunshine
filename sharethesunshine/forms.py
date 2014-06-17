@@ -87,7 +87,7 @@ class PurchaseForm(Form):
                                           ('WY', 'Wyoming')])
     shipping_zip = IntegerField('Zip',
                                 description='Zip',
-                                validators=[DataRequired('Please enter the recipient\'s zip code.'), Length(message='Please reduce your recipient\'s zip code to 9 characters or less.', max=9)]
+                                validators=[DataRequired('Please enter the recipient\'s zip code.')]
                                 )
     purchaser_name = TextField('Your name',
                                description='Note: Your name will appear on the outside of the box with your personalized message. If you\'d like to cheer up someone anonymously, leave this field blank.')
