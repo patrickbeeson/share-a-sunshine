@@ -5335,6 +5335,9 @@ body {
       color: white; }
       body nav[role="navigation"] .navbar-collapse a:hover {
         text-decoration: underline; }
+  body .branding {
+    margin-top: 25px;
+    margin-bottom: 25px; }
   body .content_main {
     position: relative;
     padding-top: 100px; }
@@ -5360,7 +5363,8 @@ body {
       margin-top: 0;
       text-transform: uppercase;
       letter-spacing: 10px;
-      margin-bottom: 25px; }
+      margin-bottom: 25px;
+      line-height: 1.2em; }
       @media (min-width: 768px) {
         body .content_main .lead {
           font-size: 82px;
@@ -5371,7 +5375,11 @@ body {
       font-size: 15px;
       line-height: 1.8em; }
     body .content_main .description .product_specs {
-      margin-top: 50px; }
+      margin-top: 75px;
+      margin-bottom: 75px; }
+      @media (min-width: 768px) {
+        body .content_main .description .product_specs {
+          margin-bottom: 0px; } }
       body .content_main .description .product_specs .responsive_header {
         margin-bottom: 25px; }
       body .content_main .description .product_specs .spec_lead {
@@ -5459,59 +5467,74 @@ body {
       body .content_main .testimonials .testimonial_right {
         top: 65px;
         right: 0px; }
-  body .content_order #form_error_messages li {
-    font-family: courier, serif;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 1.8em; }
-  body .content_order h2 {
-    background: url("../images/lets_get_started_text.png") no-repeat center;
-    background-size: 413px 92px;
-    height: 92px;
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 50px; }
-    body .content_order h2:before {
-      content: "";
-      position: absolute;
-      background: url("../images/black_dot.png") repeat-x center left;
-      height: 4px;
-      width: 25%;
-      top: 50px;
-      left: 0; }
-    body .content_order h2:after {
-      content: "";
-      position: absolute;
-      background: url("../images/black_dot.png") repeat-x center right;
-      height: 4px;
-      width: 25%;
-      top: 50px;
-      right: 0; }
-  body .content_order .responsive_header {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    padding-left: 15px;
-    padding-right: 15px; }
-  body .content_order form .required {
-    color: #b20f0f; }
-  body .content_order form .help_text {
-    color: #75787c;
-    font-family: courier, serif;
-    font-size: 13px; }
-  body .content_order form .field_grouper h3 {
-    font-family: courier, serif;
-    font-size: 16px;
-    font-weight: bold; }
-  body .content_order form #submit {
+  body .content_order {
     margin-top: 50px; }
-  body .content_order form .stripe-button-el {
-    background-image: none;
-    background: black; }
-    body .content_order form .stripe-button-el span {
-      color: courier, serif;
-      background-color: black;
-      background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
-      background-image: linear-gradient(to   , black 50%, transparent 50%); }
+    body .content_order #form_error_messages li {
+      font-family: courier, serif;
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 1.8em; }
+    @media (min-width: 992px) {
+      body .content_order #purchase_form {
+        position: relative;
+        top: 100px; }
+        body .content_order #purchase_form:before {
+          content: "";
+          background: url("../images/telegraph.png") no-repeat center;
+          background-size: 253px 91px;
+          position: absolute;
+          height: 91px;
+          width: 253px;
+          bottom: 50px;
+          left: 370px; } }
+    body .content_order h2 {
+      background: url("../images/lets_get_started_text.png") no-repeat center;
+      background-size: 413px 92px;
+      height: 92px;
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 50px; }
+      body .content_order h2:before {
+        content: "";
+        position: absolute;
+        background: url("../images/black_dot.png") repeat-x center left;
+        height: 4px;
+        width: 25%;
+        top: 50px;
+        left: 0; }
+      body .content_order h2:after {
+        content: "";
+        position: absolute;
+        background: url("../images/black_dot.png") repeat-x center right;
+        height: 4px;
+        width: 25%;
+        top: 50px;
+        right: 0; }
+    body .content_order .responsive_header {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding-left: 15px;
+      padding-right: 15px; }
+    body .content_order form .required {
+      color: #b20f0f; }
+    body .content_order form .help_text {
+      color: #75787c;
+      font-family: courier, serif;
+      font-size: 13px; }
+    body .content_order form .field_grouper h3 {
+      font-family: courier, serif;
+      font-size: 16px;
+      font-weight: bold; }
+    body .content_order form #submit {
+      margin-top: 50px; }
+    body .content_order form .stripe-button-el {
+      background-image: none;
+      background: black; }
+      body .content_order form .stripe-button-el span {
+        color: courier, serif;
+        background-color: black;
+        background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
+        background-image: linear-gradient(to   , black 50%, transparent 50%); }
   body footer {
     position: relative;
     padding-bottom: 100px; }
@@ -5523,8 +5546,12 @@ body {
       width: 100%;
       top: 0px; }
     body footer .social {
-      margin-top: 50px;
-      padding-top: 50px; }
+      margin-top: 75px;
+      padding-top: 50px;
+      padding-bottom: 25px; }
+      @media (min-width: 992px) {
+        body footer .social {
+          margin-top: 175px; } }
       body footer .social li a:hover img {
         opacity: 0.5; }
       body footer .social li a img {

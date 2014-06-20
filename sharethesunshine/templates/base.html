@@ -9,6 +9,7 @@
         {% assets "css_all" %}
         <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
         {% endassets %}
+        {% block meta_indexing %}{% endblock meta_indexing %}
 
         {% block facebook_meta %}
         <meta property="og:site_name" content="Share the Sunshine">
