@@ -7,10 +7,10 @@ STRIPE_PUBLIC_KEY = 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
 # Live
 
 # Development
-SQLALCHEMY_DATABASE_URI = 'sqlite:///sharethesunshine.db'
+#SQLALCHEMY_DATABASE_URI = 'sqlite:///sharethesunshine.db'
 
 # Production
-#SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine:ClearsTheClouds@localhost:5432/sharethesunshine'
+SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine:ClearsTheClouds@localhost:5432/sharethesunshine'
 
 ADMINS = ['pbeeson@thevariable.com']
 
