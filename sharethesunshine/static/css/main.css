@@ -5319,7 +5319,8 @@ body {
   body #form_errors {
     font-family: courier, serif;
     font-weight: bold;
-    font-size: 15px; }
+    font-size: 15px;
+    margin-bottom: 50px; }
   body #flash_messages {
     font-family: courier, serif;
     font-weight: bold;
@@ -5374,6 +5375,10 @@ body {
       font-weight: bold;
       font-size: 15px;
       line-height: 1.8em; }
+      body .content_main .description p a {
+        color: #86754d; }
+        body .content_main .description p a:hover {
+          color: #86754d; }
     body .content_main .description .product_specs {
       margin-top: 75px;
       margin-bottom: 75px; }
@@ -5469,11 +5474,21 @@ body {
         right: 0px; }
   body .content_order {
     margin-top: 50px; }
-    body .content_order #form_error_messages li {
-      font-family: courier, serif;
-      font-weight: bold;
-      font-size: 15px;
-      line-height: 1.8em; }
+    body .content_order #form_error_messages {
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 50px; }
+      @media (min-width: 992px) {
+        body .content_order #form_error_messages {
+          margin-top: 100px;
+          margin-left: 0px;
+          margin-right: 0px;
+          margin-bottom: 0px; } }
+      body .content_order #form_error_messages li {
+        font-family: courier, serif;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 1.8em; }
     @media (min-width: 992px) {
       body .content_order #purchase_form {
         position: relative;

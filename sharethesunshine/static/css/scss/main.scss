@@ -28,6 +28,7 @@ body {
         font-family: $sts_body;
         font-weight: bold;
         font-size: 15px;
+        margin-bottom: 50px;
 
         a {
             @extend .alert-link;
@@ -135,6 +136,14 @@ body {
                 font-weight: bold;
                 font-size: 15px;
                 line-height: 1.8em;
+
+                a {
+                    color: $sts_dk_canvas;
+
+                    &:hover {
+                        color: $sts_dk_canvas;
+                    }
+                }
             }
 
             .product_specs {
@@ -309,6 +318,16 @@ body {
 
         #form_error_messages {
             @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 50px;
+
+            @media (min-width: $screen-md-min) {
+                margin-top: 100px;
+                margin-left: 0px;
+                margin-right: 0px;
+                margin-bottom: 0px;
+            }
 
             li {
                 font-family: $sts_body;
