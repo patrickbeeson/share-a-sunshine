@@ -1,7 +1,6 @@
 *.pyc
 *.DS_Store
 *.log
+*.db
 sharethesunshine/static/.sass-cache
 sharethesunshine/static/.webassets-cache
-sharethesunshine/sharethesunshine.db
-sunshine_errors.log
