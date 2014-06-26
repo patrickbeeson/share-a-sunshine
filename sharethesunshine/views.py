@@ -8,6 +8,7 @@ from flask_login import LoginManager, login_required, login_user, logout_user, c
 from flask_bcrypt import Bcrypt
 
 import stripe
+from sqlalchemy import desc
 
 from . import app
 
@@ -45,8 +46,8 @@ def user_loader(user_id):
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """ For GET requests, display the login form. For POSTS, login the current user
-    by processing the form """
+    """ For GET requests, display the login form. For POSTS, login the current
+    user by processing the form """
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.get(form.email.data)
@@ -77,7 +78,8 @@ def logout():
 def home():
     """ The homepage """
     form = PurchaseForm()
-    testimonials = Testimonial.query.limit(3).all()
+    testimonials = Testimonial.query.order_by(
+        desc(Testimonial.id)).limit(5).all()
     return render_template('home.html',
                            form=form,
                            testimonials=testimonials,
@@ -88,7 +90,8 @@ def home():
 def buy():
     """ Handle the form submission (i.e. purchase) """
     form = PurchaseForm()
-    testimonials = Testimonial.query.limit(3).all()
+    testimonials = Testimonial.query.order_by(
+        desc(Testimonial.id)).limit(5).all()
     # Set product to Sunshine since that's our only product for now
     product = Product.query.filter_by(name='sunshine').first()
 
