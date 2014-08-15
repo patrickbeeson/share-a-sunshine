@@ -8,115 +8,120 @@
 // Main styles
 
 body {
-    @include background(url("../images/mountains_bg.png"));
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: $sts_canvas;
-    padding-top: 100px;
-    
-    .content_wrap {
-        @extend .container;
+    background: $sts_canvas url("../images/bg_texture.png") repeat; 
+}
 
-        // Restrict width to md size for lg screens
-        // @media (min-width: $screen-lg-min) {
-        //     max-width: 992px;
-        // }
+.content_wrap {
+    @extend .container;
+}
+
+#form_errors {
+    @extend .alert, .alert-danger, .alert-dismissable;
+    font-family: $sts_body;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 50px;
+
+    a {
+        @extend .alert-link;
+    }
+}
+
+#flash_messages {
+    @extend .alert, .alert-info;
+    font-family: $sts_body;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+nav[role="navigation"] {
+    background: $sts_black url("../images/header_texture.png") repeat center center;
+
+    .nav {
+        @extend .text-right;
     }
 
-    #form_errors {
-        @extend .alert, .alert-danger, .alert-dismissable;
-        font-family: $sts_body;
-        font-weight: bold;
-        font-size: 15px;
-        margin-bottom: 50px;
+    .navbar-toggle {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    .navbar-collapse {
+        @extend .pull-right;
+        font-family: council_regular-webfont;
+        font-size: 16px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        border: none;
+        box-shadow: none;
 
         a {
-            @extend .alert-link;
-        }
-    }
+            color: white;
 
-    #flash_messages {
-        @extend .alert, .alert-info;
-        font-family: $sts_body;
-        font-weight: bold;
-        font-size: 15px;
-    }
-
-    nav[role="navigation"] {
-        background: $sts_black url("../images/header_texture.png") repeat center center;
-
-        .nav {
-            @extend .text-right;
-        }
-
-        .navbar-toggle {
-            margin-top: 14px;
-            margin-bottom: 14px;
-        }
-
-        .navbar-collapse {
-            @extend .pull-right;
-            font-family: council_regular-webfont;
-            font-size: 16px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            border: none;
-            box-shadow: none;
-
-            a {
-                color: white;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        .navbar-brand {
-            max-width: 210px;
-            height: auto;
-
-            img {
-                @extend .img-responsive;
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
 
-    .content_main {
-        @extend .row;
+    .navbar-brand {
+        max-width: 210px;
+        height: auto;
+
+        img {
+            @extend .img-responsive;
+        }
+    }
+}
+
+.content_main {
+    @extend .row, .col-sm-12;
+    position: relative;
+
+    // .controls {
+
+    //     &:hover img {
+    //         opacity: 0.5;
+    //     }
+
+    //     img {
+    //         opacity: 1;
+    //         @include transition (opacity 0.2s ease-in-out);
+    //     }
+    // }
+
+    .progress_button {
+        @extend .text-center;
+        background-color: $sts_black;
+        color: white;
+        font-size: 26px;
+        text-transform: uppercase;
+        font-family: a_love_of_thunder-webfont;
+        letter-spacing: 3px;
+        font-size: 14px;
+        padding: 10px;
+
+        &:hover {
+            background-color: tint($sts_black, 10%);
+            text-decoration: none;
+        }
+    }
+
+    .product_intro {
+        margin-top: 100px;
         position: relative;
-        padding-top: 100px;
 
-        &:before {
-            content: "";
-            position: absolute;
-            background: url("../images/form_border_bg.png") repeat-x;
-            height: 6px;
-            width: 100%;
-            top: 50px;
-        }
-
-        .controls {
-
-            &:hover img {
-                opacity: 0.5;
-            }
-
-            img {
-                opacity: 1;
-                @include transition (opacity 0.2s ease-in-out);
-            }
-        }
+        background: url("../images/mountains_bg_sm.png") no-repeat center top;
 
         .lead {
-            @extend .col-sm-12;
-            font-family: council_regular-webfont;
-            color: $sts_dk_canvas;
-            font-size: 42px;
+            @extend .text-center;
+            font-family: a_love_of_thunder-webfont;
+            color: $sts_black;
+            font-size: 26px;
             font-weight: normal;
             margin-top: 0;
             text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 1px;
             margin-bottom: 25px;
             line-height: 1.2em;
 
@@ -127,387 +132,397 @@ body {
         }
 
         .description {
-            @extend .col-sm-6;
+            @extend .text-center;
+            margin-top: 50px;
 
             p {
+                padding-left: 15px;
+                padding-right: 15px;
                 font-family: $sts_body;
                 font-weight: bold;
-                font-size: 15px;
+                font-size: 14px;
                 line-height: 1.8em;
-
-                a {
-                    color: $sts_dk_canvas;
-
-                    &:hover {
-                        color: $sts_dk_canvas;
-                    }
-                }
-            }
-
-            .product_specs {
-                @extend .text-center;
-                margin-top: 75px;
-                margin-bottom: 75px;
-
-                @media (min-width: $screen-sm-min) {
-                    margin-bottom: 0px;
-                }
-
-                .standard_header {
-                    @extend .img-responsive, .hidden-sm, .hidden-xs, .center-block;
-                }
-
-                .responsive_header {
-                    @extend .visible-xs, .visible-sm, .center-block, .img-responsive, .center-block;
-                    margin-bottom: 25px;
-                }
-
-                .spec_lead {
-                    @extend .hidden-sm, .text-center;
-                    font-family: a_love_of_thunder-webfont;
-                    font-size: 16px;
-                    margin-top: 10px;
-
-                    @media (min-width: $screen-md-min) {
-                        position: relative;
-                        top: -100px;
-                        margin-top: 0;
-                    }
-                }
-
-                ul {
-                    @extend .list-unstyled;
-
-                    li {
-                        margin-bottom: 25px;
-                        font-family: a_love_of_thunder-webfont;
-                        font-size: 16px;
-                    }
-                }
-            }
+                margin-bottom: 25px;
+            }                
         }
 
         .product_spotlight {
-            @extend .col-sm-5, .col-sm-offset-1, .text-center;
-            position: relative;
-
-            .mobile_product_spotlight {
-                @extend .visible-xs, .visible-sm;
-            }
-
-            .carousel {
-                @extend .hidden-xs, .hidden-sm;
-            }
-
-            .carousel-inner {
-                margin-bottom: 25px;
-                min-height: 450px;
-
-                @media (min-width: $screen-md-min) {
-                    min-height: 600px;
-                }
-            }
-
-            .see_more {
-                font-family: council_regular-webfont;
-                color: black;
-                text-transform: uppercase;
-                font-size: 24px;
-                letter-spacing: 5px;
-            }
+            margin-top: 50px;
 
             img {
                 @extend .img-responsive;
+                @include filter(drop-shadow(12px 12px 7px));
+                max-width: 50%;
+                margin: 0 auto;
             }
 
-            %carousel_controls {
-                position: absolute;
-            }
+            // .price {
+            //     position: absolute;
+            //     left: 25px;
+            //     font-family: courier;
+            //     letter-spacing: 3px;
+            //     font-size: 32px;
+            //     font-weight: normal;
+            //     color: white;
+            //     background: $sts_black url(../images/header_texture.png) repeat center center;
+            //     border-radius: 35px;
+            //     display: inline-block;
+            //     padding: 8px 12px;
+            //     opacity: 0.9;
+            //     text-transform: uppercase;
 
-            .product_left {
-                @extend %carousel_controls;
-                bottom: 10px;
-                left: 0px;
-            }
-
-            .product_right {
-                @extend %carousel_controls;
-                bottom: 10px;
-                left: 225px;
-
-                @media (min-width: $screen-md-min) {
-                    //left: 335px;
-                    left: 255px;
-                }
-            }
-        }
-
-        .testimonials {
-            @extend .col-sm-12, .hidden-xs;
-            position: relative;
-            margin-top: 100px;
-
-            &:before {
-                content: "";
-                position: absolute;
-                @include background-image(url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png"));
-                background-position: top left, top right;
-                background-repeat: no-repeat, no-repeat;
-                height: 70px;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-            }
-
-            &:after {
-                content: "";
-                position: absolute;
-                @include background-image(url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png"));
-                background-position: bottom left, bottom right;
-                background-repeat: no-repeat, no-repeat;
-                height: 70px;
-                bottom: 0px;
-                left: 0px;
-                width: 100%;
-            }
-
-            .carousel-inner {
-                min-height: 250px;
-            }
-
-            h3 {
-                @extend .text-center;
-                font-family: a_love_of_thunder-webfont;
-                font-size: 24px;
-                margin-bottom: 50px;
-            }
-
-            .testimonial_salutation, .testimonial_text, .testimonial_author {
-                font-family: $sts_body;
-                font-weight: bold;
-                font-size: 15px;
-                display: block;
-                padding: 0 100px;
-                line-height: 1.8em;
-                margin-bottom: 25px;
-            }
-
-            %carousel_controls {
-                position: absolute;
-            }
-
-            .testimonial_left {
-                @extend %carousel_controls;
-                top: 65px;
-                left: 0px;
-            }
-
-            .testimonial_right {
-                @extend %carousel_controls;
-                top: 65px;
-                right: 0px;
-            }
+            //     span.dollar_sign {
+            //         font-size: 18px;
+            //         vertical-align: top;
+            //     }
+            // }
         }
     }
 
-    .content_order {
-        @extend .row;
-        margin-top: 50px;
+    
 
-        #form_error_messages {
-            @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-bottom: 50px;
+    // .description {
 
-            @media (min-width: $screen-md-min) {
-                margin-top: 100px;
-                margin-left: 0px;
-                margin-right: 0px;
-                margin-bottom: 0px;
-            }
 
-            li {
-                font-family: $sts_body;
-                font-weight: bold;
-                font-size: 15px;
-                line-height: 1.8em;
-            }
-        }
 
-        #purchase_form {
+    //     .product_specs {
+    //         @extend .text-center;
+    //         margin-top: 75px;
+    //         margin-bottom: 75px;
 
-            @media (min-width: $screen-md-min) {
-                position: relative;
-                top: 100px;
+    //         @media (min-width: $screen-sm-min) {
+    //             margin-bottom: 0px;
+    //         }
 
-                &:before {
-                    content: "";
-                    background: url("../images/telegraph.png") no-repeat center;
-                    background-size: 253px 91px;
-                    position: absolute;
-                    height: 91px;
-                    width: 253px;
-                    bottom: 50px;
-                    left: 370px;
-                }
-            }
-        }
+    //         .spec_lead {
+    //             @extend .hidden-sm, .text-center;
+    //             font-family: a_love_of_thunder-webfont;
+    //             font-size: 16px;
+    //             margin-top: 10px;
 
-        h2 {
-            @extend .text-hide, .hidden-xs, .hidden-sm;
-            background: url("../images/lets_get_started_text.png") no-repeat center;
-            background-size: 413px 92px;
-            height: 92px;
-            position: relative;
-            margin-top: 50px;
-            margin-bottom: 50px;
+    //             @media (min-width: $screen-md-min) {
+    //                 position: relative;
+    //                 top: -100px;
+    //                 margin-top: 0;
+    //             }
+    //         }
 
-            &:before {
-                content: "";
-                position: absolute;
-                background: url("../images/black_dot.png") repeat-x center left;
-                height: 4px;
-                width: 25%;
-                top: 50px;
-                left: 0;
-            }
+    //         ul {
+    //             @extend .list-unstyled;
 
-            &:after {
-                content: "";
-                position: absolute;
-                background: url("../images/black_dot.png") repeat-x center right;
-                height: 4px;
-                width: 25%;
-                top: 50px;
-                right: 0;
-            }
-        }
+    //             li {
+    //                 margin-bottom: 25px;
+    //                 font-family: a_love_of_thunder-webfont;
+    //                 font-size: 16px;
+    //             }
+    //         }
+    //     }
+    // }
 
-        .responsive_header {
-            @extend .visible-xs, .visible-sm, .center-block, .img-responsive;
-            margin-top: 50px;
-            margin-bottom: 50px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
+    // .product_spotlight {
+    //     @extend .col-sm-5, .col-sm-offset-1, .text-center;
+    //     position: relative;
 
-        form {
+    //     .mobile_product_spotlight {
+    //         @extend .visible-xs, .visible-sm;
+    //     }
 
-            label {
-                @extend .text-hide;
-            }
+    //     .carousel {
+    //         @extend .hidden-xs, .hidden-sm;
+    //     }
 
-            .required {
-                color: $sts_required_red;
-            }
+    //     .carousel-inner {
+    //         margin-bottom: 25px;
+    //         min-height: 450px;
 
-            .help_text {
-                color: $sts_gray;
-                font-family: $sts_body;
-                font-size: 13px;
-            }
+    //         @media (min-width: $screen-md-min) {
+    //             min-height: 600px;
+    //         }
+    //     }
 
-            .field_grouper {
+    //     .see_more {
+    //         font-family: council_regular-webfont;
+    //         color: black;
+    //         text-transform: uppercase;
+    //         font-size: 24px;
+    //         letter-spacing: 5px;
+    //     }
 
-                h3 {
-                    font-family: $sts_body;
-                    font-size: 16px;
-                    font-weight: bold;
-                }
-            }
+    //     img {
+    //         @extend .img-responsive;
+    //     }
 
-            %field_grouper {
-                @extend .col-sm-6;
-            }
+    //     %carousel_controls {
+    //         position: absolute;
+    //     }
 
-            #recipient {
-                @extend %field_grouper;
-            }
+    //     .product_left {
+    //         @extend %carousel_controls;
+    //         bottom: 10px;
+    //         left: 0px;
+    //     }
 
-            #recipient_address {
-                @extend %field_grouper;
-                
-            }
+    //     .product_right {
+    //         @extend %carousel_controls;
+    //         bottom: 10px;
+    //         left: 225px;
 
-            #message {
-                @extend %field_grouper;
-            }
+    //         @media (min-width: $screen-md-min) {
+    //             //left: 335px;
+    //             left: 255px;
+    //         }
+    //     }
+    // }
 
-            #purchaser {
-                @extend %field_grouper;
-            }
-
-            #submit {
-                @extend .col-sm-6, .col-sm-offset-3, .text-center;
-                margin-top: 50px;
-            }
-
-            .stripe-button-el {
-                background-image: none;
-                background: black;
-
-                span {
-                    color: $sts_body;
-                    background-color: black;
-                    @include background-image(linear-gradient(#333 0, black 50%, transparent 50%));
-                }
-            }
-        }
-    }
-
-    footer {
+    .testimonials {
+        @extend .col-sm-12, .hidden-xs;
         position: relative;
-        padding-bottom: 100px;
+        margin-top: 100px;
 
         &:before {
             content: "";
             position: absolute;
-            background: url("../images/form_border_bg.png") repeat-x;
-            height: 6px;
-            width: 100%;
+            @include background-image(url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png"));
+            background-position: top left, top right;
+            background-repeat: no-repeat, no-repeat;
+            height: 70px;
             top: 0px;
+            left: 0px;
+            width: 100%;
         }
 
-        .social {
-            @extend .list-unstyled, .list-inline, .text-center;
-            margin-top: 75px;
-            padding-top: 50px;
-            padding-bottom: 25px;
+        &:after {
+            content: "";
+            position: absolute;
+            @include background-image(url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png"));
+            background-position: bottom left, bottom right;
+            background-repeat: no-repeat, no-repeat;
+            height: 70px;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+        }
 
-            @media (min-width: $screen-md-min) {
-                margin-top: 175px;
+        .carousel-inner {
+            min-height: 250px;
+        }
+
+        h3 {
+            @extend .text-center;
+            font-family: a_love_of_thunder-webfont;
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial_salutation, .testimonial_text, .testimonial_author {
+            font-family: $sts_body;
+            font-weight: bold;
+            font-size: 15px;
+            display: block;
+            padding: 0 100px;
+            line-height: 1.8em;
+            margin-bottom: 25px;
+        }
+
+        %carousel_controls {
+            position: absolute;
+        }
+
+        .testimonial_left {
+            @extend %carousel_controls;
+            top: 65px;
+            left: 0px;
+        }
+
+        .testimonial_right {
+            @extend %carousel_controls;
+            top: 65px;
+            right: 0px;
+        }
+    }
+}
+
+.content_order {
+    @extend .row;
+    margin-top: 50px;
+
+    .form_step {
+        background: $sts_black url(../images/header_texture.png) repeat center center;
+        display: block;
+
+        h2 {
+            @extend .text-center;
+            color: $sts_brown;
+            font-family: a_love_of_thunder-webfont;
+            font-size: 18px;
+            padding: 15px 0px;
+            letter-spacing: 3px;
+        }
+    }
+
+    #form_error_messages {
+        @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 50px;
+
+        @media (min-width: $screen-md-min) {
+            margin-top: 100px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        li {
+            font-family: $sts_body;
+            font-weight: bold;
+            font-size: 15px;
+            line-height: 1.8em;
+        }
+    }
+
+    #purchase_form {
+
+    }
+
+    form {
+
+        label {
+            @extend .text-hide;
+        }
+
+        .required {
+            color: $sts_required_red;
+        }
+
+        .help_text {
+            color: $sts_gray;
+            font-family: $sts_body;
+            font-size: 13px;
+        }
+
+        .field_grouper {
+
+            h3 {
+                font-family: $sts_body;
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 0px;
+            }
+        }
+
+        %field_grouper {
+            @extend .col-sm-6;
+        }
+
+        #recipient {
+            @extend %field_grouper;
+        }
+
+        #recipient_address {
+            @extend %field_grouper;
+        }
+
+        #message {
+            @extend %field_grouper;
+        }
+
+        #purchaser {
+            @extend %field_grouper;
+        }
+
+        #submit {
+            @extend .col-sm-6, .col-sm-offset-3, .text-center;
+            margin-top: 25px;
+        }
+
+        .stripe-button-el {
+            background-image: none;
+            background: $sts_black;
+            border-radius: 0px;
+            text-shadow: none;
+
+            span {
+                color: $sts_body;
+                background: $sts_black;
+                font-family: a_love_of_thunder-webfont;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-size: 16px;
+                border-radius: 0px;
+                text-shadow: none;
+                box-shadow: none;
+                line-height: 1.3em;
+                height: auto;
+                padding: 10px 15px;
+                @include background-image(linear-gradient(#333 0, black 50%, transparent 50%));
+            }
+        }
+    }
+}
+
+footer {
+    @extend .row;
+    margin-top: 75px;
+    background: $sts_black url("../images/header_texture.png") repeat;
+    height: 65px;
+
+    .refers {
+        @extend .list-unstyled, .list-inline, .col-xs-12, .col-sm-12;
+        padding: 15px 0px;
+        margin-left: 0;
+        position: relative;
+
+        li {
+            @extend .col-xs-3;
+
+            a {
+
+                &:hover img {
+                    opacity: 0.5;
+                }
+
+                img {
+                    @extend .center-block;
+                    opacity: 1;
+                    @include transition (opacity 0.2s ease-in-out);
+
+                }
             }
 
-            li {
+            &.drinkthesunshine {
+                @extend .col-xs-6;
+                position: relative;
+                left: 0px;
+                bottom: 50px;
+                margin-bottom: -50px;
 
                 a {
 
                     &:hover img {
-                        opacity: 0.5;
-                    }
-
-                    img {
                         opacity: 1;
-                        @include transition (opacity 0.2s ease-in-out);
-
                     }
+                }
+
+                img {
+                    width: 132px;
+                    height: 129px;
                 }
             }
         }
+    }
 
-        p {
-            @extend .text-center, .small;
-            font-family: $sts_body;
-            font-weight: bold;
-            line-height: 1.8em;
+    p {
+        @extend .text-center, .small;
+        font-family: $sts_body;
+        font-weight: bold;
+        line-height: 1.8em;
 
-            a {
+        a {
+            color: $sts_dk_canvas;
+
+            &:hover {
                 color: $sts_dk_canvas;
-
-                &:hover {
-                    color: $sts_dk_canvas;
-                }
             }
         }
     }

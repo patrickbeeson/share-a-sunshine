@@ -16,13 +16,15 @@
 {% block content %}
 <div class="product_intro">
     <h2 class="lead">Finally, A<br>Greeting Card<br>You Can Drink</h2>
+
+    <div class="product_spotlight">
+        <!-- <span class="price"><span class="dollar_sign">$</span>5</span> -->
+        <img src="{{ url_for('static', filename='images/can_box_front.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
+    </div>
+    
     <div class="description">
         <p>Know someone who could use a pick-me-up? For just $5, you can send a personalized can of Sunshine to anyone, anywhere in the US. Take that, flowers!</p>
-        <a href="#" class="progress_button">Get started now</a>
-    </div>
-    <div class="product_spotlight">
-        <span class="price">$5</span>
-        <img src="{{ url_for('static', filename='images/can_box_front.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
+        <!-- <a href="#purchase_form" class="progress_button">Get started now</a> -->
     </div>
 </div>
 
@@ -71,13 +73,16 @@
     <form action="/buy" method="POST" id="purchase_form">
         {{ form.csrf_token }}
 
+        <div class="form_step">
+            <h2>1. Your Friend's Name</h2>
+        </div>
+
         <div class="field_grouper" id="recipient">
-            <h3>Recipient's Name<span class="required">*</span> &amp; Email:</h3>
 
             <div class="form-group{% if form.recipient_name.errors %} has-error{% endif %}">
                 {{ form.recipient_name.label }}
                 {{ form.recipient_name(class_='form-control', maxlength='250') }}
-                <span class="help_text">{{ form.recipient_name.description|safe }}</span>
+                <span class="help_text">{{ form.recipient_name.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.recipient_email.errors %} has-error{% endif %}">
@@ -86,14 +91,18 @@
                     <span class="help_text">{{ form.recipient_email.description|safe }}</span>
             </div>
 
+        </div>
 
-        
-            <h3>Recipient's Address:<span class="required">*</span></h3>
+        <div class="form_step">
+            <h2>2. Your Friend's Address</h2>
+        </div>
+
+        <div class="field_grouper" id="recipient_address">
 
             <div class="form-group{% if form.shipping_street_address_1.errors %} has-error{% endif %}">
                 {{ form.shipping_street_address_1.label }}
                 {{ form.shipping_street_address_1(class_='form-control', maxlength='250') }}
-                <span class="help_text">{{ form.shipping_street_address_1.description|safe }}</span>
+                <span class="help_text">{{ form.shipping_street_address_1.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.shipping_street_address_2.errors %} has-error{% endif %}">
@@ -105,28 +114,31 @@
             <div class="form-group{% if form.shipping_city.errors %} has-error{% endif %}">
                 {{ form.shipping_city.label }}
                 {{ form.shipping_city(class_='form-control', maxlength='250') }}
-                <span class="help_text">{{ form.shipping_city.description|safe }}</span>
+                <span class="help_text">{{ form.shipping_city.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.shipping_state.errors %} has-error{% endif %}">
                 {{ form.shipping_state.label }}
                 {{ form.shipping_state(class_='form-control', maxlength='2') }}
-                <span class="help_text">{{ form.shipping_state.description|safe }}</span>
+                <span class="help_text">{{ form.shipping_state.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.shipping_zip.errors %} has-error{% endif %}">
                 {{ form.shipping_zip.label }}
                 {{ form.shipping_zip(class_='form-control', maxlength='9') }}
-                <span class="help_text">{{ form.shipping_zip.description|safe }}</span>
+                <span class="help_text">{{ form.shipping_zip.description|safe }}</span> <span class="required">*</span>
             </div>
         </div>
 
+        <div class="form_step">
+            <h2>3. Add your message</h2>
+        </div>
+
         <div class="field_grouper" id="message">
-            <h3>Personalized Message:<span class="required">*</span></h3>
             <div class="form-group{% if form.personal_message.errors %} has-error{% endif %}">
                 {{ form.personal_message.label }}
-                {{ form.personal_message(class_='form-control', rows='21') }}
-                <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span>
+                {{ form.personal_message(class_='form-control', rows='10') }}
+                <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span> <span class="required">*</span>
             </div>
         </div>
 
@@ -153,25 +165,26 @@
         </div>
     </form>
 </div>
-{% endblock content %}
 
-                <div class="testimonials">
-                    <h3>All-Time Favorites</h3>
-                    <div id="testimonial_carousel" class="carousel slide">
-                        <div class="carousel-inner">
-                            {% for testimonial in testimonials %}
-                            <div class="item{% if loop.first %} active{% endif %}">
-                                <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
-                                <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
-                                <span class="testimonial_author">{{ testimonial.author|safe }}</span>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <a class="testimonial_left controls" href="#testimonial_carousel" data-slide="prev">
-                            <img src="{{ url_for('static', filename='images/arrow_left.png') }}" alt="">
-                        </a>
-                        <a class="testimonial_right controls" href="#testimonial_carousel" data-slide="next">
-                            <img src="{{ url_for('static', filename='images/arrow_right.png') }}" alt="">
-                        </a>
-                    </div>
-                </div>
+
+<div class="testimonials">
+    <h3>All-Time Favorites</h3>
+    <div id="testimonial_carousel" class="carousel slide">
+        <div class="carousel-inner">
+            {% for testimonial in testimonials %}
+            <div class="item{% if loop.first %} active{% endif %}">
+                <span class="testimonial_salutation">{{ testimonial.salutation|safe }}</span>
+                <span class="testimonial_text">{{ testimonial.testimonial|safe }}</span>
+                <span class="testimonial_author">{{ testimonial.author|safe }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="testimonial_left controls" href="#testimonial_carousel" data-slide="prev">
+            <img src="{{ url_for('static', filename='images/arrow_left.png') }}" alt="">
+        </a>
+        <a class="testimonial_right controls" href="#testimonial_carousel" data-slide="next">
+            <img src="{{ url_for('static', filename='images/arrow_right.png') }}" alt="">
+        </a>
+    </div>
+</div>
+{% endblock content %}

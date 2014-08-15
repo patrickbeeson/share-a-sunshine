@@ -909,7 +909,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, body nav[role="navigation"] .navbar-brand img, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight img, body .content_order .responsive_header {
+.img-responsive, nav[role="navigation"] .navbar-brand img, .content_main .product_intro .product_spotlight img {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -965,42 +965,42 @@ h1, h2, h3, h4, h5, h6,
   color: inherit; }
   h1 small,
   h1 .small,
-  h1 body footer p,
-  body footer h1 p, h2 small,
+  h1 footer p,
+  footer h1 p, h2 small,
   h2 .small,
-  h2 body footer p,
-  body footer h2 p, h3 small,
+  h2 footer p,
+  footer h2 p, h3 small,
   h3 .small,
-  h3 body footer p,
-  body footer h3 p, h4 small,
+  h3 footer p,
+  footer h3 p, h4 small,
   h4 .small,
-  h4 body footer p,
-  body footer h4 p, h5 small,
+  h4 footer p,
+  footer h4 p, h5 small,
   h5 .small,
-  h5 body footer p,
-  body footer h5 p, h6 small,
+  h5 footer p,
+  footer h5 p, h6 small,
   h6 .small,
-  h6 body footer p,
-  body footer h6 p,
+  h6 footer p,
+  footer h6 p,
   .h1 small,
   .h1 .small,
-  .h1 body footer p,
-  body footer .h1 p, .h2 small,
+  .h1 footer p,
+  footer .h1 p, .h2 small,
   .h2 .small,
-  .h2 body footer p,
-  body footer .h2 p, .h3 small,
+  .h2 footer p,
+  footer .h2 p, .h3 small,
   .h3 .small,
-  .h3 body footer p,
-  body footer .h3 p, .h4 small,
+  .h3 footer p,
+  footer .h3 p, .h4 small,
   .h4 .small,
-  .h4 body footer p,
-  body footer .h4 p, .h5 small,
+  .h4 footer p,
+  footer .h4 p, .h5 small,
   .h5 .small,
-  .h5 body footer p,
-  body footer .h5 p, .h6 small,
+  .h5 footer p,
+  footer .h5 p, .h6 small,
   .h6 .small,
-  .h6 body footer p,
-  body footer .h6 p {
+  .h6 footer p,
+  footer .h6 p {
     font-weight: normal;
     line-height: 1;
     color: #999999; }
@@ -1012,25 +1012,25 @@ h3, .h3 {
   margin-bottom: 10px; }
   h1 small,
   h1 .small,
-  h1 body footer p,
-  body footer h1 p, .h1 small,
+  h1 footer p,
+  footer h1 p, .h1 small,
   .h1 .small,
-  .h1 body footer p,
-  body footer .h1 p,
+  .h1 footer p,
+  footer .h1 p,
   h2 small,
   h2 .small,
-  h2 body footer p,
-  body footer h2 p, .h2 small,
+  h2 footer p,
+  footer h2 p, .h2 small,
   .h2 .small,
-  .h2 body footer p,
-  body footer .h2 p,
+  .h2 footer p,
+  footer .h2 p,
   h3 small,
   h3 .small,
-  h3 body footer p,
-  body footer h3 p, .h3 small,
+  h3 footer p,
+  footer h3 p, .h3 small,
   .h3 .small,
-  .h3 body footer p,
-  body footer .h3 p {
+  .h3 footer p,
+  footer .h3 p {
     font-size: 65%; }
 
 h4, .h4,
@@ -1040,25 +1040,25 @@ h6, .h6 {
   margin-bottom: 10px; }
   h4 small,
   h4 .small,
-  h4 body footer p,
-  body footer h4 p, .h4 small,
+  h4 footer p,
+  footer h4 p, .h4 small,
   .h4 .small,
-  .h4 body footer p,
-  body footer .h4 p,
+  .h4 footer p,
+  footer .h4 p,
   h5 small,
   h5 .small,
-  h5 body footer p,
-  body footer h5 p, .h5 small,
+  h5 footer p,
+  footer h5 p, .h5 small,
   .h5 .small,
-  .h5 body footer p,
-  body footer .h5 p,
+  .h5 footer p,
+  footer .h5 p,
   h6 small,
   h6 .small,
-  h6 body footer p,
-  body footer h6 p, .h6 small,
+  h6 footer p,
+  footer h6 p, .h6 small,
   .h6 .small,
-  .h6 body footer p,
-  body footer .h6 p {
+  .h6 footer p,
+  footer .h6 p {
     font-size: 75%; }
 
 h1, .h1 {
@@ -1093,7 +1093,7 @@ p {
 
 small,
 .small,
-body footer p {
+footer p {
   font-size: 85%; }
 
 cite {
@@ -1107,10 +1107,10 @@ mark,
 .text-left {
   text-align: left; }
 
-.text-right, body nav[role="navigation"] .nav {
+.text-right, nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, body .content_main .description .product_specs, body .content_main .description .product_specs .spec_lead, body .content_main .product_spotlight, body .content_main .testimonials h3, body .content_order #form_error_messages, body .content_order form #submit, body footer .social, body footer p, #auth #form_error_messages {
+.text-center, .content_main .progress_button, .content_main .product_intro .lead, .content_main .product_intro .description, .content_main .testimonials h3, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #submit, footer p, #auth #form_error_messages {
   text-align: center; }
 
 .text-justify {
@@ -1197,13 +1197,13 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .list-inline, body footer .social, #thanks #share_purchase ul, body .content_main .description .product_specs ul, body .content_order #form_error_messages, #auth #form_error_messages {
+.list-unstyled, .list-inline, footer .refers, #thanks #share_purchase ul, .content_order #form_error_messages, #auth #form_error_messages {
   padding-left: 0;
   list-style: none; }
 
-.list-inline, body footer .social, #thanks #share_purchase ul {
+.list-inline, footer .refers, #thanks #share_purchase ul {
   margin-left: -5px; }
-  .list-inline > li, body footer .social > li, #thanks #share_purchase ul > li {
+  .list-inline > li, footer .refers > li, #thanks #share_purchase ul > li {
     display: inline-block;
     padding-left: 5px;
     padding-right: 5px; }
@@ -1260,8 +1260,8 @@ blockquote {
   blockquote footer,
   blockquote small,
   blockquote .small,
-  blockquote body footer p,
-  body footer blockquote p {
+  blockquote footer p,
+  footer blockquote p {
     display: block;
     font-size: 80%;
     line-height: 1.42857;
@@ -1269,13 +1269,13 @@ blockquote {
     blockquote footer:before,
     blockquote small:before,
     blockquote .small:before,
-    blockquote body footer p:before,
-    body footer blockquote p:before {
+    blockquote footer p:before,
+    footer blockquote p:before {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
 blockquote.pull-right,
-body nav[role="navigation"] blockquote.navbar-collapse,
+nav[role="navigation"] blockquote.navbar-collapse,
 #auth form blockquote#submit {
   padding-right: 15px;
   padding-left: 0;
@@ -1285,44 +1285,44 @@ body nav[role="navigation"] blockquote.navbar-collapse,
   .blockquote-reverse footer:before,
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
-  .blockquote-reverse body footer p:before,
-  body footer .blockquote-reverse p:before,
+  .blockquote-reverse footer p:before,
+  footer .blockquote-reverse p:before,
   blockquote.pull-right footer:before,
-  body nav[role="navigation"] blockquote.navbar-collapse footer:before,
+  nav[role="navigation"] blockquote.navbar-collapse footer:before,
   #auth form blockquote#submit footer:before,
   blockquote.pull-right small:before,
-  body nav[role="navigation"] blockquote.navbar-collapse small:before,
+  nav[role="navigation"] blockquote.navbar-collapse small:before,
   #auth form blockquote#submit small:before,
   blockquote.pull-right .small:before,
-  body nav[role="navigation"] blockquote.navbar-collapse .small:before,
+  nav[role="navigation"] blockquote.navbar-collapse .small:before,
   #auth form blockquote#submit .small:before,
-  blockquote.pull-right body footer p:before,
-  body footer blockquote.pull-right p:before,
-  body nav[role="navigation"] blockquote.navbar-collapse footer p:before,
-  body footer nav[role="navigation"] blockquote.navbar-collapse p:before,
-  #auth form blockquote#submit body footer p:before,
-  body footer #auth form blockquote#submit p:before {
+  blockquote.pull-right footer p:before,
+  footer blockquote.pull-right p:before,
+  nav[role="navigation"] blockquote.navbar-collapse footer p:before,
+  footer nav[role="navigation"] blockquote.navbar-collapse p:before,
+  #auth form blockquote#submit footer p:before,
+  footer #auth form blockquote#submit p:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
-  .blockquote-reverse body footer p:after,
-  body footer .blockquote-reverse p:after,
+  .blockquote-reverse footer p:after,
+  footer .blockquote-reverse p:after,
   blockquote.pull-right footer:after,
-  body nav[role="navigation"] blockquote.navbar-collapse footer:after,
+  nav[role="navigation"] blockquote.navbar-collapse footer:after,
   #auth form blockquote#submit footer:after,
   blockquote.pull-right small:after,
-  body nav[role="navigation"] blockquote.navbar-collapse small:after,
+  nav[role="navigation"] blockquote.navbar-collapse small:after,
   #auth form blockquote#submit small:after,
   blockquote.pull-right .small:after,
-  body nav[role="navigation"] blockquote.navbar-collapse .small:after,
+  nav[role="navigation"] blockquote.navbar-collapse .small:after,
   #auth form blockquote#submit .small:after,
-  blockquote.pull-right body footer p:after,
-  body footer blockquote.pull-right p:after,
-  body nav[role="navigation"] blockquote.navbar-collapse footer p:after,
-  body footer nav[role="navigation"] blockquote.navbar-collapse p:after,
-  #auth form blockquote#submit body footer p:after,
-  body footer #auth form blockquote#submit p:after {
+  blockquote.pull-right footer p:after,
+  footer blockquote.pull-right p:after,
+  nav[role="navigation"] blockquote.navbar-collapse footer p:after,
+  footer nav[role="navigation"] blockquote.navbar-collapse p:after,
+  #auth form blockquote#submit footer p:after,
+  footer #auth form blockquote#submit p:after {
     content: '\00A0 \2014'; }
 
 blockquote:before,
@@ -1379,24 +1379,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, body .content_wrap {
+.container, .content_wrap {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, body .content_wrap:before, .container:after, body .content_wrap:after {
+  .container:before, .content_wrap:before, .container:after, .content_wrap:after {
     content: " ";
     display: table; }
-  .container:after, body .content_wrap:after {
+  .container:after, .content_wrap:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, body .content_wrap {
+    .container, .content_wrap {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, body .content_wrap {
+    .container, .content_wrap {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, body .content_wrap {
+    .container, .content_wrap {
       width: 1170px; } }
 
 .container-fluid {
@@ -1410,22 +1410,22 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row, body .content_main, body .content_order, #auth {
+.row, .content_main, .content_order, footer, #auth {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, body .content_main:before, body .content_order:before, #auth:before, .row:after, body .content_main:after, body .content_order:after, #auth:after {
+  .row:before, .content_main:before, .content_order:before, footer:before, #auth:before, .row:after, .content_main:after, .content_order:after, footer:after, #auth:after {
     content: " ";
     display: table; }
-  .row:after, body .content_main:after, body .content_order:after, #auth:after {
+  .row:after, .content_main:after, .content_order:after, footer:after, #auth:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, body .content_main .product_spotlight, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, footer .refers, .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, footer .refers li, .col-xs-4, .col-xs-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, footer .refers {
   float: left; }
 
 .col-xs-1 {
@@ -1434,7 +1434,7 @@ pre {
 .col-xs-2 {
   width: 16.66667%; }
 
-.col-xs-3 {
+.col-xs-3, footer .refers li {
   width: 25%; }
 
 .col-xs-4 {
@@ -1443,7 +1443,7 @@ pre {
 .col-xs-5 {
   width: 41.66667%; }
 
-.col-xs-6 {
+.col-xs-6, footer .refers li.drinkthesunshine {
   width: 50%; }
 
 .col-xs-7 {
@@ -1461,7 +1461,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12 {
+.col-xs-12, footer .refers {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1582,7 +1582,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, body .content_main .product_spotlight, .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages {
     float: left; }
 
   .col-sm-1 {
@@ -1597,10 +1597,10 @@ pre {
   .col-sm-4 {
     width: 33.33333%; }
 
-  .col-sm-5, body .content_main .product_spotlight {
+  .col-sm-5 {
     width: 41.66667%; }
 
-  .col-sm-6, body .content_main .description, body .content_order form #recipient, body .content_order form #recipient_address, body .content_order form #message, body .content_order form #purchaser, body .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase {
+  .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase {
     width: 50%; }
 
   .col-sm-7 {
@@ -1618,7 +1618,7 @@ pre {
   .col-sm-11 {
     width: 91.66667%; }
 
-  .col-sm-12, body .content_main .lead, body .content_main .testimonials, body .content_order #form_error_messages, #auth #form_error_messages {
+  .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages {
     width: 100%; }
 
   .col-sm-pull-0 {
@@ -1702,13 +1702,13 @@ pre {
   .col-sm-offset-0 {
     margin-left: 0%; }
 
-  .col-sm-offset-1, body .content_main .product_spotlight {
+  .col-sm-offset-1 {
     margin-left: 8.33333%; }
 
   .col-sm-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-sm-offset-3, body .content_order form #submit {
+  .col-sm-offset-3, .content_order form #submit {
     margin-left: 25%; }
 
   .col-sm-offset-4 {
@@ -2915,7 +2915,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right, body nav[role="navigation"] .dropdown-menu.navbar-collapse, #auth form .dropdown-menu#submit {
+  .dropdown-menu.pull-right, nav[role="navigation"] .dropdown-menu.navbar-collapse, #auth form .dropdown-menu#submit {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -2981,7 +2981,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu, body nav[role="navigation"] .navbar-collapse > .dropdown-menu, #auth form #submit > .dropdown-menu {
+.pull-right > .dropdown-menu, nav[role="navigation"] .navbar-collapse > .dropdown-menu, #auth form #submit > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -3445,17 +3445,17 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, body .content_wrap > .navbar-header,
+.container > .navbar-header, .content_wrap > .navbar-header,
 .container > .navbar-collapse,
-body .content_wrap > .navbar-collapse,
+.content_wrap > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, body .content_wrap > .navbar-header,
+    .container > .navbar-header, .content_wrap > .navbar-header,
     .container > .navbar-collapse,
-    body .content_wrap > .navbar-collapse,
+    .content_wrap > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3497,7 +3497,7 @@ body .content_wrap > .navbar-collapse,
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, body .navbar > .content_wrap .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, .navbar > .content_wrap .navbar-brand, .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3965,15 +3965,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, body .content_wrap .jumbotron {
+  .container .jumbotron, .content_wrap .jumbotron {
     border-radius: 6px; }
-  .jumbotron .container, .jumbotron body .content_wrap, body .jumbotron .content_wrap {
+  .jumbotron .container, .jumbotron .content_wrap {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, body .content_wrap .jumbotron {
+      .container .jumbotron, .content_wrap .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -4007,29 +4007,29 @@ a.thumbnail:focus,
 a.thumbnail.active {
   border-color: #428bca; }
 
-.alert, body #form_errors, body #flash_messages, body .content_order #form_error_messages, #auth #form_error_messages {
+.alert, #form_errors, #flash_messages, .content_order #form_error_messages, #auth #form_error_messages {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px; }
-  .alert h4, body #form_errors h4, body #flash_messages h4, body .content_order #form_error_messages h4, #auth #form_error_messages h4 {
+  .alert h4, #form_errors h4, #flash_messages h4, .content_order #form_error_messages h4, #auth #form_error_messages h4 {
     margin-top: 0;
     color: inherit; }
-  .alert .alert-link, body #form_errors .alert-link, body #flash_messages .alert-link, body .content_order #form_error_messages .alert-link, #auth #form_error_messages .alert-link, body #form_errors a, body .content_order #form_error_messages #form_errors a, body #form_errors .content_order #form_error_messages a, #auth #form_error_messages body #form_errors a, body #form_errors #auth #form_error_messages a {
+  .alert .alert-link, #form_errors .alert-link, #flash_messages .alert-link, .content_order #form_error_messages .alert-link, #auth #form_error_messages .alert-link, #form_errors a, .content_order #form_error_messages #form_errors a, #form_errors .content_order #form_error_messages a, #auth #form_error_messages #form_errors a, #form_errors #auth #form_error_messages a {
     font-weight: bold; }
-  .alert > p, body #form_errors > p, body #flash_messages > p, body .content_order #form_error_messages > p, #auth #form_error_messages > p,
+  .alert > p, #form_errors > p, #flash_messages > p, .content_order #form_error_messages > p, #auth #form_error_messages > p,
   .alert > ul,
-  body #form_errors > ul,
-  body #flash_messages > ul,
-  body .content_order #form_error_messages > ul,
+  #form_errors > ul,
+  #flash_messages > ul,
+  .content_order #form_error_messages > ul,
   #auth #form_error_messages > ul {
     margin-bottom: 0; }
-  .alert > p + p, body #form_errors > p + p, body #flash_messages > p + p, body .content_order #form_error_messages > p + p, #auth #form_error_messages > p + p {
+  .alert > p + p, #form_errors > p + p, #flash_messages > p + p, .content_order #form_error_messages > p + p, #auth #form_error_messages > p + p {
     margin-top: 5px; }
 
-.alert-dismissable, body #form_errors {
+.alert-dismissable, #form_errors {
   padding-right: 35px; }
-  .alert-dismissable .close, body #form_errors .close {
+  .alert-dismissable .close, #form_errors .close {
     position: relative;
     top: -2px;
     right: -21px;
@@ -4041,16 +4041,16 @@ a.thumbnail.active {
   color: #3c763d; }
   .alert-success hr {
     border-top-color: #c9e2b3; }
-  .alert-success .alert-link, .alert-success body #form_errors a, body #form_errors .alert-success a {
+  .alert-success .alert-link, .alert-success #form_errors a, #form_errors .alert-success a {
     color: #2b542c; }
 
-.alert-info, body #flash_messages {
+.alert-info, #flash_messages {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f; }
-  .alert-info hr, body #flash_messages hr {
+  .alert-info hr, #flash_messages hr {
     border-top-color: #a6e1ec; }
-  .alert-info .alert-link, body #flash_messages .alert-link, .alert-info body #form_errors a, body #form_errors .alert-info a, body #flash_messages #form_errors a, body #form_errors #flash_messages a {
+  .alert-info .alert-link, #flash_messages .alert-link, .alert-info #form_errors a, #form_errors .alert-info a, #flash_messages #form_errors a, #form_errors #flash_messages a {
     color: #245269; }
 
 .alert-warning {
@@ -4059,16 +4059,16 @@ a.thumbnail.active {
   color: #8a6d3b; }
   .alert-warning hr {
     border-top-color: #f7e1b5; }
-  .alert-warning .alert-link, .alert-warning body #form_errors a, body #form_errors .alert-warning a {
+  .alert-warning .alert-link, .alert-warning #form_errors a, #form_errors .alert-warning a {
     color: #66512c; }
 
-.alert-danger, body #form_errors, body .content_order #form_error_messages, #auth #form_error_messages {
+.alert-danger, #form_errors, .content_order #form_error_messages, #auth #form_error_messages {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442; }
-  .alert-danger hr, body #form_errors hr, body .content_order #form_error_messages hr, #auth #form_error_messages hr {
+  .alert-danger hr, #form_errors hr, .content_order #form_error_messages hr, #auth #form_error_messages hr {
     border-top-color: #e4b9c0; }
-  .alert-danger .alert-link, body #form_errors .alert-link, body .content_order #form_error_messages .alert-link, #auth #form_error_messages .alert-link, body #form_errors a, body .content_order #form_error_messages #form_errors a, body #form_errors .content_order #form_error_messages a, #auth #form_error_messages body #form_errors a, body #form_errors #auth #form_error_messages a {
+  .alert-danger .alert-link, #form_errors .alert-link, .content_order #form_error_messages .alert-link, #auth #form_error_messages .alert-link, #form_errors a, .content_order #form_error_messages #form_errors a, #form_errors .content_order #form_error_messages a, #auth #form_error_messages #form_errors a, #form_errors #auth #form_error_messages a {
     color: #843534; }
 
 @keyframes progress-bar-stripes {
@@ -4169,7 +4169,7 @@ a.thumbnail.active {
 
 .media > .pull-left {
   margin-right: 10px; }
-.media > .pull-right, body nav[role="navigation"] .media > .navbar-collapse, #auth form .media > #submit {
+.media > .pull-right, nav[role="navigation"] .media > .navbar-collapse, #auth form .media > #submit {
   margin-left: 10px; }
 
 .media-list {
@@ -5084,12 +5084,12 @@ button.close {
 .clearfix:after {
   clear: both; }
 
-.center-block, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_order .responsive_header, #auth #form_error_messages {
+.center-block, footer .refers li a img, #auth #form_error_messages {
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right, body nav[role="navigation"] .navbar-collapse, #auth form #submit {
+.pull-right, nav[role="navigation"] .navbar-collapse, #auth form #submit {
   float: right !important; }
 
 .pull-left {
@@ -5104,7 +5104,7 @@ button.close {
 .invisible {
   visibility: hidden; }
 
-.text-hide, body .content_order h2, body .content_order form label {
+.text-hide, .content_order form label {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -5120,7 +5120,7 @@ button.close {
 
 @-ms-viewport {
   width: device-width; }
-.visible-xs, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-sm, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-md, .visible-lg {
+.visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important; }
 
 .visible-xs-block,
@@ -5138,20 +5138,17 @@ button.close {
   display: none !important; }
 
 @media (max-width: 767px) {
-  .visible-xs, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
+  .visible-xs {
     display: block !important; }
 
-  table.visible-xs, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
+  table.visible-xs {
     display: table; }
 
-  tr.visible-xs, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
+  tr.visible-xs {
     display: table-row !important; }
 
-  th.visible-xs, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
-  td.visible-xs,
-  body .content_main .description .product_specs td.responsive_header,
-  body .content_main .product_spotlight td.mobile_product_spotlight,
-  body .content_order td.responsive_header {
+  th.visible-xs,
+  td.visible-xs {
     display: table-cell !important; } }
 @media (max-width: 767px) {
   .visible-xs-block {
@@ -5166,20 +5163,17 @@ button.close {
     display: inline-block !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .visible-sm, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
+  .visible-sm {
     display: block !important; }
 
-  table.visible-sm, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
+  table.visible-sm {
     display: table; }
 
-  tr.visible-sm, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
+  tr.visible-sm {
     display: table-row !important; }
 
-  th.visible-sm, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
-  td.visible-sm,
-  body .content_main .description .product_specs td.responsive_header,
-  body .content_main .product_spotlight td.mobile_product_spotlight,
-  body .content_order td.responsive_header {
+  th.visible-sm,
+  td.visible-sm {
     display: table-cell !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-block {
@@ -5244,10 +5238,10 @@ button.close {
     display: inline-block !important; } }
 
 @media (max-width: 767px) {
-  .hidden-xs, body .content_main .description .product_specs .standard_header, body .content_main .product_spotlight .carousel, body .content_main .testimonials, body .content_order h2 {
+  .hidden-xs, .content_main .testimonials {
     display: none !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
-  .hidden-sm, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .spec_lead, body .content_main .product_spotlight .carousel, body .content_order h2 {
+  .hidden-sm {
     display: none !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
@@ -5305,283 +5299,229 @@ button.close {
   src: url("../fonts/a_love_of_thunder-webfont.eot");
   src: url("../fonts/a_love_of_thunder-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/a_love_of_thunder-webfont.woff") format("woff"), url("../fonts/a_love_of_thunder-webfont.ttf") format("truetype"), url("../fonts/a_love_of_thunder-webfont.svg#a_love_of_thunder-webfont") format("svg"); }
 body {
-  background: url("../images/mountains_bg.png");
-  background: url("../images/mountains_bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #fff9f2;
-  padding-top: 100px; }
-  body #form_errors {
-    font-family: courier, serif;
-    font-weight: bold;
-    font-size: 15px;
-    margin-bottom: 50px; }
-  body #flash_messages {
-    font-family: courier, serif;
-    font-weight: bold;
-    font-size: 15px; }
-  body nav[role="navigation"] {
-    background: #121211 url("../images/header_texture.png") repeat center center; }
-    body nav[role="navigation"] .navbar-toggle {
-      margin-top: 14px;
-      margin-bottom: 14px; }
-    body nav[role="navigation"] .navbar-collapse {
-      font-family: council_regular-webfont;
-      font-size: 16px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border: none;
-      box-shadow: none; }
-      body nav[role="navigation"] .navbar-collapse a {
-        color: white; }
-        body nav[role="navigation"] .navbar-collapse a:hover {
-          text-decoration: underline; }
-    body nav[role="navigation"] .navbar-brand {
-      max-width: 210px;
-      height: auto; }
-  body .content_main {
+  background: #fff9f2 url("../images/bg_texture.png") repeat; }
+
+#form_errors {
+  font-family: courier, serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 50px; }
+
+#flash_messages {
+  font-family: courier, serif;
+  font-weight: bold;
+  font-size: 15px; }
+
+nav[role="navigation"] {
+  background: #121211 url("../images/header_texture.png") repeat center center; }
+  nav[role="navigation"] .navbar-toggle {
+    margin-top: 14px;
+    margin-bottom: 14px; }
+  nav[role="navigation"] .navbar-collapse {
+    font-family: council_regular-webfont;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: none; }
+    nav[role="navigation"] .navbar-collapse a {
+      color: white; }
+      nav[role="navigation"] .navbar-collapse a:hover {
+        text-decoration: underline; }
+  nav[role="navigation"] .navbar-brand {
+    max-width: 210px;
+    height: auto; }
+
+.content_main {
+  position: relative; }
+  .content_main .progress_button {
+    background-color: #121211;
+    color: white;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: a_love_of_thunder-webfont;
+    letter-spacing: 3px;
+    font-size: 14px;
+    padding: 10px; }
+    .content_main .progress_button:hover {
+      background-color: #292928;
+      text-decoration: none; }
+  .content_main .product_intro {
+    margin-top: 100px;
     position: relative;
-    padding-top: 100px; }
-    body .content_main:before {
-      content: "";
-      position: absolute;
-      background: url("../images/form_border_bg.png") repeat-x;
-      height: 6px;
-      width: 100%;
-      top: 50px; }
-    body .content_main .controls:hover img {
-      opacity: 0.5; }
-    body .content_main .controls img {
-      opacity: 1;
-      -webkit-transition: opacity 0.2s ease-in-out;
-      -o-transition: opacity 0.2s ease-in-out;
-      transition: opacity 0.2s ease-in-out; }
-    body .content_main .lead {
-      font-family: council_regular-webfont;
-      color: #86754d;
-      font-size: 42px;
+    background: url("../images/mountains_bg_sm.png") no-repeat center top; }
+    .content_main .product_intro .lead {
+      font-family: a_love_of_thunder-webfont;
+      color: #121211;
+      font-size: 26px;
       font-weight: normal;
       margin-top: 0;
       text-transform: uppercase;
-      letter-spacing: 10px;
+      letter-spacing: 1px;
       margin-bottom: 25px;
       line-height: 1.2em; }
       @media (min-width: 768px) {
-        body .content_main .lead {
+        .content_main .product_intro .lead {
           font-size: 82px;
           margin-bottom: 50px; } }
-    body .content_main .description p {
+    .content_main .product_intro .description {
+      margin-top: 50px; }
+      .content_main .product_intro .description p {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: courier, serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.8em;
+        margin-bottom: 25px; }
+    .content_main .product_intro .product_spotlight {
+      margin-top: 50px; }
+      .content_main .product_intro .product_spotlight img {
+        -webkit-filter: drop-shadow(12px 12px 7px);
+        filter: drop-shadow(12px 12px 7px);
+        max-width: 50%;
+        margin: 0 auto; }
+  .content_main .testimonials {
+    position: relative;
+    margin-top: 100px; }
+    .content_main .testimonials:before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
+      background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
+      background-position: top left, top right;
+      background-repeat: no-repeat, no-repeat;
+      height: 70px;
+      top: 0px;
+      left: 0px;
+      width: 100%; }
+    .content_main .testimonials:after {
+      content: "";
+      position: absolute;
+      background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
+      background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
+      background-position: bottom left, bottom right;
+      background-repeat: no-repeat, no-repeat;
+      height: 70px;
+      bottom: 0px;
+      left: 0px;
+      width: 100%; }
+    .content_main .testimonials .carousel-inner {
+      min-height: 250px; }
+    .content_main .testimonials h3 {
+      font-family: a_love_of_thunder-webfont;
+      font-size: 24px;
+      margin-bottom: 50px; }
+    .content_main .testimonials .testimonial_salutation, .content_main .testimonials .testimonial_text, .content_main .testimonials .testimonial_author {
+      font-family: courier, serif;
+      font-weight: bold;
+      font-size: 15px;
+      display: block;
+      padding: 0 100px;
+      line-height: 1.8em;
+      margin-bottom: 25px; }
+    .content_main .testimonials .testimonial_left, .content_main .testimonials .testimonial_right {
+      position: absolute; }
+    .content_main .testimonials .testimonial_left {
+      top: 65px;
+      left: 0px; }
+    .content_main .testimonials .testimonial_right {
+      top: 65px;
+      right: 0px; }
+
+.content_order {
+  margin-top: 50px; }
+  .content_order .form_step {
+    background: #121211 url(../images/header_texture.png) repeat center center;
+    display: block; }
+    .content_order .form_step h2 {
+      color: #7d6e4a;
+      font-family: a_love_of_thunder-webfont;
+      font-size: 18px;
+      padding: 15px 0px;
+      letter-spacing: 3px; }
+  .content_order #form_error_messages {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 50px; }
+    @media (min-width: 992px) {
+      .content_order #form_error_messages {
+        margin-top: 100px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px; } }
+    .content_order #form_error_messages li {
       font-family: courier, serif;
       font-weight: bold;
       font-size: 15px;
       line-height: 1.8em; }
-      body .content_main .description p a {
-        color: #86754d; }
-        body .content_main .description p a:hover {
-          color: #86754d; }
-    body .content_main .description .product_specs {
-      margin-top: 75px;
-      margin-bottom: 75px; }
-      @media (min-width: 768px) {
-        body .content_main .description .product_specs {
-          margin-bottom: 0px; } }
-      body .content_main .description .product_specs .responsive_header {
-        margin-bottom: 25px; }
-      body .content_main .description .product_specs .spec_lead {
-        font-family: a_love_of_thunder-webfont;
-        font-size: 16px;
-        margin-top: 10px; }
-        @media (min-width: 992px) {
-          body .content_main .description .product_specs .spec_lead {
-            position: relative;
-            top: -100px;
-            margin-top: 0; } }
-      body .content_main .description .product_specs ul li {
-        margin-bottom: 25px;
-        font-family: a_love_of_thunder-webfont;
-        font-size: 16px; }
-    body .content_main .product_spotlight {
-      position: relative; }
-      body .content_main .product_spotlight .carousel-inner {
-        margin-bottom: 25px;
-        min-height: 450px; }
-        @media (min-width: 992px) {
-          body .content_main .product_spotlight .carousel-inner {
-            min-height: 600px; } }
-      body .content_main .product_spotlight .see_more {
-        font-family: council_regular-webfont;
-        color: black;
-        text-transform: uppercase;
-        font-size: 24px;
-        letter-spacing: 5px; }
-      body .content_main .product_spotlight .product_left, body .content_main .product_spotlight .product_right, body .content_main .product_spotlight .testimonials .testimonial_left, body .content_main .testimonials .product_spotlight .testimonial_left, body .content_main .product_spotlight .testimonials .testimonial_right, body .content_main .testimonials .product_spotlight .testimonial_right {
-        position: absolute; }
-      body .content_main .product_spotlight .product_left {
-        bottom: 10px;
-        left: 0px; }
-      body .content_main .product_spotlight .product_right {
-        bottom: 10px;
-        left: 225px; }
-        @media (min-width: 992px) {
-          body .content_main .product_spotlight .product_right {
-            left: 255px; } }
-    body .content_main .testimonials {
-      position: relative;
-      margin-top: 100px; }
-      body .content_main .testimonials:before {
-        content: "";
-        position: absolute;
-        background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
-        background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
-        background-position: top left, top right;
-        background-repeat: no-repeat, no-repeat;
-        height: 70px;
-        top: 0px;
-        left: 0px;
-        width: 100%; }
-      body .content_main .testimonials:after {
-        content: "";
-        position: absolute;
-        background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
-        background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
-        background-position: bottom left, bottom right;
-        background-repeat: no-repeat, no-repeat;
-        height: 70px;
-        bottom: 0px;
-        left: 0px;
-        width: 100%; }
-      body .content_main .testimonials .carousel-inner {
-        min-height: 250px; }
-      body .content_main .testimonials h3 {
-        font-family: a_love_of_thunder-webfont;
-        font-size: 24px;
-        margin-bottom: 50px; }
-      body .content_main .testimonials .testimonial_salutation, body .content_main .testimonials .testimonial_text, body .content_main .testimonials .testimonial_author {
-        font-family: courier, serif;
-        font-weight: bold;
-        font-size: 15px;
-        display: block;
-        padding: 0 100px;
-        line-height: 1.8em;
-        margin-bottom: 25px; }
-      body .content_main .testimonials .product_spotlight .product_left, body .content_main .product_spotlight .testimonials .product_left, body .content_main .testimonials .product_spotlight .product_right, body .content_main .product_spotlight .testimonials .product_right, body .content_main .testimonials .testimonial_left, body .content_main .testimonials .testimonial_right {
-        position: absolute; }
-      body .content_main .testimonials .testimonial_left {
-        top: 65px;
-        left: 0px; }
-      body .content_main .testimonials .testimonial_right {
-        top: 65px;
-        right: 0px; }
-  body .content_order {
-    margin-top: 50px; }
-    body .content_order #form_error_messages {
-      margin-left: 15px;
-      margin-right: 15px;
-      margin-bottom: 50px; }
-      @media (min-width: 992px) {
-        body .content_order #form_error_messages {
-          margin-top: 100px;
-          margin-left: 0px;
-          margin-right: 0px;
-          margin-bottom: 0px; } }
-      body .content_order #form_error_messages li {
-        font-family: courier, serif;
-        font-weight: bold;
-        font-size: 15px;
-        line-height: 1.8em; }
-    @media (min-width: 992px) {
-      body .content_order #purchase_form {
-        position: relative;
-        top: 100px; }
-        body .content_order #purchase_form:before {
-          content: "";
-          background: url("../images/telegraph.png") no-repeat center;
-          background-size: 253px 91px;
-          position: absolute;
-          height: 91px;
-          width: 253px;
-          bottom: 50px;
-          left: 370px; } }
-    body .content_order h2 {
-      background: url("../images/lets_get_started_text.png") no-repeat center;
-      background-size: 413px 92px;
-      height: 92px;
-      position: relative;
-      margin-top: 50px;
-      margin-bottom: 50px; }
-      body .content_order h2:before {
-        content: "";
-        position: absolute;
-        background: url("../images/black_dot.png") repeat-x center left;
-        height: 4px;
-        width: 25%;
-        top: 50px;
-        left: 0; }
-      body .content_order h2:after {
-        content: "";
-        position: absolute;
-        background: url("../images/black_dot.png") repeat-x center right;
-        height: 4px;
-        width: 25%;
-        top: 50px;
-        right: 0; }
-    body .content_order .responsive_header {
-      margin-top: 50px;
-      margin-bottom: 50px;
-      padding-left: 15px;
-      padding-right: 15px; }
-    body .content_order form .required {
-      color: #b20f0f; }
-    body .content_order form .help_text {
-      color: #75787c;
-      font-family: courier, serif;
-      font-size: 13px; }
-    body .content_order form .field_grouper h3 {
-      font-family: courier, serif;
+  .content_order form .required {
+    color: #b20f0f; }
+  .content_order form .help_text {
+    color: #75787c;
+    font-family: courier, serif;
+    font-size: 13px; }
+  .content_order form .field_grouper h3 {
+    font-family: courier, serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0px; }
+  .content_order form #submit {
+    margin-top: 25px; }
+  .content_order form .stripe-button-el {
+    background-image: none;
+    background: #121211;
+    border-radius: 0px;
+    text-shadow: none; }
+    .content_order form .stripe-button-el span {
+      color: courier, serif;
+      background: #121211;
+      font-family: a_love_of_thunder-webfont;
+      text-transform: uppercase;
+      letter-spacing: 3px;
       font-size: 16px;
-      font-weight: bold; }
-    body .content_order form #submit {
-      margin-top: 50px; }
-    body .content_order form .stripe-button-el {
-      background-image: none;
-      background: black; }
-      body .content_order form .stripe-button-el span {
-        color: courier, serif;
-        background-color: black;
-        background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
-        background-image: linear-gradient(to   , black 50%, transparent 50%); }
-  body footer {
-    position: relative;
-    padding-bottom: 100px; }
-    body footer:before {
-      content: "";
-      position: absolute;
-      background: url("../images/form_border_bg.png") repeat-x;
-      height: 6px;
-      width: 100%;
-      top: 0px; }
-    body footer .social {
-      margin-top: 75px;
-      padding-top: 50px;
-      padding-bottom: 25px; }
-      @media (min-width: 992px) {
-        body footer .social {
-          margin-top: 175px; } }
-      body footer .social li a:hover img {
-        opacity: 0.5; }
-      body footer .social li a img {
-        opacity: 1;
-        -webkit-transition: opacity 0.2s ease-in-out;
-        -o-transition: opacity 0.2s ease-in-out;
-        transition: opacity 0.2s ease-in-out; }
-    body footer p {
-      font-family: courier, serif;
-      font-weight: bold;
-      line-height: 1.8em; }
-      body footer p a {
+      border-radius: 0px;
+      text-shadow: none;
+      box-shadow: none;
+      line-height: 1.3em;
+      height: auto;
+      padding: 10px 15px;
+      background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
+      background-image: linear-gradient(to   , black 50%, transparent 50%); }
+
+footer {
+  margin-top: 75px;
+  background: #121211 url("../images/header_texture.png") repeat;
+  height: 65px; }
+  footer .refers {
+    padding: 15px 0px;
+    margin-left: 0;
+    position: relative; }
+    footer .refers li a:hover img {
+      opacity: 0.5; }
+    footer .refers li a img {
+      opacity: 1;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
+    footer .refers li.drinkthesunshine {
+      position: relative;
+      left: 0px;
+      bottom: 50px;
+      margin-bottom: -50px; }
+      footer .refers li.drinkthesunshine a:hover img {
+        opacity: 1; }
+      footer .refers li.drinkthesunshine img {
+        width: 132px;
+        height: 129px; }
+  footer p {
+    font-family: courier, serif;
+    font-weight: bold;
+    line-height: 1.8em; }
+    footer p a {
+      color: #86754d; }
+      footer p a:hover {
         color: #86754d; }
-        body footer p a:hover {
-          color: #86754d; }
 
 #auth .description {
   width: 100%; }
