@@ -18,9 +18,9 @@ body {
         @extend .container;
 
         // Restrict width to md size for lg screens
-        @media (min-width: $screen-lg-min) {
-            max-width: 992px;
-        }
+        // @media (min-width: $screen-lg-min) {
+        //     max-width: 992px;
+        // }
     }
 
     #form_errors {
@@ -43,9 +43,15 @@ body {
     }
 
     nav[role="navigation"] {
+        background: $sts_black url("../images/header_texture.png") repeat center center;
 
         .nav {
             @extend .text-right;
+        }
+
+        .navbar-toggle {
+            margin-top: 14px;
+            margin-bottom: 14px;
         }
 
         .navbar-collapse {
@@ -65,22 +71,14 @@ body {
                 }
             }
         }
-    }
 
-    .branding {
-        margin-top: 25px;
-        margin-bottom: 25px;
+        .navbar-brand {
+            max-width: 210px;
+            height: auto;
 
-        img {
-            @extend .img-responsive, .center-block;
-        }
-
-        .standard_header {
-            @extend .hidden-xs, .hidden-sm;
-        }
-
-        .responsive_header {
-            @extend .visible-xs, .visible-sm;
+            img {
+                @extend .img-responsive;
+            }
         }
     }
 

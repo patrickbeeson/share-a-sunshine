@@ -909,7 +909,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, body .branding img, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight img, body .content_order .responsive_header {
+.img-responsive, body nav[role="navigation"] .navbar-brand img, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight img, body .content_order .responsive_header {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -5084,7 +5084,7 @@ button.close {
 .clearfix:after {
   clear: both; }
 
-.center-block, body .branding img, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_order .responsive_header, #auth #form_error_messages {
+.center-block, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .responsive_header, body .content_order .responsive_header, #auth #form_error_messages {
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -5120,7 +5120,7 @@ button.close {
 
 @-ms-viewport {
   width: device-width; }
-.visible-xs, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-md, .visible-lg {
+.visible-xs, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-sm, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header, .visible-md, .visible-lg {
   display: none !important; }
 
 .visible-xs-block,
@@ -5138,18 +5138,17 @@ button.close {
   display: none !important; }
 
 @media (max-width: 767px) {
-  .visible-xs, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
+  .visible-xs, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
     display: block !important; }
 
-  table.visible-xs, body .branding table.responsive_header, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
+  table.visible-xs, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
     display: table; }
 
-  tr.visible-xs, body .branding tr.responsive_header, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
+  tr.visible-xs, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
     display: table-row !important; }
 
-  th.visible-xs, body .branding th.responsive_header, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
+  th.visible-xs, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
   td.visible-xs,
-  body .branding td.responsive_header,
   body .content_main .description .product_specs td.responsive_header,
   body .content_main .product_spotlight td.mobile_product_spotlight,
   body .content_order td.responsive_header {
@@ -5167,18 +5166,17 @@ button.close {
     display: inline-block !important; } }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .visible-sm, body .branding .responsive_header, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
+  .visible-sm, body .content_main .description .product_specs .responsive_header, body .content_main .product_spotlight .mobile_product_spotlight, body .content_order .responsive_header {
     display: block !important; }
 
-  table.visible-sm, body .branding table.responsive_header, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
+  table.visible-sm, body .content_main .description .product_specs table.responsive_header, body .content_main .product_spotlight table.mobile_product_spotlight, body .content_order table.responsive_header {
     display: table; }
 
-  tr.visible-sm, body .branding tr.responsive_header, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
+  tr.visible-sm, body .content_main .description .product_specs tr.responsive_header, body .content_main .product_spotlight tr.mobile_product_spotlight, body .content_order tr.responsive_header {
     display: table-row !important; }
 
-  th.visible-sm, body .branding th.responsive_header, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
+  th.visible-sm, body .content_main .description .product_specs th.responsive_header, body .content_main .product_spotlight th.mobile_product_spotlight, body .content_order th.responsive_header,
   td.visible-sm,
-  body .branding td.responsive_header,
   body .content_main .description .product_specs td.responsive_header,
   body .content_main .product_spotlight td.mobile_product_spotlight,
   body .content_order td.responsive_header {
@@ -5246,10 +5244,10 @@ button.close {
     display: inline-block !important; } }
 
 @media (max-width: 767px) {
-  .hidden-xs, body .branding .standard_header, body .content_main .description .product_specs .standard_header, body .content_main .product_spotlight .carousel, body .content_main .testimonials, body .content_order h2 {
+  .hidden-xs, body .content_main .description .product_specs .standard_header, body .content_main .product_spotlight .carousel, body .content_main .testimonials, body .content_order h2 {
     display: none !important; } }
 @media (min-width: 768px) and (max-width: 991px) {
-  .hidden-sm, body .branding .standard_header, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .spec_lead, body .content_main .product_spotlight .carousel, body .content_order h2 {
+  .hidden-sm, body .content_main .description .product_specs .standard_header, body .content_main .description .product_specs .spec_lead, body .content_main .product_spotlight .carousel, body .content_order h2 {
     display: none !important; } }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
@@ -5313,9 +5311,6 @@ body {
   background-repeat: no-repeat;
   background-color: #fff9f2;
   padding-top: 100px; }
-  @media (min-width: 1200px) {
-    body .content_wrap {
-      max-width: 992px; } }
   body #form_errors {
     font-family: courier, serif;
     font-weight: bold;
@@ -5325,20 +5320,25 @@ body {
     font-family: courier, serif;
     font-weight: bold;
     font-size: 15px; }
-  body nav[role="navigation"] .navbar-collapse {
-    font-family: council_regular-webfont;
-    font-size: 16px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border: none;
-    box-shadow: none; }
-    body nav[role="navigation"] .navbar-collapse a {
-      color: white; }
-      body nav[role="navigation"] .navbar-collapse a:hover {
-        text-decoration: underline; }
-  body .branding {
-    margin-top: 25px;
-    margin-bottom: 25px; }
+  body nav[role="navigation"] {
+    background: #121211 url("../images/header_texture.png") repeat center center; }
+    body nav[role="navigation"] .navbar-toggle {
+      margin-top: 14px;
+      margin-bottom: 14px; }
+    body nav[role="navigation"] .navbar-collapse {
+      font-family: council_regular-webfont;
+      font-size: 16px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: none;
+      box-shadow: none; }
+      body nav[role="navigation"] .navbar-collapse a {
+        color: white; }
+        body nav[role="navigation"] .navbar-collapse a:hover {
+          text-decoration: underline; }
+    body nav[role="navigation"] .navbar-brand {
+      max-width: 210px;
+      height: auto; }
   body .content_main {
     position: relative;
     padding-top: 100px; }

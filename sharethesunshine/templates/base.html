@@ -7,7 +7,8 @@
         <meta name="description" content="Wanna make someone's day? Send 'em a can of Sunshine, pronto! To say good luck, thanks, miss your pretty smile, or just because.">
         <title>{% block title %}{% endblock title %}</title>
         {% assets "css_all" %}
-        <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
+        <!-- <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css"> -->
+        <link href="{{ url_for('static', filename='css/main.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
         {% endassets %}
         {% block meta_indexing %}{% endblock meta_indexing %}
 
@@ -65,9 +66,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="/" title="Share the Sunshine"><img class="logo" src="{{ url_for('static', filename='images/logo_reversed.png') }}" alt="Share the Sunshine"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                        <li><a href="http://drinkthesunshine.com">Learn more</a></li>
                         <li><a href="mailto:info@share.drinkthesunshine.com">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -79,12 +82,6 @@
             {% endblock flash_messages %}
             {% block form_errors %}
             {% endblock form_errors %}
-            <div class="branding">
-                <a href="/" title="Share the Sunshine">
-                <img class="standard_header" src="{{ url_for('static', filename='images/logo.png') }}" alt="Share the Sunshine">
-                <img src="{{ url_for('static', filename='images/logo_mobile.png') }}" alt="Share the Sunshine" class="responsive_header">
-                </a>
-            </div>
 
             <div class="content_main">
             {% block content %}{% endblock content %}
