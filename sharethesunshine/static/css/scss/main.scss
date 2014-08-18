@@ -12,11 +12,11 @@ body {
 }
 
 .content_wrap {
-
-    @media (min-width: $screen-sm-min) {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
+    @extend .container-fluid;
+    // @media (min-width: $screen-sm-min) {
+    //     margin-left: 15px;
+    //     margin-right: 15px;
+    // }
 }
 
 #form_errors {
@@ -44,7 +44,12 @@ body {
 }
 
 nav[role="navigation"] {
+    @extend .container-fluid;
     background: $sts_black url("../images/header_texture.png") repeat center center;
+
+    .content_wrap {
+        @extend .col-md-10, .col-md-offset-1;
+    }
 
     .nav {
         @extend .text-right;
@@ -97,7 +102,7 @@ nav[role="navigation"] {
 }
 
 .content_main {
-    @extend .clearfix;
+    @extend .row, .clearfix;
     position: relative;
     background: url("../images/mountains_bg_sm.png") no-repeat center 100px;
 
@@ -114,19 +119,19 @@ nav[role="navigation"] {
         font-family: a_love_of_thunder-webfont;
         letter-spacing: 3px;
 
-        @media (min-width: $screen-sm-min) {
+        // @media (min-width: $screen-sm-min) {
 
-        }
+        // }
     }
 
     .intro {
-        @extend .clearfix;
-        @extend .container;
+        @extend .clearfix, .col-md-offset-1;
+        // @extend .container;
         margin-top: 100px;
         position: relative; 
 
         .lead {
-            @extend .text-center, .col-md-6;
+            @extend .text-center, .col-md-5;
             font-family: a_love_of_thunder-webfont;
             color: $sts_black;
             font-size: 26px;
@@ -144,7 +149,7 @@ nav[role="navigation"] {
         }
 
         .description {
-            @extend .text-center, .col-md-6;
+            @extend .text-center, .col-md-5;
             margin-top: 50px;
 
             @media (min-width: $screen-md-min) {
@@ -210,7 +215,7 @@ nav[role="navigation"] {
     }
 
     .testimonials {
-        @extend .col-sm-12, .col-md-6, .col-md-offset-3, .hidden-xs;
+        @extend .col-md-6, .col-md-offset-3, .hidden-xs;
         position: relative;
         margin-top: 100px;
 
@@ -255,24 +260,26 @@ nav[role="navigation"] {
 }
 
 .content_order {
-    @extend .row, .clearfix;
-    margin-left: 0px;
-    margin-right: 0px;
+    // @extend .row, .clearfix;
+    @extend .container-fluid, .clearfix;
+    // margin-left: 0px;
+    // margin-right: 0px;
 
     @media (min-width: $screen-sm-min) {
-        margin-top: 50px;
-        margin-left: -15px;
-        margin-right: -15px;
+        // margin-top: 50px;
+        // margin-left: -15px;
+        // margin-right: -15px;
     }
 
     .form_step {
+        @extend .row, .clearfix;
         background: $sts_black url(../images/header_texture.png) repeat center center;
-        display: block;
+        // display: block;
         clear: both;
 
         @media (min-width: $screen-md-min) {
-            float: left;
-            width: 100%;
+            // float: left;
+            // width: 100%;
             margin-bottom: 50px;
             margin-top: 50px;
         }
@@ -283,7 +290,10 @@ nav[role="navigation"] {
             color: $sts_brown;
             font-family: a_love_of_thunder-webfont;
             font-size: 18px;
-            padding: 15px 0px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            margin-top: 15px;
             letter-spacing: 3px;
 
             @media (min-width: $screen-sm-min) {
@@ -293,7 +303,8 @@ nav[role="navigation"] {
 
             @media (min-width: $screen-md-min) {
                 text-align: left;
-                padding-left: 15px;
+                // padding-left: 15px;
+                padding-left: 30px;
             }
         }
     }
@@ -324,16 +335,16 @@ nav[role="navigation"] {
     #purchase_form {
 
         @media (min-width: $screen-sm-min) {
-            padding-left: 0px;
-            padding-right: 0px;
+            // padding-left: 0px;
+            // padding-right: 0px;
         }
     }
 
     form {
 
         @media (min-width: $screen-md-min) {
-            padding-left: 0px;
-            padding-right: 0px;
+            // padding-left: 0px;
+            // padding-right: 0px;
         }
 
         label {
@@ -351,7 +362,8 @@ nav[role="navigation"] {
         }
 
         .field_grouper {
-            clear: both;
+            // clear: both;
+            @extend .row;
 
             h3 {
                 font-family: $sts_body;
@@ -363,6 +375,7 @@ nav[role="navigation"] {
 
         %field_grouper {
             @extend .col-md-5, .col-md-offset-1;
+            clear: both;
         }
 
         #recipient {
@@ -371,18 +384,18 @@ nav[role="navigation"] {
 
         #recipient_address {
             @extend %field_grouper;
-            position: relative;
+            // position: relative;
 
-            @media (min-width: $screen-md-min) {
-                &:before {
-                    content: "";
-                    background: url(../images/stamp_bg.png) no-repeat 0px 0px;
-                    width: 221px;
-                    height: 150px;
-                    position: absolute;
-                    right: -325px;
-                }
-            }
+            // @media (min-width: $screen-md-min) {
+            //     &:before {
+            //         content: "";
+            //         background: url(../images/stamp_bg.png) no-repeat 0px 0px;
+            //         width: 221px;
+            //         height: 150px;
+            //         position: absolute;
+            //         right: -325px;
+            //     }
+            // }
         }
 
         #message {
@@ -396,6 +409,7 @@ nav[role="navigation"] {
         #submit {
             @extend .col-sm-6, .col-sm-offset-3, .text-center, .col-md-5, .col-md-offset-1;
             margin-top: 25px;
+            clear: both;
         }
 
         .stripe-button-el {
@@ -424,17 +438,19 @@ nav[role="navigation"] {
 }
 
 footer {
+    @extend .row, .clearfix;
     margin-top: 75px;
     background: $sts_black url("../images/header_texture.png") repeat;
     height: 65px;
 
-    @media (min-width: $screen-sm-min) {
-        margin-left: -15px;
-        margin-right: -15px;
-    }
+    // @media (min-width: $screen-sm-min) {
+    //     margin-left: -15px;
+    //     margin-right: -15px;
+    // }
 
     .refers {
-        @extend .list-unstyled, .list-inline, .col-xs-12, .col-sm-6, .col-sm-offset-3, .col-md-6, .col-md-offset-3;
+        @extend .container-fluid, .list-unstyled, .list-inline, .col-sm-6, .col-sm-offset-3, .col-md-6, .col-md-offset-3;
+        // @extend .list-unstyled, .list-inline, .col-xs-12, .col-sm-6, .col-sm-offset-3, .col-md-6, .col-md-offset-3;
         padding: 15px 0px;
         position: relative;
 

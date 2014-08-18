@@ -1379,53 +1379,53 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .content_main .intro, #terms #content_main, #thanks #content_main {
+.container, #terms #content_main, #thanks #content_main {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .content_main .intro:before, #terms #content_main:before, #thanks #content_main:before, .container:after, .content_main .intro:after, #terms #content_main:after, #thanks #content_main:after {
+  .container:before, #terms #content_main:before, #thanks #content_main:before, .container:after, #terms #content_main:after, #thanks #content_main:after {
     content: " ";
     display: table; }
-  .container:after, .content_main .intro:after, #terms #content_main:after, #thanks #content_main:after {
+  .container:after, #terms #content_main:after, #thanks #content_main:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .content_main .intro, #terms #content_main, #thanks #content_main {
+    .container, #terms #content_main, #thanks #content_main {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .content_main .intro, #terms #content_main, #thanks #content_main {
+    .container, #terms #content_main, #thanks #content_main {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .content_main .intro, #terms #content_main, #thanks #content_main {
+    .container, #terms #content_main, #thanks #content_main {
       width: 1170px; } }
 
-.container-fluid {
+.container-fluid, .content_wrap, nav[role="navigation"], .content_order, footer .refers {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, .container-fluid:after {
+  .container-fluid:before, .content_wrap:before, nav[role="navigation"]:before, .content_order:before, footer .refers:before, .container-fluid:after, .content_wrap:after, nav[role="navigation"]:after, .content_order:after, footer .refers:after {
     content: " ";
     display: table; }
-  .container-fluid:after {
+  .container-fluid:after, .content_wrap:after, nav[role="navigation"]:after, .content_order:after, footer .refers:after {
     clear: both; }
 
-.row, #form_errors, .content_order, #auth .intro, #terms .intro, #thanks .intro {
+.row, #form_errors, .content_main, .content_order .form_step, .content_order form .field_grouper, footer, #auth .intro, #terms .intro, #thanks .intro {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, #form_errors:before, .content_order:before, #auth .intro:before, #terms .intro:before, #thanks .intro:before, .row:after, #form_errors:after, .content_order:after, #auth .intro:after, #terms .intro:after, #thanks .intro:after {
+  .row:before, #form_errors:before, .content_main:before, .content_order .form_step:before, .content_order form .field_grouper:before, footer:before, #auth .intro:before, #terms .intro:before, #thanks .intro:before, .row:after, #form_errors:after, .content_main:after, .content_order .form_step:after, .content_order form .field_grouper:after, footer:after, #auth .intro:after, #terms .intro:after, #thanks .intro:after {
     content: " ";
     display: table; }
-  .row:after, #form_errors:after, .content_order:after, #auth .intro:after, #terms .intro:after, #thanks .intro:after {
+  .row:after, #form_errors:after, .content_main:after, .content_order .form_step:after, .content_order form .field_grouper:after, footer:after, #auth .intro:after, #terms .intro:after, #thanks .intro:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-md-6, .content_main .intro .lead, .content_main .intro .description, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, #terms .description, #thanks .description, #thanks #share_purchase, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, #auth #flash_messages, #terms .intro .lead, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, footer .refers, .col-sm-12, .content_main .testimonials, .col-md-12, #terms .intro, #thanks .intro, #thanks .intro .lead, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, #terms .description, #thanks .description, #thanks #share_purchase, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, nav[role="navigation"] .content_wrap, #auth #flash_messages, #terms .intro .lead, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #terms .intro, #thanks .intro, #thanks .intro .lead, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, footer .refers li, .col-xs-4, .col-xs-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, footer .refers {
+.col-xs-1, .col-xs-2, .col-xs-3, footer .refers li, .col-xs-4, .col-xs-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left; }
 
 .col-xs-1 {
@@ -1461,7 +1461,7 @@ pre {
 .col-xs-11 {
   width: 91.66667%; }
 
-.col-xs-12, footer .refers {
+.col-xs-12 {
   width: 100%; }
 
 .col-xs-pull-0 {
@@ -1582,7 +1582,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .content_main .testimonials {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
 
   .col-sm-1 {
@@ -1618,7 +1618,7 @@ pre {
   .col-sm-11 {
     width: 91.66667%; }
 
-  .col-sm-12, .content_main .testimonials {
+  .col-sm-12 {
     width: 100%; }
 
   .col-sm-pull-0 {
@@ -1738,7 +1738,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-md-6, .content_main .intro .lead, .content_main .intro .description, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-md-7, .col-md-8, #terms .description, #thanks .description, #thanks #share_purchase, .col-md-9, .col-md-10, #auth #flash_messages, #terms .intro .lead, .col-md-11, .col-md-12, #terms .intro, #thanks .intro, #thanks .intro .lead {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-md-7, .col-md-8, #terms .description, #thanks .description, #thanks #share_purchase, .col-md-9, .col-md-10, nav[role="navigation"] .content_wrap, #auth #flash_messages, #terms .intro .lead, .col-md-11, .col-md-12, #terms .intro, #thanks .intro, #thanks .intro .lead {
     float: left; }
 
   .col-md-1 {
@@ -1753,10 +1753,10 @@ pre {
   .col-md-4 {
     width: 33.33333%; }
 
-  .col-md-5, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
+  .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
     width: 41.66667%; }
 
-  .col-md-6, .content_main .intro .lead, .content_main .intro .description, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers {
+  .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers {
     width: 50%; }
 
   .col-md-7 {
@@ -1768,7 +1768,7 @@ pre {
   .col-md-9 {
     width: 75%; }
 
-  .col-md-10, #auth #flash_messages, #terms .intro .lead {
+  .col-md-10, nav[role="navigation"] .content_wrap, #auth #flash_messages, #terms .intro .lead {
     width: 83.33333%; }
 
   .col-md-11 {
@@ -1858,7 +1858,7 @@ pre {
   .col-md-offset-0 {
     margin-left: 0%; }
 
-  .col-md-offset-1, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, #auth #flash_messages, #terms .intro .lead {
+  .col-md-offset-1, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, #auth #flash_messages, #terms .intro .lead {
     margin-left: 8.33333%; }
 
   .col-md-offset-2, #terms .description, #thanks .description, #thanks #share_purchase {
@@ -3445,23 +3445,37 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .content_main .intro > .navbar-header, #terms #content_main > .navbar-header, #thanks #content_main > .navbar-header,
+.container > .navbar-header, #terms #content_main > .navbar-header, #thanks #content_main > .navbar-header,
 .container > .navbar-collapse,
-.content_main .intro > .navbar-collapse,
 #terms #content_main > .navbar-collapse,
 #thanks #content_main > .navbar-collapse,
 .container-fluid > .navbar-header,
-.container-fluid > .navbar-collapse {
+.content_wrap > .navbar-header,
+nav[role="navigation"] > .navbar-header,
+.content_order > .navbar-header,
+footer .refers > .navbar-header,
+.container-fluid > .navbar-collapse,
+.content_wrap > .navbar-collapse,
+nav[role="navigation"] > .navbar-collapse,
+.content_order > .navbar-collapse,
+footer .refers > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .content_main .intro > .navbar-header, #terms #content_main > .navbar-header, #thanks #content_main > .navbar-header,
+    .container > .navbar-header, #terms #content_main > .navbar-header, #thanks #content_main > .navbar-header,
     .container > .navbar-collapse,
-    .content_main .intro > .navbar-collapse,
     #terms #content_main > .navbar-collapse,
     #thanks #content_main > .navbar-collapse,
     .container-fluid > .navbar-header,
-    .container-fluid > .navbar-collapse {
+    .content_wrap > .navbar-header,
+    nav[role="navigation"] > .navbar-header,
+    .content_order > .navbar-header,
+    footer .refers > .navbar-header,
+    .container-fluid > .navbar-collapse,
+    .content_wrap > .navbar-collapse,
+    nav[role="navigation"] > .navbar-collapse,
+    .content_order > .navbar-collapse,
+    footer .refers > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3501,7 +3515,7 @@ tbody.collapse.in {
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .content_main .navbar > .intro .navbar-brand, #terms .navbar > #content_main .navbar-brand, #thanks .navbar > #content_main .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, #terms .navbar > #content_main .navbar-brand, #thanks .navbar > #content_main .navbar-brand, .navbar > .container-fluid .navbar-brand, .navbar > .content_wrap .navbar-brand, .navbar > nav[role="navigation"] .navbar-brand, .navbar > .content_order .navbar-brand, footer .navbar > .refers .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3969,15 +3983,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .content_main .intro .jumbotron, #terms #content_main .jumbotron, #thanks #content_main .jumbotron {
+  .container .jumbotron, #terms #content_main .jumbotron, #thanks #content_main .jumbotron {
     border-radius: 6px; }
-  .jumbotron .container, .jumbotron .content_main .intro, .content_main .jumbotron .intro, .jumbotron #terms #content_main, #terms .jumbotron #content_main, .jumbotron #thanks #content_main, #thanks .jumbotron #content_main {
+  .jumbotron .container, .jumbotron #terms #content_main, #terms .jumbotron #content_main, .jumbotron #thanks #content_main, #thanks .jumbotron #content_main {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .content_main .intro .jumbotron, #terms #content_main .jumbotron, #thanks #content_main .jumbotron {
+      .container .jumbotron, #terms #content_main .jumbotron, #thanks #content_main .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -5082,10 +5096,10 @@ button.close {
 
   .carousel-indicators {
     bottom: 20px; } }
-.clearfix:before, .content_main:before, .content_main .intro:before, .content_order:before, .clearfix:after, .content_main:after, .content_main .intro:after, .content_order:after {
+.clearfix:before, .content_main:before, .content_main .intro:before, .content_order:before, .content_order .form_step:before, footer:before, .clearfix:after, .content_main:after, .content_main .intro:after, .content_order:after, .content_order .form_step:after, footer:after {
   content: " ";
   display: table; }
-.clearfix:after, .content_main:after, .content_main .intro:after, .content_order:after {
+.clearfix:after, .content_main:after, .content_main .intro:after, .content_order:after, .content_order .form_step:after, footer:after {
   clear: both; }
 
 .center-block, footer .refers li a img, #auth .intro, #thanks .intro {
@@ -5305,11 +5319,6 @@ button.close {
 body {
   background: #fff9f2 url("../images/bg_texture.png") repeat; }
 
-@media (min-width: 768px) {
-  .content_wrap {
-    margin-left: 15px;
-    margin-right: 15px; } }
-
 #form_errors {
   position: absolute;
   z-index: 2;
@@ -5456,117 +5465,87 @@ nav[role="navigation"] {
       top: 65px;
       right: 0px; }
 
-.content_order {
-  margin-left: 0px;
-  margin-right: 0px; }
-  @media (min-width: 768px) {
-    .content_order {
-      margin-top: 50px;
-      margin-left: -15px;
-      margin-right: -15px; } }
-  .content_order .form_step {
-    background: #121211 url(../images/header_texture.png) repeat center center;
-    display: block;
-    clear: both; }
-    @media (min-width: 992px) {
-      .content_order .form_step {
-        float: left;
-        width: 100%;
-        margin-bottom: 50px;
-        margin-top: 50px; } }
-    .content_order .form_step h2 {
-      color: #7d6e4a;
-      font-family: a_love_of_thunder-webfont;
-      font-size: 18px;
-      padding: 15px 0px;
-      letter-spacing: 3px; }
-      @media (min-width: 768px) {
-        .content_order .form_step h2 {
-          font-size: 27px;
-          text-align: center; } }
-      @media (min-width: 992px) {
-        .content_order .form_step h2 {
-          text-align: left;
-          padding-left: 15px; } }
-  .content_order #form_error_messages {
-    margin-bottom: 50px;
-    margin-left: 15px;
-    margin-right: 15px; }
-    @media (min-width: 992px) {
-      .content_order #form_error_messages {
-        margin-top: 25px;
-        margin-left: 8.3333%;
-        margin-right: 8.3333%;
-        margin-bottom: 0px; } }
-    .content_order #form_error_messages li {
-      font-family: courier, serif;
-      font-weight: bold;
-      font-size: 15px;
-      line-height: 1.8em;
-      margin-bottom: 10px;
-      margin-left: 15px; }
-  @media (min-width: 768px) {
-    .content_order #purchase_form {
-      padding-left: 0px;
-      padding-right: 0px; } }
+.content_order .form_step {
+  background: #121211 url(../images/header_texture.png) repeat center center;
+  clear: both; }
   @media (min-width: 992px) {
-    .content_order form {
-      padding-left: 0px;
-      padding-right: 0px; } }
-  .content_order form .required {
-    color: #b20f0f; }
-  .content_order form .help_text {
-    color: #75787c;
-    font-family: courier, serif;
-    font-size: 13px; }
-  .content_order form .field_grouper {
-    clear: both; }
-    .content_order form .field_grouper h3 {
-      font-family: courier, serif;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 0px; }
-  .content_order form #recipient_address {
-    position: relative; }
+    .content_order .form_step {
+      margin-bottom: 50px;
+      margin-top: 50px; } }
+  .content_order .form_step h2 {
+    color: #7d6e4a;
+    font-family: a_love_of_thunder-webfont;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    letter-spacing: 3px; }
+    @media (min-width: 768px) {
+      .content_order .form_step h2 {
+        font-size: 27px;
+        text-align: center; } }
     @media (min-width: 992px) {
-      .content_order form #recipient_address:before {
-        content: "";
-        background: url(../images/stamp_bg.png) no-repeat 0px 0px;
-        width: 221px;
-        height: 150px;
-        position: absolute;
-        right: -325px; } }
-  .content_order form #submit {
-    margin-top: 25px; }
-  .content_order form .stripe-button-el {
-    background-image: none;
+      .content_order .form_step h2 {
+        text-align: left;
+        padding-left: 30px; } }
+.content_order #form_error_messages {
+  margin-bottom: 50px;
+  margin-left: 15px;
+  margin-right: 15px; }
+  @media (min-width: 992px) {
+    .content_order #form_error_messages {
+      margin-top: 25px;
+      margin-left: 8.3333%;
+      margin-right: 8.3333%;
+      margin-bottom: 0px; } }
+  .content_order #form_error_messages li {
+    font-family: courier, serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.8em;
+    margin-bottom: 10px;
+    margin-left: 15px; }
+.content_order form .required {
+  color: #b20f0f; }
+.content_order form .help_text {
+  color: #75787c;
+  font-family: courier, serif;
+  font-size: 13px; }
+.content_order form .field_grouper h3 {
+  font-family: courier, serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0px; }
+.content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields {
+  clear: both; }
+.content_order form #submit {
+  margin-top: 25px;
+  clear: both; }
+.content_order form .stripe-button-el {
+  background-image: none;
+  background: #121211;
+  border-radius: 0px;
+  text-shadow: none; }
+  .content_order form .stripe-button-el span {
+    color: courier, serif;
     background: #121211;
+    font-family: a_love_of_thunder-webfont;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 16px;
     border-radius: 0px;
-    text-shadow: none; }
-    .content_order form .stripe-button-el span {
-      color: courier, serif;
-      background: #121211;
-      font-family: a_love_of_thunder-webfont;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 16px;
-      border-radius: 0px;
-      text-shadow: none;
-      box-shadow: none;
-      line-height: 1.3em;
-      height: auto;
-      padding: 10px 15px;
-      background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
-      background-image: linear-gradient(to   , black 50%, transparent 50%); }
+    text-shadow: none;
+    box-shadow: none;
+    line-height: 1.3em;
+    height: auto;
+    padding: 10px 15px;
+    background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
+    background-image: linear-gradient(to   , black 50%, transparent 50%); }
 
 footer {
   margin-top: 75px;
   background: #121211 url("../images/header_texture.png") repeat;
   height: 65px; }
-  @media (min-width: 768px) {
-    footer {
-      margin-left: -15px;
-      margin-right: -15px; } }
   footer .refers {
     padding: 15px 0px;
     position: relative; }
