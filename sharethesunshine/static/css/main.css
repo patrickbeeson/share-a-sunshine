@@ -1379,24 +1379,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .content_wrap {
+.container, .content_main .product_intro {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .content_wrap:before, .container:after, .content_wrap:after {
+  .container:before, .content_main .product_intro:before, .container:after, .content_main .product_intro:after {
     content: " ";
     display: table; }
-  .container:after, .content_wrap:after {
+  .container:after, .content_main .product_intro:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .content_wrap {
+    .container, .content_main .product_intro {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .content_wrap {
+    .container, .content_main .product_intro {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .content_wrap {
+    .container, .content_main .product_intro {
       width: 1170px; } }
 
 .container-fluid {
@@ -1410,16 +1410,16 @@ pre {
   .container-fluid:after {
     clear: both; }
 
-.row, .content_main, .content_order, footer, #auth {
+.row, .content_order, #auth {
   margin-left: -15px;
   margin-right: -15px; }
-  .row:before, .content_main:before, .content_order:before, footer:before, #auth:before, .row:after, .content_main:after, .content_order:after, footer:after, #auth:after {
+  .row:before, .content_order:before, #auth:before, .row:after, .content_order:after, #auth:after {
     content: " ";
     display: table; }
-  .row:after, .content_main:after, .content_order:after, footer:after, #auth:after {
+  .row:after, .content_order:after, #auth:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, footer .refers, .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, #thanks #share_purchase, .col-md-6, .content_main .product_intro .lead, .content_main .product_intro .description, .content_main .product_intro .product_spotlight, footer .refers, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .content_main .testimonials, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, footer .refers, .col-sm-12, .content_main .testimonials, .content_order #form_error_messages, #auth #form_error_messages, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1582,7 +1582,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, #thanks #share_purchase, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .content_main .testimonials, .content_order #form_error_messages, #auth #form_error_messages {
     float: left; }
 
   .col-sm-1 {
@@ -1600,7 +1600,7 @@ pre {
   .col-sm-5 {
     width: 41.66667%; }
 
-  .col-sm-6, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #submit, #auth form #auth_fields, #thanks #share_purchase {
+  .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, #thanks #share_purchase {
     width: 50%; }
 
   .col-sm-7 {
@@ -1618,7 +1618,7 @@ pre {
   .col-sm-11 {
     width: 91.66667%; }
 
-  .col-sm-12, .content_main, .content_main .testimonials, .content_order #form_error_messages, footer .refers, #auth #form_error_messages {
+  .col-sm-12, .content_main .testimonials, .content_order #form_error_messages, #auth #form_error_messages {
     width: 100%; }
 
   .col-sm-pull-0 {
@@ -1708,7 +1708,7 @@ pre {
   .col-sm-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-sm-offset-3, .content_order form #submit {
+  .col-sm-offset-3, .content_order form #submit, footer .refers {
     margin-left: 25%; }
 
   .col-sm-offset-4 {
@@ -1738,7 +1738,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-md-6, .content_main .product_intro .lead, .content_main .product_intro .description, .content_main .product_intro .product_spotlight, footer .refers, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .content_main .testimonials, .col-md-11, .col-md-12 {
     float: left; }
 
   .col-md-1 {
@@ -1753,10 +1753,10 @@ pre {
   .col-md-4 {
     width: 33.33333%; }
 
-  .col-md-5 {
+  .col-md-5, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
     width: 41.66667%; }
 
-  .col-md-6 {
+  .col-md-6, .content_main .product_intro .lead, .content_main .product_intro .description, .content_main .product_intro .product_spotlight, footer .refers {
     width: 50%; }
 
   .col-md-7 {
@@ -1768,7 +1768,7 @@ pre {
   .col-md-9 {
     width: 75%; }
 
-  .col-md-10 {
+  .col-md-10, .content_main .testimonials {
     width: 83.33333%; }
 
   .col-md-11 {
@@ -1858,13 +1858,13 @@ pre {
   .col-md-offset-0 {
     margin-left: 0%; }
 
-  .col-md-offset-1 {
+  .col-md-offset-1, .content_main .testimonials, .content_order .form_step h2, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
     margin-left: 8.33333%; }
 
   .col-md-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-md-offset-3 {
+  .col-md-offset-3, footer .refers {
     margin-left: 25%; }
 
   .col-md-offset-4 {
@@ -3445,17 +3445,17 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .content_wrap > .navbar-header,
+.container > .navbar-header, .content_main .product_intro > .navbar-header,
 .container > .navbar-collapse,
-.content_wrap > .navbar-collapse,
+.content_main .product_intro > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .content_wrap > .navbar-header,
+    .container > .navbar-header, .content_main .product_intro > .navbar-header,
     .container > .navbar-collapse,
-    .content_wrap > .navbar-collapse,
+    .content_main .product_intro > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3497,7 +3497,7 @@ tbody.collapse.in {
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .content_wrap .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    .navbar > .container .navbar-brand, .content_main .navbar > .product_intro .navbar-brand, .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -3965,15 +3965,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .content_wrap .jumbotron {
+  .container .jumbotron, .content_main .product_intro .jumbotron {
     border-radius: 6px; }
-  .jumbotron .container, .jumbotron .content_wrap {
+  .jumbotron .container, .jumbotron .content_main .product_intro, .content_main .jumbotron .product_intro {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding-top: 48px;
       padding-bottom: 48px; }
-      .container .jumbotron, .content_wrap .jumbotron {
+      .container .jumbotron, .content_main .product_intro .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -5078,10 +5078,10 @@ button.close {
 
   .carousel-indicators {
     bottom: 20px; } }
-.clearfix:before, .clearfix:after {
+.clearfix:before, .content_main:before, .content_main .product_intro:before, .content_order:before, .clearfix:after, .content_main:after, .content_main .product_intro:after, .content_order:after {
   content: " ";
   display: table; }
-.clearfix:after {
+.clearfix:after, .content_main:after, .content_main .product_intro:after, .content_order:after {
   clear: both; }
 
 .center-block, footer .refers li a img, #auth #form_error_messages {
@@ -5301,6 +5301,11 @@ button.close {
 body {
   background: #fff9f2 url("../images/bg_texture.png") repeat; }
 
+@media (min-width: 768px) {
+  .content_wrap {
+    margin-left: 15px;
+    margin-right: 15px; } }
+
 #form_errors {
   font-family: courier, serif;
   font-weight: bold;
@@ -5314,6 +5319,9 @@ body {
 
 nav[role="navigation"] {
   background: #121211 url("../images/header_texture.png") repeat center center; }
+  @media (min-width: 768px) {
+    nav[role="navigation"] .nav {
+      margin-top: 20px; } }
   nav[role="navigation"] .navbar-toggle {
     margin-top: 14px;
     margin-bottom: 14px; }
@@ -5324,6 +5332,9 @@ nav[role="navigation"] {
     text-transform: uppercase;
     border: none;
     box-shadow: none; }
+    @media (min-width: 768px) {
+      nav[role="navigation"] .navbar-collapse {
+        font-size: 31px; } }
     nav[role="navigation"] .navbar-collapse a {
       color: white; }
       nav[role="navigation"] .navbar-collapse a:hover {
@@ -5331,6 +5342,9 @@ nav[role="navigation"] {
   nav[role="navigation"] .navbar-brand {
     max-width: 210px;
     height: auto; }
+    @media (min-width: 768px) {
+      nav[role="navigation"] .navbar-brand {
+        max-width: 325px; } }
 
 .content_main {
   position: relative; }
@@ -5350,6 +5364,10 @@ nav[role="navigation"] {
     margin-top: 100px;
     position: relative;
     background: url("../images/mountains_bg_sm.png") no-repeat center top; }
+    @media (min-width: 768px) {
+      .content_main .product_intro {
+        background: url("../images/mountains_bg.png") no-repeat center top;
+        margin-top: 150px; } }
     .content_main .product_intro .lead {
       font-family: a_love_of_thunder-webfont;
       color: #121211;
@@ -5362,10 +5380,14 @@ nav[role="navigation"] {
       line-height: 1.2em; }
       @media (min-width: 768px) {
         .content_main .product_intro .lead {
-          font-size: 82px;
+          font-size: 43px;
           margin-bottom: 50px; } }
     .content_main .product_intro .description {
       margin-top: 50px; }
+      @media (min-width: 992px) {
+        .content_main .product_intro .description {
+          float: left;
+          margin-top: 0px; } }
       .content_main .product_intro .description p {
         padding-left: 15px;
         padding-right: 15px;
@@ -5374,44 +5396,33 @@ nav[role="navigation"] {
         font-size: 14px;
         line-height: 1.8em;
         margin-bottom: 25px; }
+        @media (min-width: 768px) {
+          .content_main .product_intro .description p {
+            font-size: 19px; } }
     .content_main .product_intro .product_spotlight {
       margin-top: 50px; }
+      @media (min-width: 992px) {
+        .content_main .product_intro .product_spotlight {
+          float: right;
+          margin-top: 0px; } }
       .content_main .product_intro .product_spotlight img {
-        -webkit-filter: drop-shadow(12px 12px 7px);
-        filter: drop-shadow(12px 12px 7px);
+        -webkit-filter: drop-shadow(20px 25px 10px rgba(0, 0, 0, 0.5));
+        filter: drop-shadow(20px 25px 10px rgba(0, 0, 0, 0.5));
         max-width: 50%;
         margin: 0 auto; }
+        @media (min-width: 768px) {
+          .content_main .product_intro .product_spotlight img {
+            max-width: 100%; } }
   .content_main .testimonials {
     position: relative;
     margin-top: 100px; }
-    .content_main .testimonials:before {
-      content: "";
-      position: absolute;
-      background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
-      background-image: url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png");
-      background-position: top left, top right;
-      background-repeat: no-repeat, no-repeat;
-      height: 70px;
-      top: 0px;
-      left: 0px;
-      width: 100%; }
-    .content_main .testimonials:after {
-      content: "";
-      position: absolute;
-      background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
-      background-image: url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png");
-      background-position: bottom left, bottom right;
-      background-repeat: no-repeat, no-repeat;
-      height: 70px;
-      bottom: 0px;
-      left: 0px;
-      width: 100%; }
     .content_main .testimonials .carousel-inner {
       min-height: 250px; }
     .content_main .testimonials h3 {
       font-family: a_love_of_thunder-webfont;
-      font-size: 24px;
-      margin-bottom: 50px; }
+      font-size: 35px;
+      margin-bottom: 50px;
+      color: #7d6e4a; }
     .content_main .testimonials .testimonial_salutation, .content_main .testimonials .testimonial_text, .content_main .testimonials .testimonial_author {
       font-family: courier, serif;
       font-weight: bold;
@@ -5430,16 +5441,37 @@ nav[role="navigation"] {
       right: 0px; }
 
 .content_order {
-  margin-top: 50px; }
+  margin-left: 0px;
+  margin-right: 0px; }
+  @media (min-width: 768px) {
+    .content_order {
+      margin-top: 50px;
+      margin-left: -15px;
+      margin-right: -15px; } }
   .content_order .form_step {
     background: #121211 url(../images/header_texture.png) repeat center center;
-    display: block; }
+    display: block;
+    clear: both; }
+    @media (min-width: 992px) {
+      .content_order .form_step {
+        float: left;
+        width: 100%;
+        margin-bottom: 50px;
+        margin-top: 50px; } }
     .content_order .form_step h2 {
       color: #7d6e4a;
       font-family: a_love_of_thunder-webfont;
       font-size: 18px;
       padding: 15px 0px;
       letter-spacing: 3px; }
+      @media (min-width: 768px) {
+        .content_order .form_step h2 {
+          font-size: 27px;
+          text-align: center; } }
+      @media (min-width: 992px) {
+        .content_order .form_step h2 {
+          text-align: left;
+          padding-left: 15px; } }
   .content_order #form_error_messages {
     margin-left: 15px;
     margin-right: 15px;
@@ -5455,17 +5487,27 @@ nav[role="navigation"] {
       font-weight: bold;
       font-size: 15px;
       line-height: 1.8em; }
+  @media (min-width: 768px) {
+    .content_order #purchase_form {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  @media (min-width: 992px) {
+    .content_order form {
+      padding-left: 0px;
+      padding-right: 0px; } }
   .content_order form .required {
     color: #b20f0f; }
   .content_order form .help_text {
     color: #75787c;
     font-family: courier, serif;
     font-size: 13px; }
-  .content_order form .field_grouper h3 {
-    font-family: courier, serif;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0px; }
+  .content_order form .field_grouper {
+    clear: both; }
+    .content_order form .field_grouper h3 {
+      font-family: courier, serif;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 0px; }
   .content_order form #submit {
     margin-top: 25px; }
   .content_order form .stripe-button-el {
@@ -5493,9 +5535,12 @@ footer {
   margin-top: 75px;
   background: #121211 url("../images/header_texture.png") repeat;
   height: 65px; }
+  @media (min-width: 768px) {
+    footer {
+      margin-left: -15px;
+      margin-right: -15px; } }
   footer .refers {
     padding: 15px 0px;
-    margin-left: 0;
     position: relative; }
     footer .refers li a:hover img {
       opacity: 0.5; }
@@ -5509,12 +5554,20 @@ footer {
       left: 0px;
       bottom: 50px;
       margin-bottom: -50px; }
+      @media (min-width: 1200px) {
+        footer .refers li.drinkthesunshine {
+          bottom: 125px; } }
       footer .refers li.drinkthesunshine a:hover img {
         opacity: 1; }
       footer .refers li.drinkthesunshine img {
         width: 132px;
         height: 129px; }
+        @media (min-width: 1200px) {
+          footer .refers li.drinkthesunshine img {
+            width: 100%;
+            height: 100%; } }
   footer p {
+    clear: both;
     font-family: courier, serif;
     font-weight: bold;
     line-height: 1.8em; }

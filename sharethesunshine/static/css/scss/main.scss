@@ -12,7 +12,11 @@ body {
 }
 
 .content_wrap {
-    @extend .container;
+    //@extend .container;
+    @media (min-width: $screen-sm-min) {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }
 
 #form_errors {
@@ -39,6 +43,10 @@ nav[role="navigation"] {
 
     .nav {
         @extend .text-right;
+
+        @media (min-width: $screen-sm-min) {
+            margin-top: 20px;
+        }
     }
 
     .navbar-toggle {
@@ -55,6 +63,10 @@ nav[role="navigation"] {
         border: none;
         box-shadow: none;
 
+        @media (min-width: $screen-sm-min) {
+            font-size: 31px;
+        }
+
         a {
             color: white;
 
@@ -68,6 +80,10 @@ nav[role="navigation"] {
         max-width: 210px;
         height: auto;
 
+        @media (min-width: $screen-sm-min) {
+            max-width: 325px;
+        }
+
         img {
             @extend .img-responsive;
         }
@@ -75,20 +91,8 @@ nav[role="navigation"] {
 }
 
 .content_main {
-    @extend .row, .col-sm-12;
+    @extend .clearfix;
     position: relative;
-
-    // .controls {
-
-    //     &:hover img {
-    //         opacity: 0.5;
-    //     }
-
-    //     img {
-    //         opacity: 1;
-    //         @include transition (opacity 0.2s ease-in-out);
-    //     }
-    // }
 
     .progress_button {
         @extend .text-center;
@@ -108,13 +112,20 @@ nav[role="navigation"] {
     }
 
     .product_intro {
+        @extend .clearfix;
+        @extend .container;
         margin-top: 100px;
         position: relative;
 
         background: url("../images/mountains_bg_sm.png") no-repeat center top;
 
+        @media (min-width: $screen-sm-min) {
+            background: url("../images/mountains_bg.png") no-repeat center top;
+            margin-top: 150px;
+        } 
+
         .lead {
-            @extend .text-center;
+            @extend .text-center, .col-md-6;
             font-family: a_love_of_thunder-webfont;
             color: $sts_black;
             font-size: 26px;
@@ -126,14 +137,19 @@ nav[role="navigation"] {
             line-height: 1.2em;
 
             @media (min-width: $screen-sm-min) {
-                font-size: 82px;
+                font-size: 43px;
                 margin-bottom: 50px;
             }
         }
 
         .description {
-            @extend .text-center;
+            @extend .text-center, .col-md-6;
             margin-top: 50px;
+
+            @media (min-width: $screen-md-min) {
+                float: left;
+                margin-top: 0px;
+            }
 
             p {
                 padding-left: 15px;
@@ -143,165 +159,63 @@ nav[role="navigation"] {
                 font-size: 14px;
                 line-height: 1.8em;
                 margin-bottom: 25px;
+
+                @media (min-width: $screen-sm-min) {
+                    font-size: 19px;
+                }
             }                
         }
 
         .product_spotlight {
+            @extend .col-md-6;
             margin-top: 50px;
+
+            @media (min-width: $screen-md-min) {
+                float: right;
+                margin-top: 0px;
+            }
 
             img {
                 @extend .img-responsive;
-                @include filter(drop-shadow(12px 12px 7px));
+                @include filter(drop-shadow(20px 25px 10px rgba(0,0,0,0.5)));
                 max-width: 50%;
                 margin: 0 auto;
+
+                @media (min-width: $screen-sm-min) {
+                    max-width: 100%;
+                }
             }
-
-            // .price {
-            //     position: absolute;
-            //     left: 25px;
-            //     font-family: courier;
-            //     letter-spacing: 3px;
-            //     font-size: 32px;
-            //     font-weight: normal;
-            //     color: white;
-            //     background: $sts_black url(../images/header_texture.png) repeat center center;
-            //     border-radius: 35px;
-            //     display: inline-block;
-            //     padding: 8px 12px;
-            //     opacity: 0.9;
-            //     text-transform: uppercase;
-
-            //     span.dollar_sign {
-            //         font-size: 18px;
-            //         vertical-align: top;
-            //     }
-            // }
         }
     }
 
-    
-
-    // .description {
-
-
-
-    //     .product_specs {
-    //         @extend .text-center;
-    //         margin-top: 75px;
-    //         margin-bottom: 75px;
-
-    //         @media (min-width: $screen-sm-min) {
-    //             margin-bottom: 0px;
-    //         }
-
-    //         .spec_lead {
-    //             @extend .hidden-sm, .text-center;
-    //             font-family: a_love_of_thunder-webfont;
-    //             font-size: 16px;
-    //             margin-top: 10px;
-
-    //             @media (min-width: $screen-md-min) {
-    //                 position: relative;
-    //                 top: -100px;
-    //                 margin-top: 0;
-    //             }
-    //         }
-
-    //         ul {
-    //             @extend .list-unstyled;
-
-    //             li {
-    //                 margin-bottom: 25px;
-    //                 font-family: a_love_of_thunder-webfont;
-    //                 font-size: 16px;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // .product_spotlight {
-    //     @extend .col-sm-5, .col-sm-offset-1, .text-center;
-    //     position: relative;
-
-    //     .mobile_product_spotlight {
-    //         @extend .visible-xs, .visible-sm;
-    //     }
-
-    //     .carousel {
-    //         @extend .hidden-xs, .hidden-sm;
-    //     }
-
-    //     .carousel-inner {
-    //         margin-bottom: 25px;
-    //         min-height: 450px;
-
-    //         @media (min-width: $screen-md-min) {
-    //             min-height: 600px;
-    //         }
-    //     }
-
-    //     .see_more {
-    //         font-family: council_regular-webfont;
-    //         color: black;
-    //         text-transform: uppercase;
-    //         font-size: 24px;
-    //         letter-spacing: 5px;
-    //     }
-
-    //     img {
-    //         @extend .img-responsive;
-    //     }
-
-    //     %carousel_controls {
-    //         position: absolute;
-    //     }
-
-    //     .product_left {
-    //         @extend %carousel_controls;
-    //         bottom: 10px;
-    //         left: 0px;
-    //     }
-
-    //     .product_right {
-    //         @extend %carousel_controls;
-    //         bottom: 10px;
-    //         left: 225px;
-
-    //         @media (min-width: $screen-md-min) {
-    //             //left: 335px;
-    //             left: 255px;
-    //         }
-    //     }
-    // }
-
     .testimonials {
-        @extend .col-sm-12, .hidden-xs;
+        @extend .col-sm-12, .col-md-10, .col-md-offset-1, .hidden-xs;
         position: relative;
         margin-top: 100px;
 
-        &:before {
-            content: "";
-            position: absolute;
-            @include background-image(url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png"));
-            background-position: top left, top right;
-            background-repeat: no-repeat, no-repeat;
-            height: 70px;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-        }
+        // &:before {
+        //     content: "";
+        //     position: absolute;
+        //     @include background-image(url("../images/testimonials_frame_upper_left.png"), url("../images/testimonials_frame_upper_right.png"));
+        //     background-position: top left, top right;
+        //     background-repeat: no-repeat, no-repeat;
+        //     height: 70px;
+        //     top: 0px;
+        //     left: 0px;
+        //     width: 100%;
+        // }
 
-        &:after {
-            content: "";
-            position: absolute;
-            @include background-image(url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png"));
-            background-position: bottom left, bottom right;
-            background-repeat: no-repeat, no-repeat;
-            height: 70px;
-            bottom: 0px;
-            left: 0px;
-            width: 100%;
-        }
+        // &:after {
+        //     content: "";
+        //     position: absolute;
+        //     @include background-image(url("../images/testimonials_frame_lower_left.png"), url("../images/testimonials_frame_lower_right.png"));
+        //     background-position: bottom left, bottom right;
+        //     background-repeat: no-repeat, no-repeat;
+        //     height: 70px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     width: 100%;
+        // }
 
         .carousel-inner {
             min-height: 250px;
@@ -310,8 +224,9 @@ nav[role="navigation"] {
         h3 {
             @extend .text-center;
             font-family: a_love_of_thunder-webfont;
-            font-size: 24px;
+            font-size: 35px;
             margin-bottom: 50px;
+            color: $sts_brown;
         }
 
         .testimonial_salutation, .testimonial_text, .testimonial_author {
@@ -343,20 +258,46 @@ nav[role="navigation"] {
 }
 
 .content_order {
-    @extend .row;
-    margin-top: 50px;
+    @extend .row, .clearfix;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    @media (min-width: $screen-sm-min) {
+        margin-top: 50px;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
 
     .form_step {
         background: $sts_black url(../images/header_texture.png) repeat center center;
         display: block;
+        clear: both;
+
+        @media (min-width: $screen-md-min) {
+            float: left;
+            width: 100%;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
 
         h2 {
+            @extend .col-md-offset-1;
             @extend .text-center;
             color: $sts_brown;
             font-family: a_love_of_thunder-webfont;
             font-size: 18px;
             padding: 15px 0px;
             letter-spacing: 3px;
+
+            @media (min-width: $screen-sm-min) {
+                font-size: 27px;
+                text-align: center;
+            }
+
+            @media (min-width: $screen-md-min) {
+                text-align: left;
+                padding-left: 15px;
+            }
         }
     }
 
@@ -382,10 +323,23 @@ nav[role="navigation"] {
     }
 
     #purchase_form {
+        // padding-left: 0px;
+        // padding-right: 0px;
 
+        @media (min-width: $screen-sm-min) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
     }
 
     form {
+        // padding-left: 15px;
+        // padding-right: 15px;
+
+        @media (min-width: $screen-md-min) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
 
         label {
             @extend .text-hide;
@@ -402,6 +356,7 @@ nav[role="navigation"] {
         }
 
         .field_grouper {
+            clear: both;
 
             h3 {
                 font-family: $sts_body;
@@ -412,7 +367,8 @@ nav[role="navigation"] {
         }
 
         %field_grouper {
-            @extend .col-sm-6;
+            //@extend .container;
+            @extend .col-md-5, .col-md-offset-1;
         }
 
         #recipient {
@@ -432,7 +388,7 @@ nav[role="navigation"] {
         }
 
         #submit {
-            @extend .col-sm-6, .col-sm-offset-3, .text-center;
+            @extend .col-sm-6, .col-sm-offset-3, .text-center, .col-md-5, .col-md-offset-1;
             margin-top: 25px;
         }
 
@@ -462,15 +418,19 @@ nav[role="navigation"] {
 }
 
 footer {
-    @extend .row;
+    //@extend .row;
     margin-top: 75px;
     background: $sts_black url("../images/header_texture.png") repeat;
     height: 65px;
 
+    @media (min-width: $screen-sm-min) {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
     .refers {
-        @extend .list-unstyled, .list-inline, .col-xs-12, .col-sm-12;
+        @extend .list-unstyled, .list-inline, .col-xs-12, .col-sm-6, .col-sm-offset-3, .col-md-6, .col-md-offset-3;
         padding: 15px 0px;
-        margin-left: 0;
         position: relative;
 
         li {
@@ -497,6 +457,10 @@ footer {
                 bottom: 50px;
                 margin-bottom: -50px;
 
+                @media (min-width: $screen-lg-min) {
+                    bottom: 125px;
+                }
+
                 a {
 
                     &:hover img {
@@ -507,6 +471,11 @@ footer {
                 img {
                     width: 132px;
                     height: 129px;
+
+                    @media (min-width: $screen-lg-min) {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }
@@ -514,6 +483,7 @@ footer {
 
     p {
         @extend .text-center, .small;
+        clear: both;
         font-family: $sts_body;
         font-weight: bold;
         line-height: 1.8em;
