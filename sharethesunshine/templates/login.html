@@ -19,33 +19,35 @@
 {% endblock flash_messages %}
 
 {% block content %}
-<h2 class="lead">API Access Login</h2>
+<div class="intro">
+    <h2 class="lead">API Access Login</h2>
 
-<div class="description">
-    {% if form.errors %}
-    <ul id="form_error_messages">
-    {% for message in form.email.errors %}
-        <li>{{ message }}</li>
-    {% endfor %}
+    <div class="description">
+        {% if form.errors %}
+        <ul id="form_error_messages">
+        {% for message in form.email.errors %}
+            <li>{{ message }}</li>
+        {% endfor %}
 
-    {% for message in form.password.errors %}
-        <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
-    {% endif %}
-    <form method="POST" action="/login">
-        {{ form.csrf_token }}
-        <div class="field_grouper" id="auth_fields">
-            <div class="form-group{% if form.email.errors %} has-error{% endif %}">
-                {{ form.email.label }}
-                {{ form.email(class_='form-control') }}
+        {% for message in form.password.errors %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <form method="POST" action="/login">
+            {{ form.csrf_token }}
+            <div class="field_grouper" id="auth_fields">
+                <div class="form-group{% if form.email.errors %} has-error{% endif %}">
+                    {{ form.email.label }}
+                    {{ form.email(class_='form-control') }}
+                </div>
+                <div class="form-group{% if form.password.errors %} has-error{% endif %}">
+                    {{ form.password.label }}
+                    {{ form.password(class_='form-control') }}
+                </div>
+                <input type="submit" value="Login" id="submit">
             </div>
-            <div class="form-group{% if form.password.errors %} has-error{% endif %}">
-                {{ form.password.label }}
-                {{ form.password(class_='form-control') }}
-            </div>
-            <input type="submit" value="Login" id="submit">
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 {% endblock %}

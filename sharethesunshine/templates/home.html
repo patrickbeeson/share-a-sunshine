@@ -14,17 +14,17 @@
 {% endblock form_errors %}
 
 {% block content %}
-<div class="product_intro">
+<div class="intro">
     <h2 class="lead">Finally, A Greeting Card You Can Drink</h2>
 
     <div class="product_spotlight">
-        <!-- <span class="price"><span class="dollar_sign">$</span>5</span> -->
         <img src="{{ url_for('static', filename='images/can_box_front.png') }}" alt="Photo showing a can of Sunshine and the box it arrives in when shipped.">
     </div>
     
     <div class="description">
         <p>Know someone who could use a pick-me-up? For just $5, you can send a personalized can of Sunshine to anyone, anywhere in the US. Take that, flowers!</p>
-        <!-- <a href="#purchase_form" class="progress_button">Get started now</a> -->
+        <div class="get_started">Get started now</div>
+        <span class="glyphicon glyphicon-chevron-down"></span>
     </div>
 </div>
 

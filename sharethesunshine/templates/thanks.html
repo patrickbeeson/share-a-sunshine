@@ -5,37 +5,38 @@
 {% block page %}thanks{% endblock page %}
 
 {% block content %}
-<h2 class="lead">Thanks for your order</h2>
+<div class="intro">
+  <h2 class="lead">Thanks for your order</h2>
 
-<div class="description">
+  <div class="description">
 
-    {% if purchase.purchaser_name %}<p>{{ purchase.purchaser_name }},</p>{% endif %}
-    
-    <p>A golden hued Sunshine can was recently dipped into The Well of Unbelievable Awesomeness and lovingly placed into a custom package at your direction.</p>
+      {% if purchase.purchaser_name %}<p>{{ purchase.purchaser_name }},</p>{% endif %}
+      
+      <p>A golden hued Sunshine can was recently dipped into The Well of Unbelievable Awesomeness and lovingly placed into a custom package at your direction.</p>
 
-    <p>The box is currently following the sunrays to <b>{{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} {{ purchase.shipping_city }}, {{ purchase.shipping_state }}</b> (one of our favorite places in the world!) where <b>{{ purchase.recipient_name }}</b> will soon have their day brightened with 8.4 ounces of bubbly goodness.</p>
+      <p>The box is currently following the sunrays to <b>{{ purchase.shipping_street_address_1 }}{% if purchase.shipping_street_address_2 %}, {{ purchase.shipping_street_address_2 }}{% endif %} {{ purchase.shipping_city }}, {{ purchase.shipping_state }}</b> (one of our favorite places in the world!) where <b>{{ purchase.recipient_name }}</b> will soon have their day brightened with 8.4 ounces of bubbly goodness.</p>
 
-    <p>{% if purchase.purchaser_name %}{{ purchase.purchaser_name }}, you{% else %}You{% endif %} are a great American for having the heart to tell <b>{{ purchase.recipient_name }}</b>: <b>"{{ purchase.personal_message }}"</b> Finer words have never been written. Our computer wept at reading your prose.</p>
+      <p>{% if purchase.purchaser_name %}{{ purchase.purchaser_name }}, you{% else %}You{% endif %} are a great American for having the heart to tell <b>{{ purchase.recipient_name }}</b>: <b>"{{ purchase.personal_message }}"</b> Finer words have never been written. Our computer wept at reading your prose.</p>
 
-    <p>For your records, your order number is: <b>{{ purchase.uuid }}</b>. A number we will never forget. It was the best one we've ever had the good fortune of fulfilling; truly our pleasure.</p>
+      <p>For your records, your order number is: <b>{{ purchase.uuid }}</b>. A number we will never forget. It was the best one we've ever had the good fortune of fulfilling; truly our pleasure.</p>
 
-    <p>Thanks for sharing the Sunshine.</p>
+      <p>Thanks for sharing the Sunshine.</p>
 
+  </div>
+
+  <div id="share_purchase">
+      <p>Pass it on:</p>
+      <ul>
+        <li>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://share.drinkthesunshine.com" data-text="Just made someone's day. What a cool gift idea!" data-via="SunshineDrink" data-count="none" data-hashtags="ShareTheSunshine,PositiveEnergy">Tweet</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <div class="fb-share-button" data-href="https://share.drinkthesunshine.com" data-width="76" data-type="button"></div>
+        </li>
+      </ul>
+  </div>
 </div>
-
-<div id="share_purchase">
-    <p>Pass it on:</p>
-    <ul>
-      <li>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://share.drinkthesunshine.com" data-text="Just made someone's day. What a cool gift idea!" data-via="SunshineDrink" data-count="none" data-hashtags="ShareTheSunshine,PositiveEnergy">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-      </li>
-      <li>
-        <div class="fb-share-button" data-href="https://share.drinkthesunshine.com" data-width="76" data-type="button"></div>
-      </li>
-    </ul>
-</div>
-
 {% endblock content %}
 
 {% block facebook_js %}
