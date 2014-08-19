@@ -7,8 +7,7 @@
         <meta name="description" content="Wanna make someone's day? Send 'em a can of Sunshine, pronto! To say good luck, thanks, miss your pretty smile, or just because.">
         <title>{% block title %}{% endblock title %}</title>
         {% assets "css_all" %}
-        <!-- <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css"> -->
-        <link href="{{ url_for('static', filename='css/main.css') }}" media="screen, projection" rel="stylesheet" type="text/css">
+        <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
         {% endassets %}
         {% block meta_indexing %}{% endblock meta_indexing %}
 
