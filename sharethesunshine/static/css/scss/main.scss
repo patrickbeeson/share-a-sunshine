@@ -13,10 +13,6 @@ body {
 
 .content_wrap {
     @extend .container-fluid;
-    // @media (min-width: $screen-sm-min) {
-    //     margin-left: 15px;
-    //     margin-right: 15px;
-    // }
 }
 
 #form_errors {
@@ -380,10 +376,18 @@ nav[role="navigation"] {
 
         #recipient {
             @extend %field_grouper;
+
+            @media (min-width: $screen-md-min) {
+                margin-bottom: 50px;
+            }
         }
 
         #recipient_address {
             @extend %field_grouper;
+
+            @media (min-width: $screen-md-min) {
+                margin-bottom: 50px;
+            }
             // position: relative;
 
             // @media (min-width: $screen-md-min) {
@@ -536,49 +540,33 @@ footer {
 
     .content_main {
 
-        @media (min-width: $screen-md-min) {
-            height: 817px;
+        @media (min-width: $screen-sm-min) {
+            height: 675px;
         }
         
     }
 
     .intro {
-        @extend .row, .center-block;
-        margin-bottom: 100px;
+        @extend .col-md-offset-0;
 
         .lead {
-            @extend .text-left;
-            // padding-left: 0px;
+            @extend .text-center, .col-md-10, .col-md-offset-1;
         }
 
         .description {
-            @extend .text-left;
+            @extend .text-left, .col-md-10, .col-md-offset-1;
             clear: both;
-            // padding-left: 0px;
-
-            p {
-                // padding-left: 0px;
-            }
         }
     }
 
     #flash_messages {
         @extend .col-md-10, .col-md-offset-1;
-        margin-top: 75px;
+        margin-top: 100px;
     }
 
     #form_error_messages {
         @extend .alert, .alert-danger;
         margin-bottom: 50px;
-        margin-left: 15px;
-        margin-right: 15px;
-
-        @media (min-width: $screen-md-min) {
-            margin-top: 25px;
-            // margin-left: 8.3333%;
-            // margin-right: 8.3333%;
-            margin-bottom: 50px;
-        }
 
         li {
             font-family: $sts_body;
@@ -590,20 +578,7 @@ footer {
         }
     }
 
-
-    // #form_error_messages {
-    //     @extend .alert, .alert-danger, .col-sm-12, .list-unstyled, .text-center, .center-block;
-
-    //     li {
-    //         font-family: $sts_body;
-    //         font-weight: bold;
-    //         font-size: 15px;
-    //         line-height: 1.8em;
-    //     }
-    // }
-
     form {
-        //width: 75%;
 
         label {
             font-family: $sts_body;
@@ -636,13 +611,8 @@ footer {
 // Terms and Conditions
 #terms {
 
-    #content_main {
-        @extend .container;
-    }
-
     .intro {
-        @extend .row, .col-md-12;
-        margin-bottom: 100px;
+        @extend .col-md-offset-0;
 
         .lead {
             @extend .text-center, .col-md-10, .col-md-offset-1;
@@ -650,7 +620,7 @@ footer {
     }
 
     .description {
-        @extend .col-md-8, .col-md-offset-2, .text-left;
+        @extend .text-left, .col-md-10, .col-md-offset-1;
 
         li {
             font-family: $sts_body;
@@ -664,39 +634,25 @@ footer {
 // Thanks and purchase confirmation
 #thanks {
 
-    #content_main {
-        @extend .container;
-    }
-
     .intro {
-        @extend .row, .col-md-12, .center-block;
-        margin-bottom: 100px;
+        @extend .col-md-offset-0;
 
         .lead {
-            @extend .text-center, .col-md-12;
+            @extend .text-center, .col-md-10, .col-md-offset-1;
         }
     }
 
     .description {
-        @extend .col-md-8, .col-md-offset-2, .text-left;
-
-        p {
-            margin-left: 0px;
-            padding-left: 0px;
-        }
-
-        // li {
-        //     font-family: $sts_body;
-        //     font-weight: bold;
-        //     font-size: 15px;
-        //     line-height: 1.8em;
-        // }
+        @extend .text-left, .col-md-10, .col-md-offset-1;
     }
 
     #share_purchase {
-        @extend .col-md-8, .col-md-offset-2, .text-left;
+        @extend .text-center, .col-md-10, .col-md-offset-1;
         clear: both;
-        margin-top: 25px;
+
+        @media (min-width: $screen-lg-min) {
+            margin-bottom: 100px;
+        }
 
         p {
             font-family: $sts_body;
