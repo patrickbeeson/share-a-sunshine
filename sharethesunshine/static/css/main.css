@@ -1419,7 +1419,7 @@ pre {
   .row:after, #form_errors:after, .content_main:after, .content_order .form_step:after, .content_order form .field_grouper:after, footer:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-xs-5, .col-sm-5, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, footer .refers, .col-lg-6, .content_main .intro .product_spotlight, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1894,7 +1894,7 @@ pre {
   .col-md-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-lg-6, .content_main .intro .product_spotlight, .col-lg-7, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left; }
 
   .col-lg-1 {
@@ -1906,19 +1906,19 @@ pre {
   .col-lg-3 {
     width: 25%; }
 
-  .col-lg-4 {
+  .col-lg-4, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
     width: 33.33333%; }
 
-  .col-lg-5 {
+  .col-lg-5, .content_main .intro .lead, .content_main .intro .description {
     width: 41.66667%; }
 
-  .col-lg-6 {
+  .col-lg-6, .content_main .intro .product_spotlight {
     width: 50%; }
 
   .col-lg-7 {
     width: 58.33333%; }
 
-  .col-lg-8 {
+  .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase {
     width: 66.66667%; }
 
   .col-lg-9 {
@@ -1933,7 +1933,7 @@ pre {
   .col-lg-12 {
     width: 100%; }
 
-  .col-lg-pull-0 {
+  .col-lg-pull-0, .content_main .intro .product_spotlight {
     right: auto; }
 
   .col-lg-pull-1 {
@@ -2017,7 +2017,7 @@ pre {
   .col-lg-offset-1 {
     margin-left: 8.33333%; }
 
-  .col-lg-offset-2 {
+  .col-lg-offset-2, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase {
     margin-left: 16.66667%; }
 
   .col-lg-offset-3 {
@@ -5377,6 +5377,9 @@ nav[role="navigation"] {
   .content_main .intro {
     margin-top: 100px;
     position: relative; }
+    @media (min-width: 992px) {
+      .content_main .intro {
+        margin-bottom: 100px; } }
     .content_main .intro .lead {
       font-family: a_love_of_thunder-webfont;
       color: #121211;
@@ -5395,7 +5398,8 @@ nav[role="navigation"] {
       margin-top: 50px; }
       @media (min-width: 992px) {
         .content_main .intro .description {
-          float: left;
+          position: absolute;
+          top: 175px;
           margin-top: 0px; } }
       .content_main .intro .description p {
         padding-left: 15px;
@@ -5426,7 +5430,6 @@ nav[role="navigation"] {
       margin-top: 50px; }
       @media (min-width: 992px) {
         .content_main .intro .product_spotlight {
-          float: right;
           margin-top: 0px; } }
       .content_main .intro .product_spotlight img {
         max-width: 50%;
@@ -5485,15 +5488,19 @@ nav[role="navigation"] {
         text-align: left;
         padding-left: 30px; } }
 .content_order #form_error_messages {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-left: 15px;
   margin-right: 15px; }
   @media (min-width: 992px) {
     .content_order #form_error_messages {
       margin-top: 25px;
       margin-left: 8.3333%;
-      margin-right: 8.3333%;
-      margin-bottom: 0px; } }
+      margin-right: 8.3333%; } }
+  @media (min-width: 1200px) {
+    .content_order #form_error_messages {
+      margin-top: 25px;
+      margin-left: 16.66667%;
+      margin-right: 16.66667%; } }
   .content_order #form_error_messages li {
     font-family: courier, serif;
     font-weight: bold;
@@ -5629,6 +5636,11 @@ footer {
     height: 675px; } }
 #auth .intro .description {
   clear: both; }
+  @media (min-width: 992px) {
+    #auth .intro .description {
+      position: none;
+      top: 0px;
+      margin-top: 0px; } }
 #auth #flash_messages {
   margin-top: 100px; }
 #auth #form_error_messages {
@@ -5649,12 +5661,25 @@ footer {
   #auth a:hover {
     color: #86754d; }
 
+@media (min-width: 768px) {
+  #terms .content_main {
+    margin-bottom: 200px; } }
 #terms .description li {
   font-family: courier, serif;
   font-weight: bold;
   font-size: 15px;
   line-height: 1.8em; }
+@media (min-width: 992px) {
+  #terms .description {
+    position: none;
+    top: 0px;
+    margin-top: 0px; } }
 
+@media (min-width: 992px) {
+  #thanks .description {
+    position: none;
+    top: 0px;
+    margin-top: 0px; } }
 #thanks #share_purchase {
   clear: both; }
   @media (min-width: 1200px) {
