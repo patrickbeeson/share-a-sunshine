@@ -26,4 +26,4 @@ MAIL_PORT = 465
 
 MAIL_USE_SSL = True
 
-SITE_ADDRESS = 'https://share.drinkthesunshine.com'
+SITE_ADDRESS = 'https://shareasunshine.com'

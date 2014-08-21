@@ -152,7 +152,7 @@ def buy():
             html=mail_html,
             subject='You\'ve shared Sunshine. Everyone is happy.',
             sender='noreply@share.drinkthesunshine.com',
-            recipients=[email, 'sales@share.drinkthesunshine.com']
+            recipients=[email, 'sales@shareasunshine.com']
         )
 
         with mail.connect() as conn:

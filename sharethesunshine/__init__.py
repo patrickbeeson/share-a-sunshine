@@ -28,7 +28,7 @@ if not app.debug:
     file_handler.setLevel(logging.INFO)
     app.logger.addHandler(file_handler)
     mail_handler = SMTPHandler(MAIL_SERVER,
-                               'error@share.drinkthesunshine.com',
+                               'error@shareasunshine.com',
                                ADMINS, 'An error has occured',
                                credentials=credentials)
     mail_handler.setLevel(logging.ERROR)
