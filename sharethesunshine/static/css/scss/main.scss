@@ -657,3 +657,24 @@ footer {
     }
 
 }
+
+#error {
+
+    .intro {
+        @extend .col-md-offset-0;
+
+        .lead {
+            @extend .text-center, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+        }
+    }
+
+    .description {
+        @extend .text-left, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+
+        @media (min-width: $screen-md-min) {
+            position: none;
+            top: 0px;
+            margin-top: 0px;
+        }
+    }
+}

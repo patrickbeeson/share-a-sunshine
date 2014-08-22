@@ -151,7 +151,7 @@ def buy():
         message = Message(
             html=mail_html,
             subject='You\'ve shared Sunshine. Everyone is happy.',
-            sender='noreply@share.drinkthesunshine.com',
+            sender='noreply@shareasunshine.com',
             recipients=[email, 'sales@shareasunshine.com']
         )
 
