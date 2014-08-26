@@ -27,3 +27,5 @@ MAIL_PORT = 465
 MAIL_USE_SSL = True
 
 SITE_ADDRESS = 'https://shareasunshine.com'
+
+#TESTING = True

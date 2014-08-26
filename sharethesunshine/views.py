@@ -1,7 +1,7 @@
 import uuid
 import datetime
 
-from flask import render_template, request, redirect, flash
+from flask import render_template, request, redirect, flash, url_for, session
 from flask_mail import Message, Mail
 from flask_restless import APIManager, ProcessingException
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
@@ -142,6 +142,16 @@ def buy():
         db.session.add(purchase)
         db.session.commit()
 
+        # Put purchase data into sessions for use after post
+        session['uuid'] = purchase.uuid
+        session['purchaser_name'] = purchase.purchaser_name
+        session['shipping_street_address_1'] = purchase.shipping_street_address_1
+        session['shipping_street_address_2'] = purchase.shipping_street_address_2
+        session['shipping_city'] = purchase.shipping_city
+        session['shipping_state'] = purchase.shipping_state
+        session['recipient_name'] = purchase.recipient_name
+        session['personal_message'] = purchase.personal_message
+
         # Send the purchaser an email using the purchaser_email value
         mail_html = render_template(
             'email.html',
@@ -158,13 +168,29 @@ def buy():
         with mail.connect() as conn:
             conn.send(message)
 
-        # Send the user to the thanks template to view their order summary
-        return render_template('thanks.html', purchase=purchase, amount=amount)
+        # Redirect the user to the thanks template to view their order summary
+        return redirect(url_for('thanks'))
     return render_template(
         'home.html',
         form=form,
         testimonials=testimonials,
         key=stripe_keys['publishable_key'])
+
+
+@app.route('/thanks')
+def thanks():
+    """ Post purchase confirmation """
+    return render_template(
+        'thanks.html',
+        uuid=session.get('uuid'),
+        purchaser_name=session.get('purchaser_name'),
+        shipping_street_address_1=session.get('shipping_street_address_1'),
+        shipping_street_address_2=session.get('shipping_street_address_2'),
+        shipping_city=session.get('shipping_city'),
+        shipping_state=session.get('shipping_state'),
+        recipient_name=session.get('recipient_name'),
+        personal_message=session.get('personal_message'),
+    )
 
 
 def auth_func(**kw):
