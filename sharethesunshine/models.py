@@ -85,3 +85,26 @@ class Testimonial(db.Model):
 
     def __repr__(self):
         return '<Testimonial %r>' % self.id
+
+
+class MessageCategory(db.Model):
+    """ A category for prefilled messages """
+    __tablename__ = 'messagecategories'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100))
+    description = db.Column(db.Text)
+
+    def __repr__(self):
+        return '<MessageCategory {title}>'.format(title=self.title)
+
+
+class PrefilledMessage(db.model):
+    """ A pre-written message for sunshine purchases. """
+    __tablename__ = 'prefilledmessages'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    message = db.Column(db.Text)
+    category_id = db.Column(db.Integer, db.ForeignKey('messsagecategory.id'))
+    category = db.relationship(MessageCategory)
+
+    def __repr__(self):
+        return '<PrefilledMessage {id}'.format(id=self.id)
