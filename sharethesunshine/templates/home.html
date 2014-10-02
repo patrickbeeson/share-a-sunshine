@@ -134,6 +134,19 @@
             <h2>3. Add your message</h2>
         </div>
 
+        <div class="prefilled_messages">
+
+        {% for message_category in message_categories %}
+            {{ message_category.title }}
+            {{ message_category.prefilled_messages }}
+        {% endfor %}
+
+<!--         {% for message in prefilled_messages %}
+            {{ message.message_category.title }}
+            {{ message.message }}
+        {% endfor %} -->
+        </div>
+
         <div class="field_grouper" id="message">
             <div class="form-group{% if form.personal_message.errors %} has-error{% endif %}">
                 {{ form.personal_message.label }}

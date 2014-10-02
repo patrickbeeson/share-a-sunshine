@@ -12,7 +12,7 @@ from sqlalchemy import desc
 
 from . import app
 
-from .models import Product, Purchase, Testimonial, User, db
+from .models import Product, Purchase, Testimonial, User, db, MessageCategory, PrefilledMessage
 from .forms import PurchaseForm, LoginForm
 
 login_manager = LoginManager()
@@ -78,11 +78,17 @@ def logout():
 def home():
     """ The homepage """
     form = PurchaseForm()
+
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
+
+    prefilled_messages = PrefilledMessage.query.all()
+    message_categories = MessageCategory.query.all()
     return render_template('home.html',
                            form=form,
                            testimonials=testimonials,
+                           prefilled_messages=prefilled_messages,
+                           message_categories=message_categories,
                            key=stripe_keys['publishable_key'])
 
 
@@ -90,8 +96,12 @@ def home():
 def buy():
     """ Handle the form submission (i.e. purchase) """
     form = PurchaseForm()
+    # Get five testimonials for display
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
+
+    message_categories = MessageCategory.query.all()
+
     # Set product to Sunshine since that's our only product for now
     product = Product.query.filter_by(name='sunshine').first()
 
@@ -174,6 +184,7 @@ def buy():
         'home.html',
         form=form,
         testimonials=testimonials,
+        message_categories=message_categories,
         key=stripe_keys['publishable_key'])
 
 
