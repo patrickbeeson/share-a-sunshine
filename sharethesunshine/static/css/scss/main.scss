@@ -321,7 +321,14 @@ nav[role="navigation"] {
     form {
 
         label {
-            @extend .text-hide;
+            @extend .hide;
+        }
+
+        #prefilled_messages {
+
+            label {
+                @extend .show;
+            }
         }
 
         .required {

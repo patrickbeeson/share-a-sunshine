@@ -98,6 +98,13 @@ class MessageCategory(db.Model):
         backref='message_category'
     )
 
+    @property
+    def get_messages_for_category(self):
+        """Gets prefilled messages for a given message category."""
+        return PrefilledMessage.query.filter(
+            PrefilledMessage.category_id == self.id
+        )
+
     def __repr__(self):
         return '<MessageCategory {title}>'.format(title=self.title)
 

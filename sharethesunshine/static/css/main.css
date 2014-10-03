@@ -5109,16 +5109,16 @@ button.close {
 .pull-left {
   float: left !important; }
 
-.hide {
+.hide, .content_order form label {
   display: none !important; }
 
-.show {
+.show, .content_order form #prefilled_messages label {
   display: block !important; }
 
 .invisible {
   visibility: hidden; }
 
-.text-hide, .content_order form label {
+.text-hide {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
