@@ -136,18 +136,15 @@
 
         <div class="field_grouper" id="prefilled_messages">
             <div class="form-group">
-            <h3>Choose a pre-filled message:</h3>
-            {% for message_category in message_categories %}
-                <h4>{{ message_category.title}}</h4>
-                    <div class="radio">
-                    {% for prefilled_message in message_category.get_messages_for_category %}
-                        <label>
-                            <input type="radio" name="optionsRadios" id="message{{ prefilled_message.id }}" value="message{{ prefilled_message.id }}">
-                            {{ prefilled_message.message }}
-                        </label>
-                    {% endfor %}
-                    </div>
-            {% endfor %}
+                <h3>Choose from one of our pre-written messages:</h3>
+                <ul id="prefilled_message_list">
+                {% for prefilled_message in prefilled_messages %}
+                    <li class="prefilled_message">
+                        <h4>{{ prefilled_message.message_category.title }}{% if prefilled_message.message_category.get_messages_for_category|list|count > 1 %} #{{ loop.index - 3 }}{% endif %}</h4>
+                        <p>{{ prefilled_message.message }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
 
