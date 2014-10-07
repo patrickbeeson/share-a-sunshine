@@ -103,7 +103,7 @@ class MessageCategory(db.Model):
         """Gets prefilled messages for a given message category."""
         return PrefilledMessage.query.filter(
             PrefilledMessage.category_id == self.id
-        )
+        ).all()
 
     def __repr__(self):
         return '<MessageCategory {title}>'.format(title=self.title)

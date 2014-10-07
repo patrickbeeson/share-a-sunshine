@@ -138,9 +138,35 @@
             <div class="form-group">
                 <h3>Choose from one of our pre-written messages:</h3>
                 <ul id="prefilled_message_list">
+                {% for message_category in message_categories %}
+                    <li class="prefilled_message">
+                        {% if message_category.get_messages_for_category|count > 1 %}
+                            {% for prefilled_message in message_category.get_messages_for_category %}
+                            <h4>{{ message_category.title }} #{{ loop.index }}</h4>
+                            <p>{{ prefilled_message.message }}</p>
+                            {% endfor %}
+                        {% else %}
+                            <h4>{{ message_category.title }}</h4>
+                            {% for prefilled_message in message_category.get_messages_for_category %}
+                            <p>{{ prefilled_message.message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="field_grouper" id="prefilled_messages">
+            <div class="form-group">
+                <h3>Choose from one of our pre-written messages:</h3>
+                <ul id="prefilled_message_list">
                 {% for prefilled_message in prefilled_messages %}
                     <li class="prefilled_message">
-                        <h4>{{ prefilled_message.message_category.title }}{% if prefilled_message.message_category.get_messages_for_category|list|count > 1 %} #{{ loop.index - 3 }}{% endif %}</h4>
+                        <h4>{{ prefilled_message.message_category.title }}
+                        {% if prefilled_message.message_category.get_messages_for_category|count > 1 %}
+                        #{{ loop.revindex }}
+                        {% endif %}</h4>
                         <p>{{ prefilled_message.message }}</p>
                     </li>
                 {% endfor %}
