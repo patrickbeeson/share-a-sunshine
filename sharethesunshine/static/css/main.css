@@ -5521,9 +5521,15 @@ nav[role="navigation"] {
   margin-bottom: 0px; }
 .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields {
   clear: both; }
+.content_order form #prefilled_messages p:last-of-type {
+  font-family: courier, serif;
+  font-weight: bold;
+  font-size: 16px; }
+.content_order form #prefilled_messages #prefilled_message_list {
+  margin-top: 25px;
+  margin-bottom: 25px; }
 .content_order form #prefilled_messages .prefilled_message {
-  padding-top: 25px;
-  border-bottom: 1px solid #ededed; }
+  padding-top: 25px; }
   .content_order form #prefilled_messages .prefilled_message .message_content {
     margin-bottom: 25px; }
   .content_order form #prefilled_messages .prefilled_message h4 {
@@ -5536,11 +5542,16 @@ nav[role="navigation"] {
     color: #686a70;
     font-size: 15px;
     font-weight: bold; }
-  .content_order form #prefilled_messages .prefilled_message:nth-child(odd) {
-    padding-left: 0px;
-    border-right: 1px solid #ededed; }
-  .content_order form #prefilled_messages .prefilled_message::nth-child(even) {
-    padding-right: 0px; }
+  @media (min-width: 992px) {
+    .content_order form #prefilled_messages .prefilled_message {
+      border-bottom: 1px solid #ededed; }
+      .content_order form #prefilled_messages .prefilled_message:nth-child(odd) {
+        padding-left: 0px;
+        border-right: 1px solid #ededed; }
+      .content_order form #prefilled_messages .prefilled_message:nth-child(even) {
+        padding-right: 0px; }
+      .content_order form #prefilled_messages .prefilled_message:nth-last-child(-n+2) {
+        border-bottom: none; } }
   .content_order form #prefilled_messages .prefilled_message button {
     border-radius: 0px;
     background-color: #121211;

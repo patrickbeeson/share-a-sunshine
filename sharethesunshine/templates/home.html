@@ -135,8 +135,8 @@
         </div>
 
         <div class="field_grouper" id="prefilled_messages">
+            <h3>Choose from one of our pre-written messages:</h3>
             <div class="form-group">
-                <h3>Choose from one of our pre-written messages:</h3>
                 <ul id="prefilled_message_list">
                 {% for message_category in message_categories %}
                         {% if message_category.get_messages_for_category|count > 1 %}

@@ -358,14 +358,21 @@ nav[role="navigation"] {
                 @extend .text-center;
             }
 
+            p:last-of-type {
+                font-family: $sts_body;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
             #prefilled_message_list {
                 @extend .list-unstyled, .clearfix;
+                margin-top: 25px;
+                margin-bottom: 25px;
             }
 
             .prefilled_message {
                 @extend .col-md-6;
                 padding-top: 25px;
-                border-bottom: 1px solid $sts_light_gray;
 
                 .message_content {
                     margin-bottom: 25px;
@@ -385,13 +392,21 @@ nav[role="navigation"] {
                     font-weight: bold;
                 }
 
-                &:nth-child(odd) {
-                    padding-left: 0px;
-                    border-right: 1px solid $sts_light_gray;
-                }
+                @media (min-width: $screen-md-min) {
+                    border-bottom: 1px solid $sts_light_gray;
+                    
+                    &:nth-child(odd) {
+                        padding-left: 0px;
+                        border-right: 1px solid $sts_light_gray;
+                    }
 
-                &::nth-child(even) {
-                    padding-right: 0px;
+                    &:nth-child(even) {
+                        padding-right: 0px;
+                    }
+
+                    &:nth-last-child(-n+2) {
+                        border-bottom: none;
+                    }
                 }
 
                 button {
