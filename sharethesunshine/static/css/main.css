@@ -1110,7 +1110,7 @@ mark,
 .text-right, nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, .content_main .get_started, .content_main .intro .lead, .content_main .intro .description, .content_main .testimonials h3, .content_order .form_step h2, .content_order form #submit, footer p, #auth .intro .lead, #terms .intro .lead, #thanks .intro .lead, #thanks #share_purchase, #error .intro .lead {
+.text-center, .content_main .get_started, .content_main .intro .lead, .content_main .intro .description, .content_main .testimonials h3, .content_order .form_step h2, .content_order form #prefilled_messages h3, .content_order form #submit, footer p, #auth .intro .lead, #terms .intro .lead, #thanks .intro .lead, #thanks #share_purchase, #error .intro .lead {
   text-align: center; }
 
 .text-justify {
@@ -5523,17 +5523,18 @@ nav[role="navigation"] {
   clear: both; }
 .content_order form #prefilled_messages .prefilled_message {
   padding-top: 25px;
-  padding-bottom: 25px;
   border-bottom: 1px solid #ededed; }
+  .content_order form #prefilled_messages .prefilled_message .message_content {
+    margin-bottom: 25px; }
   .content_order form #prefilled_messages .prefilled_message h4 {
     font-family: courier, serif;
     font-weight: bold;
-    font-size: 19px; }
+    font-size: 19px;
+    margin-bottom: 15px; }
   .content_order form #prefilled_messages .prefilled_message p {
     font-family: courier, serif;
     color: #686a70;
-    height: 225px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold; }
   .content_order form #prefilled_messages .prefilled_message:nth-child(odd) {
     padding-left: 0px;
@@ -5546,7 +5547,8 @@ nav[role="navigation"] {
     font-family: a_love_of_thunder-webfont;
     text-transform: uppercase;
     color: white;
-    font-size: 23px; }
+    font-size: 16px;
+    padding: 10px 15px; }
 @media (min-width: 992px) {
   .content_order form #prefilled_messages {
     margin-bottom: 50px; } }

@@ -354,6 +354,10 @@ nav[role="navigation"] {
         #prefilled_messages {
             @extend %field_grouper;
 
+            h3 {
+                @extend .text-center;
+            }
+
             #prefilled_message_list {
                 @extend .list-unstyled, .clearfix;
             }
@@ -361,20 +365,23 @@ nav[role="navigation"] {
             .prefilled_message {
                 @extend .col-md-6;
                 padding-top: 25px;
-                padding-bottom: 25px;
                 border-bottom: 1px solid $sts_light_gray;
+
+                .message_content {
+                    margin-bottom: 25px;
+                }
 
                 h4 {
                     font-family: $sts_body;
                     font-weight: bold;
                     font-size: 19px;
+                    margin-bottom: 15px;
                 }
 
                 p {
                     font-family: $sts_body;
                     color: $sts_dark_gray;
-                    height: 225px;
-                    font-size: 16px;
+                    font-size: 15px;
                     font-weight: bold;
                 }
 
@@ -394,7 +401,8 @@ nav[role="navigation"] {
                     font-family: a_love_of_thunder-webfont;
                     text-transform: uppercase;
                     color: white;
-                    font-size: 23px;
+                    font-size: 16px;
+                    padding: 10px 15px;
                 }
             }
 

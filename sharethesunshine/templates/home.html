@@ -142,17 +142,21 @@
                         {% if message_category.get_messages_for_category|count > 1 %}
                             {% for prefilled_message in message_category.get_messages_for_category %}
                             <li class="prefilled_message">
-                            <h4>{{ message_category.title }} #{{ loop.index }}</h4>
-                            <p>{{ prefilled_message.message }}</p>
-                            <button type="button" class="btn btn-default">SELECT</button>
+                                <div class="message_content">
+                                    <h4 class="message_category">{{ message_category.title }} #{{ loop.index }}</h4>
+                                    <p class="message">{{ prefilled_message.message }}</p>
+                                </div>
+                                <button type="button" class="btn btn-default">SELECT</button>
                             </li>
                             {% endfor %}
                         {% else %}
                             <li class="prefilled_message">
-                            <h4>{{ message_category.title }}</h4>
-                            {% for prefilled_message in message_category.get_messages_for_category %}
-                            <p>{{ prefilled_message.message }}</p>
-                            <button type="button" class="btn btn-default">SELECT</button>
+                                <div class="message_content">
+                                    <h4 class="message_category">{{ message_category.title }}</h4>
+                                    {% for prefilled_message in message_category.get_messages_for_category %}
+                                    <p class="message">{{ prefilled_message.message }}</p>
+                                </div>
+                                <button type="button" class="btn btn-default">SELECT</button>
                             {% endfor %}
                             </li>
                         {% endif %}

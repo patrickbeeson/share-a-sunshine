@@ -4,7 +4,9 @@ from sharethesunshine import app
 
 assets = Environment(app)
 
-js = Bundle('scripts/jquery.limit-1.2.js',
+js = Bundle('scripts/main.js',
+            'scripts/grids.min.js',
+            'scripts/jquery.limit-1.2.js',
             'scripts/bootstrap/carousel.js',
             'scripts/bootstrap/collapse.js',
             'scripts/bootstrap/alert.js',
