@@ -87,7 +87,6 @@ def home():
     return render_template('home.html',
                            form=form,
                            testimonials=testimonials,
-                           prefilled_messages=prefilled_messages,
                            message_categories=message_categories,
                            key=stripe_keys['publishable_key'])
 

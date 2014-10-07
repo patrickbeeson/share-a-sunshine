@@ -139,46 +139,35 @@
                 <h3>Choose from one of our pre-written messages:</h3>
                 <ul id="prefilled_message_list">
                 {% for message_category in message_categories %}
-                    <li class="prefilled_message">
                         {% if message_category.get_messages_for_category|count > 1 %}
                             {% for prefilled_message in message_category.get_messages_for_category %}
+                            <li class="prefilled_message">
                             <h4>{{ message_category.title }} #{{ loop.index }}</h4>
                             <p>{{ prefilled_message.message }}</p>
+                            <button type="button" class="btn btn-default">SELECT</button>
+                            </li>
                             {% endfor %}
                         {% else %}
+                            <li class="prefilled_message">
                             <h4>{{ message_category.title }}</h4>
                             {% for prefilled_message in message_category.get_messages_for_category %}
                             <p>{{ prefilled_message.message }}</p>
+                            <button type="button" class="btn btn-default">SELECT</button>
                             {% endfor %}
+                            </li>
                         {% endif %}
-                    </li>
                 {% endfor %}
                 </ul>
-            </div>
-        </div>
-
-        <div class="field_grouper" id="prefilled_messages">
-            <div class="form-group">
-                <h3>Choose from one of our pre-written messages:</h3>
-                <ul id="prefilled_message_list">
-                {% for prefilled_message in prefilled_messages %}
-                    <li class="prefilled_message">
-                        <h4>{{ prefilled_message.message_category.title }}
-                        {% if prefilled_message.message_category.get_messages_for_category|count > 1 %}
-                        #{{ loop.revindex }}
-                        {% endif %}</h4>
-                        <p>{{ prefilled_message.message }}</p>
-                    </li>
-                {% endfor %}
-                </ul>
+                <p>Or, write a customized message from scratch using the form.</p>
             </div>
         </div>
 
         <div class="field_grouper" id="message">
+            <h3>Personalized Message:</h3>
             <div class="form-group{% if form.personal_message.errors %} has-error{% endif %}">
                 {{ form.personal_message.label }}
                 {{ form.personal_message(class_='form-control', rows='10') }}
-                <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span> <span class="required">*</span>
+                <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span><span class="required">*</span>
             </div>
         </div>
 

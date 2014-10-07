@@ -324,13 +324,6 @@ nav[role="navigation"] {
             @extend .hide;
         }
 
-        #prefilled_messages {
-
-            label {
-                @extend .show;
-            }
-        }
-
         .required {
             color: $sts_required_red;
         }
@@ -355,6 +348,59 @@ nav[role="navigation"] {
         %field_grouper {
             @extend .col-md-5, .col-md-offset-1, .col-lg-4, .col-lg-offset-2;
             clear: both;
+        }
+
+
+        #prefilled_messages {
+            @extend %field_grouper;
+
+            #prefilled_message_list {
+                @extend .list-unstyled, .clearfix;
+            }
+
+            .prefilled_message {
+                @extend .col-md-6;
+                padding-top: 25px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid $sts_light_gray;
+
+                h4 {
+                    font-family: $sts_body;
+                    font-weight: bold;
+                    font-size: 19px;
+                }
+
+                p {
+                    font-family: $sts_body;
+                    color: $sts_dark_gray;
+                    height: 225px;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                &:nth-child(odd) {
+                    padding-left: 0px;
+                    border-right: 1px solid $sts_light_gray;
+                }
+
+                &::nth-child(even) {
+                    padding-right: 0px;
+                }
+
+                button {
+                    @extend .center-block;
+                    border-radius: 0px;
+                    background-color: $sts-black;
+                    font-family: a_love_of_thunder-webfont;
+                    text-transform: uppercase;
+                    color: white;
+                    font-size: 23px;
+                }
+            }
+
+            @media (min-width: $screen-md-min) {
+                margin-bottom: 50px;
+            }
         }
 
         #recipient {

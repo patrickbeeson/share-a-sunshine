@@ -69,6 +69,7 @@ class Purchase(db.Model):
     product = db.relationship(Product)
 
     def sell_date(self):
+        """ Return the purchase sold date. """
         return self.sold_at.date()
 
     def __repr__(self):
