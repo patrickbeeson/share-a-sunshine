@@ -82,9 +82,23 @@ def home():
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
+    return render_template('home.html',
+                           form=form,
+                           testimonials=testimonials,
+                           key=stripe_keys['publishable_key'])
+
+
+@app.route('/parents-weekend')
+def parents_weekend():
+    """ A special landing page for parent's weekend """
+    form = PurchaseForm()
+
+    testimonials = Testimonial.query.order_by(
+        desc(Testimonial.id)).limit(5).all()
+
     prefilled_messages = PrefilledMessage.query.all()
     message_categories = MessageCategory.query.all()
-    return render_template('home.html',
+    return render_template('home_parents_weekend.html',
                            form=form,
                            testimonials=testimonials,
                            message_categories=message_categories,

@@ -133,38 +133,9 @@
         <div class="form_step">
             <h2>3. Add your message</h2>
         </div>
+        {% block prefilled_messages %}
 
-        <div class="field_grouper" id="prefilled_messages">
-            <h3>Choose from one of our pre-written messages:</h3>
-            <div class="form-group">
-                <ul id="prefilled_message_list">
-                {% for message_category in message_categories %}
-                        {% if message_category.get_messages_for_category|count > 1 %}
-                            {% for prefilled_message in message_category.get_messages_for_category %}
-                            <li class="prefilled_message">
-                                <div class="message_content">
-                                    <h4 class="message_category">{{ message_category.title }} #{{ loop.index }}</h4>
-                                    <p class="message">{{ prefilled_message.message }}</p>
-                                </div>
-                                <button type="button" class="btn btn-default">SELECT</button>
-                            </li>
-                            {% endfor %}
-                        {% else %}
-                            <li class="prefilled_message">
-                                <div class="message_content">
-                                    <h4 class="message_category">{{ message_category.title }}</h4>
-                                    {% for prefilled_message in message_category.get_messages_for_category %}
-                                    <p class="message">{{ prefilled_message.message }}</p>
-                                </div>
-                                <button type="button" class="btn btn-default">SELECT</button>
-                            {% endfor %}
-                            </li>
-                        {% endif %}
-                {% endfor %}
-                </ul>
-                <p>Or, write a customized message from scratch using the form.</p>
-            </div>
-        </div>
+        {% endblock %}
 
         <div class="field_grouper" id="message">
             <h3>Personalized Message:</h3>
