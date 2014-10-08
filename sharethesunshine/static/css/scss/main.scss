@@ -321,7 +321,7 @@ nav[role="navigation"] {
     form {
 
         label {
-            @extend .hide;
+            @extend .text-hide;
         }
 
         .required {
@@ -354,8 +354,17 @@ nav[role="navigation"] {
         #prefilled_messages {
             @extend %field_grouper;
 
+            @media (min-width: $screen-md-min) {
+                // margin-bottom: 50px;
+            }
+
             h3 {
                 @extend .text-center;
+                margin-top: 25px;
+
+                @media (min-width: $screen-md-min) {
+                    margin-top: 0px;
+                }
             }
 
             p:last-of-type {
@@ -366,8 +375,11 @@ nav[role="navigation"] {
 
             #prefilled_message_list {
                 @extend .list-unstyled, .clearfix;
-                margin-top: 25px;
                 margin-bottom: 25px;
+
+                @media (min-width: $screen-md-min) {
+                    margin-top: 25px;
+                }
             }
 
             .prefilled_message {
@@ -419,10 +431,6 @@ nav[role="navigation"] {
                     font-size: 16px;
                     padding: 10px 15px;
                 }
-            }
-
-            @media (min-width: $screen-md-min) {
-                margin-bottom: 50px;
             }
         }
 

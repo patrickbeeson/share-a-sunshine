@@ -5109,7 +5109,7 @@ button.close {
 .pull-left {
   float: left !important; }
 
-.hide, .content_order form label {
+.hide {
   display: none !important; }
 
 .show {
@@ -5118,7 +5118,7 @@ button.close {
 .invisible {
   visibility: hidden; }
 
-.text-hide {
+.text-hide, .content_order form label {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -5521,13 +5521,20 @@ nav[role="navigation"] {
   margin-bottom: 0px; }
 .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields {
   clear: both; }
+.content_order form #prefilled_messages h3 {
+  margin-top: 25px; }
+  @media (min-width: 992px) {
+    .content_order form #prefilled_messages h3 {
+      margin-top: 0px; } }
 .content_order form #prefilled_messages p:last-of-type {
   font-family: courier, serif;
   font-weight: bold;
   font-size: 16px; }
 .content_order form #prefilled_messages #prefilled_message_list {
-  margin-top: 25px;
   margin-bottom: 25px; }
+  @media (min-width: 992px) {
+    .content_order form #prefilled_messages #prefilled_message_list {
+      margin-top: 25px; } }
 .content_order form #prefilled_messages .prefilled_message {
   padding-top: 25px; }
   .content_order form #prefilled_messages .prefilled_message .message_content {
@@ -5560,9 +5567,6 @@ nav[role="navigation"] {
     color: white;
     font-size: 16px;
     padding: 10px 15px; }
-@media (min-width: 992px) {
-  .content_order form #prefilled_messages {
-    margin-bottom: 50px; } }
 @media (min-width: 992px) {
   .content_order form #recipient {
     margin-bottom: 50px; } }
