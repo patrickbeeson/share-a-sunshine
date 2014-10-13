@@ -113,8 +113,6 @@ def buy():
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
-    message_categories = MessageCategory.query.all()
-
     # Set product to Sunshine since that's our only product for now
     product = Product.query.filter_by(name='sunshine').first()
 
@@ -197,7 +195,6 @@ def buy():
         'home.html',
         form=form,
         testimonials=testimonials,
-        message_categories=message_categories,
         key=stripe_keys['publishable_key'])
 
 
