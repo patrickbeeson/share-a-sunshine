@@ -12,7 +12,7 @@ from sqlalchemy import desc
 
 from . import app
 
-from .models import Product, Purchase, Testimonial, User, db, MessageCategory, PrefilledMessage
+from .models import Product, Purchase, Testimonial, User, db, MessageCategory
 from .forms import PurchaseForm, LoginForm
 
 login_manager = LoginManager()
@@ -20,9 +20,12 @@ bcrypt = Bcrypt()
 
 manager = APIManager(app, flask_sqlalchemy_db=db)
 
+stripe_secret_key = app.config['STRIPE_SECRET_KEY']
+stripe_publishable_key = app.config['STRIPE_PUBLIC_KEY']
+
 stripe_keys = {
-    'secret_key': app.config['STRIPE_SECRET_KEY'],
-    'publishable_key': app.config['STRIPE_PUBLIC_KEY']
+    'secret_key': stripe_secret_key,
+    'publishable_key': stripe_publishable_key
 }
 
 stripe.api_key = stripe_keys['secret_key']
@@ -96,7 +99,6 @@ def parents_weekend():
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
-    prefilled_messages = PrefilledMessage.query.all()
     message_categories = MessageCategory.query.all()
     return render_template('home_parents_weekend.html',
                            form=form,
