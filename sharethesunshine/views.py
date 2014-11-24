@@ -12,7 +12,7 @@ from sqlalchemy import desc
 
 from . import app
 
-from .models import Product, Purchase, Testimonial, User, db, MessageCategory
+from .models import Product, Purchase, Testimonial, User, db
 from .forms import PurchaseForm, LoginForm
 
 login_manager = LoginManager()
@@ -88,22 +88,6 @@ def home():
     return render_template('home.html',
                            form=form,
                            testimonials=testimonials,
-                           key=stripe_keys['publishable_key'])
-
-
-@app.route('/parents-weekend')
-def parents_weekend():
-    """ A special landing page for parent's weekend """
-    form = PurchaseForm()
-
-    testimonials = Testimonial.query.order_by(
-        desc(Testimonial.id)).limit(5).all()
-
-    message_categories = MessageCategory.query.all()
-    return render_template('home_parents_weekend.html',
-                           form=form,
-                           testimonials=testimonials,
-                           message_categories=message_categories,
                            key=stripe_keys['publishable_key'])
 
 

@@ -1,10 +1,10 @@
 class Config(object):
     DEBUG = False
-    SECRET_KEY = '\x03V\x96\xb6{#\x9f\x14K\xef{\x86Z\x14\xafZK/-\x84\xb0O\xcd\x13'
-    ADMINS = ['pbeeson@thevariable.com']
-    MAIL_SERVER = 'smtp.webfaction.com'
-    MAIL_USERNAME = 'sharethesunshine'
-    MAIL_PASSWORD = 'V@r1able'
+    SECRET_KEY = ''
+    ADMINS = ['']
+    MAIL_SERVER = ''
+    MAIL_USERNAME = ''
+    MAIL_PASSWORD = ''
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     SITE_ADDRESS = 'https://shareasunshine.com'
@@ -14,15 +14,15 @@ class Config(object):
 class ProductionConfig(Config):
     DEBUG = False
     TESTING = False
-    STRIPE_SECRET_KEY = 'sk_live_n4OGJVSC81yBSXl7R0gdjkmF'
-    STRIPE_PUBLIC_KEY = 'pk_live_XDeeIdG9LbgtgpPdEJdUwtV4'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine:ClearsTheClouds@localhost:5432/sharethesunshine'
+    STRIPE_SECRET_KEY = ''
+    STRIPE_PUBLIC_KEY = ''
+    SQLALCHEMY_DATABASE_URI = ''
 
 
 class DevelopmentConfig(Config):
-    STRIPE_SECRET_KEY = 'sk_test_HsuAieq5wo8ZSAm3lEushARi'
-    STRIPE_PUBLIC_KEY = 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine@localhost/sharethesunshine'
+    STRIPE_SECRET_KEY = ''
+    STRIPE_PUBLIC_KEY = ''
+    SQLALCHEMY_DATABASE_URI = ''
     DEBUG = True
     TESTING = True
-    SITE_ADDRESS = 'http://dev.thevariable.com'
+    SITE_ADDRESS = ''
