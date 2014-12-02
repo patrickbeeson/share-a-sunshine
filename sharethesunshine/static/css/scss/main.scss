@@ -8,7 +8,7 @@
 // Main styles
 
 body {
-    background: $sts_canvas url("../images/bg_texture.png") repeat; 
+    background: $sts_canvas url("../images/bg_texture.png") repeat;
 }
 
 .content_wrap {
@@ -123,7 +123,7 @@ nav[role="navigation"] {
 
         @media (min-width: $screen-md-min) {
             margin-bottom: 100px;
-        } 
+        }
 
         .lead {
             @extend .text-center, .col-md-5, .col-lg-5;
@@ -185,7 +185,7 @@ nav[role="navigation"] {
                     margin-top: 50px;
                 }
             }
-           
+
         }
 
         .product_spotlight {
@@ -406,7 +406,7 @@ nav[role="navigation"] {
 
                 @media (min-width: $screen-md-min) {
                     border-bottom: 1px solid $sts_light_gray;
-                    
+
                     &:nth-child(odd) {
                         padding-left: 0px;
                         border-right: 1px solid $sts_light_gray;
@@ -585,7 +585,7 @@ footer {
         @media (min-width: $screen-sm-min) {
             height: 675px;
         }
-        
+
     }
 
     .intro {
@@ -652,6 +652,49 @@ footer {
 
         &:hover {
             color: $sts_dk_canvas;
+        }
+    }
+}
+
+// Sales export
+// Terms and Conditions
+#sales-export {
+
+    .content_main {
+        @media (min-width: $screen-sm-min) {
+            margin-bottom: 200px;
+        }
+    }
+
+    .intro {
+        @extend .col-md-offset-0;
+
+        .lead {
+            @extend .text-center, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+        }
+
+        .glyphicon {
+            animation: none;
+            display: inline;
+            font-size: 19px;
+        }
+    }
+
+    .description {
+        @extend .text-center, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+
+        @media (min-width: $screen-md-min) {
+            position: none;
+            top: 0px;
+            margin-top: 0px;
+        }
+
+        a {
+            color: $sts_dk_canvas;
+
+            &:hover {
+                color: $sts_dk_canvas;
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
 import uuid
 import datetime
+import csv
+import cStringIO
 
-from flask import render_template, request, redirect, flash, url_for, session
+from flask import render_template, request, redirect, flash, url_for, session, send_file
 from flask_mail import Message, Mail
 from flask_restless import APIManager, ProcessingException
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
@@ -60,7 +62,7 @@ def login():
                 db.session.add(user)
                 db.session.commit()
                 login_user(user, remember=True)
-                return redirect('/api/purchases', code=302)
+                return redirect(url_for('sales_export'))
     return render_template("login.html", form=form)
 
 
@@ -216,15 +218,75 @@ def thanks():
     )
 
 
-def auth_func(**kw):
-    """ Send a 401 if user isn't logged in """
-    if not current_user.is_authenticated():
-        raise ProcessingException(description='Not Authorized', code=401)
+@app.route('/sales-export')
+@login_required
+def sales_export():
+    """ Sales export """
+    purchases = Purchase.query.all()
+    start_date = Purchase.query.first().sold_at.strftime('%x')
+    end_date = Purchase.query.all()[-1].sold_at.strftime('%x')
+    return render_template('sales_export.html', start_date=start_date, end_date=end_date)
 
-""" Only logged in users can view the API for purchases """
-manager.create_api(
-    Purchase,
-    preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
+
+@app.route('/download')
+@login_required
+def download():
+    """ Export a CSV of all sales data """
+    purchases = Purchase.query.all()
+    csvfile = cStringIO.StringIO()
+    headers = [
+        'uuid',
+        'recipient_name',
+        'recipient_email',
+        'shipping_street_address_1',
+        'shipping_street_address_2',
+        'shipping_city',
+        'shipping_state',
+        'shipping_zip',
+        'purchaser_name',
+        'purchaser_email',
+        'personal_message',
+        'sold_at'
+    ]
+    rows = []
+    for purchase in Purchase.query.all():
+        rows.append(
+            {
+                'uuid': purchase.uuid,
+                'recipient_name': purchase.recipient_name,
+                'recipient_email': purchase.recipient_email,
+                'shipping_street_address_1': purchase.shipping_street_address_1,
+                'shipping_street_address_2': purchase.shipping_street_address_2,
+                'shipping_city': purchase.shipping_city,
+                'shipping_state': purchase.shipping_state,
+                'shipping_zip': purchase.shipping_zip,
+                'purchaser_name': purchase.purchaser_name,
+                'purchaser_email': purchase.purchaser_email,
+                'personal_message': purchase.personal_message,
+                'sold_at': purchase.sold_at.strftime('%c')
+            }
+        )
+    writer = csv.DictWriter(csvfile, headers)
+    writer.writeheader()
+    for row in rows:
+        writer.writerow(
+            dict(
+                (k, v.encode('utf-8') if type(v) is unicode else v) for k, v in row.iteritems()
+            )
+        )
+    csvfile.seek(0)
+    return send_file(csvfile, attachment_filename='sales_export.csv', as_attachment=True)
+
+
+# def auth_func(**kw):
+#     """ Send a 401 if user isn't logged in """
+#     if not current_user.is_authenticated():
+#         raise ProcessingException(description='Not Authorized', code=401)
+
+# """ Only logged in users can view the API for purchases """
+# manager.create_api(
+#     Purchase,
+#     preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
 
 
 @app.route('/terms')
