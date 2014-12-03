@@ -24,5 +24,14 @@ class DevelopmentConfig(Config):
     STRIPE_PUBLIC_KEY = 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
     SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine@localhost/sharethesunshine'
     DEBUG = True
+    TESTING = False
+    SITE_ADDRESS = 'http://dev.thevariable.com'
+
+
+class TestingConfig(Config):
+    STRIPE_SECRET_KEY = 'sk_test_HsuAieq5wo8ZSAm3lEushARi'
+    STRIPE_PUBLIC_KEY = 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine@localhost/sharethesunshine'
+    DEBUG = True
     TESTING = True
     SITE_ADDRESS = 'http://dev.thevariable.com'

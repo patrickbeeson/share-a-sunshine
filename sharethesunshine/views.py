@@ -278,15 +278,15 @@ def download():
     return send_file(csvfile, attachment_filename='sales_export.csv', as_attachment=True)
 
 
-# def auth_func(**kw):
-#     """ Send a 401 if user isn't logged in """
-#     if not current_user.is_authenticated():
-#         raise ProcessingException(description='Not Authorized', code=401)
+def auth_func(**kw):
+    """ Send a 401 if user isn't logged in """
+    if not current_user.is_authenticated():
+        raise ProcessingException(description='Not Authorized', code=401)
 
-# """ Only logged in users can view the API for purchases """
-# manager.create_api(
-#     Purchase,
-#     preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
+""" Only logged in users can view the API for purchases """
+manager.create_api(
+    Purchase,
+    preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
 
 
 @app.route('/terms')
