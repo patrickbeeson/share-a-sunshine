@@ -12,8 +12,6 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    DEBUG = False
-    TESTING = False
     STRIPE_SECRET_KEY = 'sk_live_n4OGJVSC81yBSXl7R0gdjkmF'
     STRIPE_PUBLIC_KEY = 'pk_live_XDeeIdG9LbgtgpPdEJdUwtV4'
     SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine:ClearsTheClouds@localhost:5432/sharethesunshine'
@@ -24,7 +22,6 @@ class DevelopmentConfig(Config):
     STRIPE_PUBLIC_KEY = 'pk_test_7MmO7bkJvlkV0TfD1YfFcnVf'
     SQLALCHEMY_DATABASE_URI = 'postgresql://sharethesunshine@localhost/sharethesunshine'
     DEBUG = True
-    TESTING = False
     SITE_ADDRESS = 'http://dev.thevariable.com'
 
 
