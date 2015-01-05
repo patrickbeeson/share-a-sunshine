@@ -4,6 +4,11 @@ from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Length
 
 
+class CouponCodeForm(Form):
+    code = StringField('Coupon code')
+    submit = SubmitField('Submit')
+
+
 class LoginForm(Form):
     """ Form class for user login """
     email = TextField('email', validators=[DataRequired('Please enter an email address.')])
