@@ -15,7 +15,7 @@ from sqlalchemy import desc
 from . import app
 
 from .models import Product, Purchase, Testimonial, User, db, MessageCategory, CouponCode
-from .forms import PurchaseForm, LoginForm, CouponCodeForm
+from .forms import PurchaseForm, LoginForm
 
 login_manager = LoginManager()
 bcrypt = Bcrypt()
@@ -82,16 +82,13 @@ def logout():
 def home():
     "The homepage"
     purchase_form = PurchaseForm()
-    coupon_code_form = CouponCodeForm()
 
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
     return render_template('home.html',
-                           purchase_form=purchase_form,
-                           coupon_code_form=coupon_code_form,
-                           testimonials=testimonials,
-                           key=stripe_keys['publishable_key'])
+                           form=purchase_form,
+                           testimonials=testimonials)
 
 
 @app.route('/parents-weekend')
@@ -122,11 +119,12 @@ def code_validate():
         validated_code = CouponCode.query.filter_by(code=validated_code).first()
         if validated_code and validated_code.active:
             validated_code.active = False
-            validated_code.redeem_date()
+            validated_code.redeem()
             db.session.merge(validated_code)
             db.session.commit()
             response_data['response'] = 'Coupon code submitted!'
             response_data['price'] = 'Free'
+            session['code_redeemed'] = True
             return jsonify(response_data)
         elif validated_code and not validated_code.active:
             response_data['response'] = 'Coupon code already used!'
@@ -151,7 +149,7 @@ def buy():
     # Get our price in dollars and turn it to cents
     amount = int(product.price * 100)
     # Get the purchaser email from the Stripe Checkout form
-    email = request.form['stripeEmail']
+    # email = request.form['stripeEmail']
     # Get the token from the Stripe Checkout form
     stripe_token = request.form['stripeToken']
     # Set quanity to one since that's all folks can buy currently
@@ -159,17 +157,12 @@ def buy():
 
     # Try and validate the form on submission
     if form.validate_on_submit():
-        # Create the Stripe customer
-        customer = stripe.Customer.create(
-            email=email,
-            card=stripe_token
-        )
         # Try to charge the card via Stripe
         try:
             charge = stripe.Charge.create(
-                customer=customer.id,
                 amount=amount,
                 currency='usd',
+                card=stripe_token,
                 description=product.description)
         # Present new template if there is a problem charging the card
         except stripe.CardError:
@@ -227,8 +220,7 @@ def buy():
     return render_template(
         'home.html',
         form=form,
-        testimonials=testimonials,
-        key=stripe_keys['publishable_key'])
+        testimonials=testimonials)
 
 
 @app.route('/thanks')

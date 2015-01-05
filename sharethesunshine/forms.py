@@ -1,12 +1,7 @@
 from flask_wtf import Form
-from wtforms import TextField, TextAreaField, IntegerField, PasswordField, SubmitField, SelectField, HiddenField, StringField
+from wtforms import TextField, TextAreaField, IntegerField, PasswordField, SubmitField, SelectField, HiddenField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Length
-
-
-class CouponCodeForm(Form):
-    code = StringField('Coupon code')
-    submit = SubmitField('Submit')
 
 
 class LoginForm(Form):
@@ -100,4 +95,9 @@ class PurchaseForm(Form):
                                      description='140 characters max',
                                      validators=[DataRequired('Please enter a message.'), Length(message='Please reduce your message to 140 characters or less.', max=140)]
                                      )
-    coupon_used = HiddenField(default=False)
+    # card_number = TextField('Card number', validators=[Length(max=20)])
+    # cvc = TextField('CVC', validators=[Length(max=4)])
+    # expiration_month = TextField('Expiration month (MM)', validators=[Length(max=2)])
+    # expiration_year = TextField('Expiration year (YYYY)', validators=[Length(max=4)])
+    coupon_code = TextField('Coupon code', description='Enter a valid coupon code')
+    # submit = SubmitField('Share the Sunshine')
