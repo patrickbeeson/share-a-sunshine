@@ -3,7 +3,7 @@ import datetime
 import csv
 import cStringIO
 
-from flask import render_template, request, redirect, flash, url_for, session, send_file
+from flask import render_template, request, redirect, flash, url_for, session, send_file, jsonify
 from flask_mail import Message, Mail
 from flask_restless import APIManager, ProcessingException
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
@@ -14,8 +14,8 @@ from sqlalchemy import desc
 
 from . import app
 
-from .models import Product, Purchase, Testimonial, User, db, MessageCategory
-from .forms import PurchaseForm, LoginForm
+from .models import Product, Purchase, Testimonial, User, db, MessageCategory, CouponCode
+from .forms import PurchaseForm, LoginForm, CouponCodeForm
 
 login_manager = LoginManager()
 bcrypt = Bcrypt()
@@ -42,17 +42,16 @@ mail.init_app(app)
 
 @login_manager.user_loader
 def user_loader(user_id):
-    """Given *user_id*, return the associated User object.
-
-    :param unicode user_id: user_id (email) user to retrieve
-    """
+    "Given user_id, return the associated User object."
     return User.query.get(user_id)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """ For GET requests, display the login form. For POSTS, login the current
-    user by processing the form """
+    """
+    For GET requests, display the login form. For POSTS, login the current
+    user by processing the form
+    """
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.get(form.email.data)
@@ -69,7 +68,7 @@ def login():
 @app.route("/logout", methods=["GET"])
 @login_required
 def logout():
-    """ Logout the current user """
+    "Logout the current user"
     user = current_user
     user.authenticated = False
     db.session.add(user)
@@ -81,21 +80,23 @@ def logout():
 
 @app.route('/')
 def home():
-    """ The homepage """
-    form = PurchaseForm()
+    "The homepage"
+    purchase_form = PurchaseForm()
+    coupon_code_form = CouponCodeForm()
 
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
     return render_template('home.html',
-                           form=form,
+                           purchase_form=purchase_form,
+                           coupon_code_form=coupon_code_form,
                            testimonials=testimonials,
                            key=stripe_keys['publishable_key'])
 
 
 @app.route('/parents-weekend')
 def parents_weekend():
-    """ A special landing page for parent's weekend """
+    "A special landing page for parent's weekend"
     form = PurchaseForm()
 
     testimonials = Testimonial.query.order_by(
@@ -109,9 +110,36 @@ def parents_weekend():
                            key=stripe_keys['publishable_key'])
 
 
+@app.route('/code_validate', methods=['POST'])
+def code_validate():
+    "Handle coupon code redemption"
+    if request.method == 'POST':
+        response_data = {}
+        incoming_data = request.get_json()
+        response_data['code'] = incoming_data['code']
+        response_data['response'] = 'OK'
+        validated_code = incoming_data['code']
+        validated_code = CouponCode.query.filter_by(code=validated_code).first()
+        if validated_code and validated_code.active:
+            validated_code.active = False
+            validated_code.redeem_date()
+            db.session.merge(validated_code)
+            db.session.commit()
+            response_data['response'] = 'Coupon code submitted!'
+            response_data['price'] = 'Free'
+            return jsonify(response_data)
+        elif validated_code and not validated_code.active:
+            response_data['response'] = 'Coupon code already used!'
+            return jsonify(response_data)
+        else:
+            response_data['response'] = 'Invalid coupon code!'
+            return jsonify(response_data)
+        return jsonify(response_data)
+
+
 @app.route('/buy', methods=['POST'])
 def buy():
-    """ Handle the form submission (i.e. purchase) """
+    "Handle the form submission (i.e. purchase)"
     form = PurchaseForm()
     # Get five testimonials for display
     testimonials = Testimonial.query.order_by(
@@ -161,7 +189,8 @@ def buy():
             personal_message=form.personal_message.data,
             sold_at=datetime.datetime.now(),
             quantity=quantity,
-            product=product
+            product=product,
+            coupon_used=coupon_used,
         )
         # Send valid data to the database
         db.session.add(purchase)
@@ -204,7 +233,7 @@ def buy():
 
 @app.route('/thanks')
 def thanks():
-    """ Post purchase confirmation """
+    "Post purchase confirmation"
     return render_template(
         'thanks.html',
         uuid=session.get('uuid'),
@@ -221,7 +250,7 @@ def thanks():
 @app.route('/sales-export')
 @login_required
 def sales_export():
-    """ Sales export """
+    "Sales export"
     purchases = Purchase.query.all()
     start_date = Purchase.query.first().sold_at.strftime('%x')
     end_date = Purchase.query.all()[-1].sold_at.strftime('%x')
@@ -231,7 +260,7 @@ def sales_export():
 @app.route('/download')
 @login_required
 def download():
-    """ Export a CSV of all sales data """
+    "Export a CSV of all sales data"
     purchases = Purchase.query.all()
     csvfile = cStringIO.StringIO()
     headers = [
@@ -246,7 +275,8 @@ def download():
         'purchaser_name',
         'purchaser_email',
         'personal_message',
-        'sold_at'
+        'sold_at',
+        'coupon_used'
     ]
     rows = []
     for purchase in Purchase.query.all():
@@ -263,7 +293,8 @@ def download():
                 'purchaser_name': purchase.purchaser_name,
                 'purchaser_email': purchase.purchaser_email,
                 'personal_message': purchase.personal_message,
-                'sold_at': purchase.sold_at.strftime('%c')
+                'sold_at': purchase.sold_at.strftime('%c'),
+                'coupon_used': purchase.coupon_used
             }
         )
     writer = csv.DictWriter(csvfile, headers)
@@ -279,11 +310,11 @@ def download():
 
 
 def auth_func(**kw):
-    """ Send a 401 if user isn't logged in """
+    "Send a 401 if user isn't logged in"
     if not current_user.is_authenticated():
         raise ProcessingException(description='Not Authorized', code=401)
 
-""" Only logged in users can view the API for purchases """
+"Only logged in users can view the API for purchases"
 manager.create_api(
     Purchase,
     preprocessors=dict(GET_SINGLE=[auth_func], GET_MANY=[auth_func]))
@@ -291,17 +322,17 @@ manager.create_api(
 
 @app.route('/terms')
 def terms():
-    """ Terms and conditions """
+    "Terms and conditions"
     return render_template('terms.html',)
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    """ 404 page """
+    "404 page"
     return render_template('404.html'), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
-    """ 500 page """
+    "500 page"
     return render_template('500.html'), 500

@@ -94,7 +94,7 @@ class Purchase(db.Model):
     quantity = db.Column(db.Integer, default=1)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
     product = db.relationship(Product)
-    coupon_used = db.Column(db.Boolean, default=False)
+    coupon_used = db.Column(db.Boolean, default=False, nullable=True)
 
     def sell_date(self):
         " Return the purchase sold date."

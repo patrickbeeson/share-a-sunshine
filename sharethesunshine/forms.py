@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import TextField, TextAreaField, IntegerField, PasswordField, SubmitField, SelectField
+from wtforms import TextField, TextAreaField, IntegerField, PasswordField, SubmitField, SelectField, HiddenField, StringField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Length
 
@@ -100,3 +100,4 @@ class PurchaseForm(Form):
                                      description='140 characters max',
                                      validators=[DataRequired('Please enter a message.'), Length(message='Please reduce your message to 140 characters or less.', max=140)]
                                      )
+    coupon_used = HiddenField(default=False)
