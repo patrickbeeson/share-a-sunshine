@@ -9,31 +9,55 @@ app.config['SQLALCHEMY_DATABASE_URI']
 db = SQLAlchemy(app)
 
 
+class CouponCode(db.Model):
+    """
+    A coupon code object.
+    """
+    __tablename__ = 'couponcodes'
+    id = db.Column(db.Integer, primary_key=True)
+    code = db.Column(db.String(250), unique=True)
+    active = db.Column(db.Boolean, default=True)
+    redemption_date = db.Column(db.DateTime)
+
+    def redeem(self):
+        "Set redemption_date for coupon"
+        self.redemption_date = datetime.datetime.utcnow()
+        db.session.add(self)
+
+    def __repr__(self):
+        return '<CouponCode {}>'.format(self.code)
+
+    def __str__(self):
+        return self.code
+
+
 class User(UserMixin, db.Model):
-    """ An administrative user of this application. """
+    """
+    An administrative user of this application.
+    """
     __tablename__ = 'users'
     email = db.Column(db.String(255), primary_key=True)
     password = db.Column(db.String)
     authenticated = db.Column(db.Boolean, default=False)
 
     def is_active(self):
-        """ True, as all users are active. """
+        "True, as all users are active."
         return True
 
     def get_id(self):
-        """Return the email address to satify Flask-Login's requirements."""
+        "Return the email address to satify Flask-Login's requirements."
         return self.email
 
     def is_authenticated(self):
-        """ Return True if the user is authenticated. """
+        "Return True if the user is authenticated."
         return self.authenticated
 
     def is_anonymous(self):
-        """ False, as anonymous users aren't supported. """
+        "False, as anonymous users aren't supported."
         return False
 
     def __repr__(self):
-        return '<User %r>' % self.email
+        return '<User {}}>'.format(self.email)
 
 
 class Product(db.Model):
@@ -46,7 +70,10 @@ class Product(db.Model):
     price = db.Column(db.Float)
 
     def __repr__(self):
-        return '<product %r>' % self.name
+        return '<product {}>'.format(self.name)
+
+    def __str__(self):
+        return self.name
 
 
 class Purchase(db.Model):
@@ -67,13 +94,19 @@ class Purchase(db.Model):
     quantity = db.Column(db.Integer, default=1)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
     product = db.relationship(Product)
+    coupon_used = db.Column(db.Boolean, default=False)
 
     def sell_date(self):
-        """ Return the purchase sold date. """
+        " Return the purchase sold date."
         return self.sold_at.date()
 
+    def coupon_used(self):
+        "Indicate coupon was used for purchase"
+        self.coupon_used = True
+        db.session.add(self)
+
     def __repr__(self):
-        return '<Purchase %r>' % self.sold_at
+        return '<Purchase {}>'.format(self.sold_at)
 
 
 class Testimonial(db.Model):
@@ -85,7 +118,10 @@ class Testimonial(db.Model):
     salutation = db.Column(db.String(100))
 
     def __repr__(self):
-        return '<Testimonial %r>' % self.id
+        return '<Testimonial {}>'.format(self.id)
+
+    def __str__(self):
+        return self.testimonial
 
 
 class MessageCategory(db.Model):
@@ -101,13 +137,16 @@ class MessageCategory(db.Model):
 
     @property
     def get_messages_for_category(self):
-        """Gets prefilled messages for a given message category."""
+        "Gets prefilled messages for a given message category."
         return PrefilledMessage.query.filter(
             PrefilledMessage.category_id == self.id
         ).all()
 
     def __repr__(self):
-        return '<MessageCategory {title}>'.format(title=self.title)
+        return '<MessageCategory {}>'.format(self.title)
+
+    def __str__(self):
+        return self.title
 
 
 class PrefilledMessage(db.Model):
@@ -118,4 +157,7 @@ class PrefilledMessage(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey('message_categories.id'))
 
     def __repr__(self):
-        return '<PrefilledMessage {id}'.format(id=self.id)
+        return '<PrefilledMessage {}'.format(self.id)
+
+    def __str__(self):
+        return self.message

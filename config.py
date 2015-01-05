@@ -1,5 +1,6 @@
 class Config(object):
     DEBUG = False
+    TESTING = False
     SECRET_KEY = '\x03V\x96\xb6{#\x9f\x14K\xef{\x86Z\x14\xafZK/-\x84\xb0O\xcd\x13'
     ADMINS = ['pbeeson@thevariable.com']
     MAIL_SERVER = 'smtp.webfaction.com'
@@ -8,7 +9,6 @@ class Config(object):
     MAIL_PORT = 465
     MAIL_USE_SSL = True
     SITE_ADDRESS = 'https://shareasunshine.com'
-    TESTING = False
 
 
 class ProductionConfig(Config):
