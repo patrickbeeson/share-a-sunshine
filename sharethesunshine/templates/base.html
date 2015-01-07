@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Wanna make someone's day? Send 'em a can of Sunshine, pronto! To say good luck, thanks, miss your pretty smile, or just because.">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{% block title %}{% endblock title %}</title>
         {% assets "css_all" %}
         <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
@@ -99,43 +100,10 @@
         </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">
-    Stripe.setPublishableKey('pk_test_7MmO7bkJvlkV0TfD1YfFcnVf');
-
-    var stripeResponseHandler = function(status, response) {
-        var $form = $('#purchase_form');
-        console.log($form);
-
-        if (response.error) {
-            // Show the errors on the form
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('input').prop('disabled', false);
-        } else {
-            // token contains id, last4, and card type
-            var token = response.id;
-            // Insert the token into the form so it gets submitted to the server
-            $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-            // and re-submit
-            $form.get(0).submit();
-        }
-    };
-
-    jQuery(function($) {
-        $('#purchase_form').submit(function(e) {
-            var $form = $(this);
-            console.log($form);
-
-            // Disable the submit button to prevent repeated clicks
-            $form.find('button').prop('disabled', true);
-
-            Stripe.card.createToken($form, stripeResponseHandler);
-
-            // Prevent the form from submitting with the default action
-            return false;
-        });
-    });
+    <script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
     </script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     {% assets "js_all" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}

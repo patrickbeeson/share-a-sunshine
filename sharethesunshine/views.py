@@ -8,6 +8,7 @@ from flask_mail import Message, Mail
 from flask_restless import APIManager, ProcessingException
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from flask_bcrypt import Bcrypt
+from flask_wtf.csrf import CsrfProtect
 
 import stripe
 from sqlalchemy import desc
@@ -15,7 +16,7 @@ from sqlalchemy import desc
 from . import app
 
 from .models import Product, Purchase, Testimonial, User, db, MessageCategory, CouponCode
-from .forms import PurchaseForm, LoginForm
+from .forms import PurchaseForm, LoginForm, CouponCodeForm
 
 login_manager = LoginManager()
 bcrypt = Bcrypt()
@@ -38,6 +39,8 @@ app.config['MAIL_PASSWORD']
 
 mail = Mail()
 mail.init_app(app)
+
+CsrfProtect(app)
 
 
 @login_manager.user_loader
@@ -82,12 +85,14 @@ def logout():
 def home():
     "The homepage"
     purchase_form = PurchaseForm()
+    couponcode_form = CouponCodeForm()
 
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
 
     return render_template('home.html',
                            form=purchase_form,
+                           couponcode_form=couponcode_form,
                            testimonials=testimonials)
 
 
@@ -122,15 +127,15 @@ def code_validate():
             validated_code.redeem()
             db.session.merge(validated_code)
             db.session.commit()
-            response_data['response'] = 'Coupon code submitted!'
+            response_data['response'] = 'Code accepted!'
             response_data['price'] = 'Free'
-            session['code_redeemed'] = True
+            response_data['code_applied'] = True
             return jsonify(response_data)
         elif validated_code and not validated_code.active:
-            response_data['response'] = 'Coupon code already used!'
+            response_data['response'] = 'Code already used!'
             return jsonify(response_data)
         else:
-            response_data['response'] = 'Invalid coupon code!'
+            response_data['response'] = 'Invalid or missing code!'
             return jsonify(response_data)
         return jsonify(response_data)
 
@@ -139,6 +144,7 @@ def code_validate():
 def buy():
     "Handle the form submission (i.e. purchase)"
     form = PurchaseForm()
+
     # Get five testimonials for display
     testimonials = Testimonial.query.order_by(
         desc(Testimonial.id)).limit(5).all()
@@ -146,27 +152,28 @@ def buy():
     # Set product to Sunshine since that's our only product for now
     product = Product.query.filter_by(name='sunshine').first()
 
+    if request.form.get('stripeToken'):
+        token = request.form.get('stripeToken')
+
     # Get our price in dollars and turn it to cents
     amount = int(product.price * 100)
-    # Get the purchaser email from the Stripe Checkout form
-    # email = request.form['stripeEmail']
-    # Get the token from the Stripe Checkout form
-    stripe_token = request.form['stripeToken']
+
     # Set quanity to one since that's all folks can buy currently
     quantity = 1
 
     # Try and validate the form on submission
     if form.validate_on_submit():
-        # Try to charge the card via Stripe
-        try:
-            charge = stripe.Charge.create(
-                amount=amount,
-                currency='usd',
-                card=stripe_token,
-                description=product.description)
-        # Present new template if there is a problem charging the card
-        except stripe.CardError:
-            return render_template('charge_error.html')
+        # Try to charge the card via Stripe if token exists
+        if token:
+            try:
+                charge = stripe.Charge.create(
+                    amount=amount,
+                    currency='usd',
+                    card=token,
+                    description=product.description)
+            # Present new template if there is a problem charging the card
+            except stripe.CardError:
+                return render_template('charge_error.html')
 
         purchase = Purchase(
             uuid=str(uuid.uuid4()),
@@ -178,13 +185,14 @@ def buy():
             shipping_state=form.shipping_state.data,
             shipping_zip=form.shipping_zip.data,
             purchaser_name=form.purchaser_name.data,
-            purchaser_email=email,
+            purchaser_email=form.purchaser_email.data,
             personal_message=form.personal_message.data,
             sold_at=datetime.datetime.now(),
             quantity=quantity,
             product=product,
-            coupon_used=coupon_used,
+            coupon_used=form.coupon_used.data,
         )
+
         # Send valid data to the database
         db.session.add(purchase)
         db.session.commit()
@@ -198,6 +206,7 @@ def buy():
         session['shipping_state'] = purchase.shipping_state
         session['recipient_name'] = purchase.recipient_name
         session['personal_message'] = purchase.personal_message
+        session['purchaser_email'] = purchase.purchaser_email
 
         # Send the purchaser an email using the purchaser_email value
         mail_html = render_template(
@@ -209,7 +218,7 @@ def buy():
             html=mail_html,
             subject='You\'ve shared Sunshine. Everyone is happy.',
             sender='noreply@shareasunshine.com',
-            recipients=[email, 'sales@shareasunshine.com']
+            recipients=[purchase.purchaser_email, 'sales@shareasunshine.com']
         )
 
         with mail.connect() as conn:

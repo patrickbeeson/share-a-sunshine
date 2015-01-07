@@ -23,12 +23,21 @@
 
     <div class="description">
         <p>Know someone who could use a pick-me-up? For just $5, you can send a personalized can of Sunshine to anyone, anywhere in the US. Take that, flowers!</p>
-        <div class="get_started">Get started now</div>
+        <div class="get_started">Get started now<br><small class="coupon_code_prompt">(<a href="#coupon_code" class="coupon_code_reveal">Got a coupon code?</a>)</small></div>
         <span class="glyphicon glyphicon-chevron-down"></span>
     </div>
 </div>
 
 <div class="content_order">
+
+    <div id="coupon_code">
+        <h3>Coupon code:</h3>
+        <p class="validation_response"></p>
+        <form method='POST' action='/code_validate' id="couponcode_form">
+            {{ couponcode_form.coupon_code(class_="form-control", maxLength='250') }}
+            {{ couponcode_form.submit }}
+        </form>
+    </div>
 
     {% if form.errors %}
     <ul id="form_error_messages">
@@ -70,10 +79,9 @@
     </ul>
     {% endif %}
 
-    <form action="/buy" method="POST" id="purchase_form">
+    <form action="/buy" method="POST" id="purchase_form" autocomplete="on" data-parsley-validate novalidate>
         {{ form.csrf_token }}
-
-        <span class="payment-errors"></span>
+        {{ form.coupon_used }}
 
         <div class="form_step">
             <h2>1. Your Friend's Name</h2>
@@ -83,7 +91,7 @@
 
             <div class="form-group{% if form.recipient_name.errors %} has-error{% endif %}">
                 {{ form.recipient_name.label }}
-                {{ form.recipient_name(class_='form-control', maxlength='250') }}
+                {{ form.recipient_name(class_='form-control', maxlength='250', required='required') }}
                 <span class="help_text">{{ form.recipient_name.description|safe }}</span> <span class="required">*</span>
             </div>
 
@@ -103,7 +111,7 @@
 
             <div class="form-group{% if form.shipping_street_address_1.errors %} has-error{% endif %}">
                 {{ form.shipping_street_address_1.label }}
-                {{ form.shipping_street_address_1(class_='form-control', maxlength='250') }}
+                {{ form.shipping_street_address_1(class_='form-control', maxlength='250', required='required') }}
                 <span class="help_text">{{ form.shipping_street_address_1.description|safe }}</span> <span class="required">*</span>
             </div>
 
@@ -115,19 +123,19 @@
 
             <div class="form-group{% if form.shipping_city.errors %} has-error{% endif %}">
                 {{ form.shipping_city.label }}
-                {{ form.shipping_city(class_='form-control', maxlength='250') }}
+                {{ form.shipping_city(class_='form-control', maxlength='250', required='required') }}
                 <span class="help_text">{{ form.shipping_city.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.shipping_state.errors %} has-error{% endif %}">
                 {{ form.shipping_state.label }}
-                {{ form.shipping_state(class_='form-control', maxlength='2') }}
+                {{ form.shipping_state(class_='form-control', maxlength='2', required='required') }}
                 <span class="help_text">{{ form.shipping_state.description|safe }}</span> <span class="required">*</span>
             </div>
 
             <div class="form-group{% if form.shipping_zip.errors %} has-error{% endif %}">
                 {{ form.shipping_zip.label }}
-                {{ form.shipping_zip(class_='form-control', maxlength='9') }}
+                {{ form.shipping_zip(class_='form-control', maxlength='9', required='required') }}
                 <span class="help_text">{{ form.shipping_zip.description|safe }}</span> <span class="required">*</span>
             </div>
         </div>
@@ -143,7 +151,7 @@
             <h3>Personalized Message:</h3>
             <div class="form-group{% if form.personal_message.errors %} has-error{% endif %}">
                 {{ form.personal_message.label }}
-                {{ form.personal_message(class_='form-control', rows='10') }}
+                {{ form.personal_message(class_='form-control', rows='10', required='required') }}
                 <span class="help_text">{{ form.personal_message.description|safe }}. You have <b><span id="charsleft"></span></b> characters left.</span><span class="required">*</span>
             </div>
         </div>
@@ -156,38 +164,40 @@
                 {{ form.purchaser_name(class_='form-control', maxlength='250') }}
                 <span class="help_text">{{ form.purchaser_name.description|safe }}</span>
             </div>
+
+            <div class="form-group{% if form.purchaser_email.errors %} has-error{% endif %}">
+                {{ form.purchaser_email.label }}
+                {{ form.purchaser_email(class_='form-control', maxLength='100', required='required') }}
+                <span class="help_text">{{ form.purchaser_email.description|safe }}</span> <span class="required">*</span>
+            </div>
         </div>
 
         <div class="form_step">
             <h2>4. Pay</h2>
         </div>
 
+        <span class="code_redemption"></span>
+
         <div class="field_grouper" id="payment">
 
-            <div class="form-group">
-                <input type="text" size="20" data-stripe="number"/>
+            <span class="payment-errors"></span>
 
-                <span class="help_text">Card number</span> <span class="required">*</span>
+            <h3>Credit card:</h3>
+
+            <div class="form-group">
+                <label for="cc-number" class="control-label">Card number</label>
+                <input id="cc-number" type="text" class="form-control cc-number" pattern="\d*" autocomplete="cc-number" required>
+                <span class="help_text">Card number <span class="required">*</span>
             </div>
 
             <div class="form-group">
-                <input type="text" size="4" data-stripe="cvc"/>
-
+                <input id="cc-cvc" type="text" class="form-control cc-cvc" pattern="\d*" autocomplete="off" required>
                 <span class="help_text">CVC</span> <span class="required">*</span>
             </div>
 
             <div class="form-group">
-                <input type="text" size="2" data-stripe="exp-month"/>
-                <span> / </span>
-                <input type="text" size="4" data-stripe="exp-year"/>
-
-                <span class="help_text">Expiration month and year (MM/YYYY)</span> <span class="required">*</span>
-            </div>
-
-            <div class="form-group{% if form.purchaser_name.errors %} has-error{% endif %}">
-                {{ form.coupon_code.label }}
-                {{ form.coupon_code(class_='form-control') }}
-                <span class="help_text">{{ form.coupon_code.description|safe }}</span>
+                <input id="cc-exp" type="text" class="form-control cc-exp" pattern="\d*" autocomplete="cc-exp" required>
+                <span class="help_text">Expiration month and year (MM/YY)</span> <span class="required">*</span>
             </div>
 
         </div>

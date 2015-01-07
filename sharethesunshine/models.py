@@ -100,11 +100,6 @@ class Purchase(db.Model):
         " Return the purchase sold date."
         return self.sold_at.date()
 
-    def coupon_used(self):
-        "Indicate coupon was used for purchase"
-        self.coupon_used = True
-        db.session.add(self)
-
     def __repr__(self):
         return '<Purchase {}>'.format(self.sold_at)
 
