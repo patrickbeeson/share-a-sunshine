@@ -114,6 +114,18 @@ nav[role="navigation"] {
         text-transform: uppercase;
         font-family: a_love_of_thunder-webfont;
         letter-spacing: 3px;
+
+        .coupon_code_prompt {
+            font-size: 13px;
+
+            a {
+                color: $sts_dk_canvas;
+
+                &:hover {
+                    color: $sts_dk_canvas;
+                }
+            }
+        }
     }
 
     .intro {
@@ -318,7 +330,28 @@ nav[role="navigation"] {
         }
     }
 
+    #coupon_code {
+        margin-top: 40px;
+
+        .validation_response {
+            // @extend .text-info;
+        }
+    }
+
     form {
+
+        .parsley-errors-list {
+            @extend .list-unstyled;
+            padding-left: 0px;
+
+            li {
+                @extend .text-danger;
+                padding-top: 10px;
+                font-family: $sts_body;
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
 
         label {
             @extend .text-hide;
@@ -458,20 +491,22 @@ nav[role="navigation"] {
             @extend %field_grouper;
         }
 
-        #submit {
+        #payment {
+            @extend %field_grouper;
+        }
+
+        #coupon_code_fields {
+            @extend %field_grouper;
+        }
+
+        .submit, .coupon_form_submit {
             @extend .col-sm-6, .col-sm-offset-3, .text-center, .col-md-5, .col-md-offset-1, .col-lg-offset-2, .col-lg-4;
             margin-top: 25px;
             clear: both;
-        }
 
-        .stripe-button-el {
-            background-image: none;
-            background: $sts_black;
-            border-radius: 0px;
-            text-shadow: none;
-
-            span {
-                color: $sts_body;
+            button, input[type='submit'] {
+                text-shadow: none;
+                color: white;
                 background: $sts_black;
                 font-family: a_love_of_thunder-webfont;
                 text-transform: uppercase;
@@ -484,6 +519,10 @@ nav[role="navigation"] {
                 height: auto;
                 padding: 10px 15px;
                 @include background-image(linear-gradient(#333 0, black 50%, transparent 50%));
+            }
+
+            input[type='submit'] {
+                margin-bottom: 25px;
             }
         }
     }

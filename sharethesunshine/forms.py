@@ -143,7 +143,7 @@ class PurchaseForm(Form):
     )
     purchaser_name = TextField(
         'Your name',
-        description='Note: Your name will appear on the outside of the box with your personalized message. If you\'d like to cheer up someone anonymously, leave this field blank.'
+        description='Your name will appear on the outside of the box with your personalized message. If you\'d like to cheer up someone anonymously, leave this field blank.'
     )
     purchaser_email = EmailField(
         'Your email',

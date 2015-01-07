@@ -23,7 +23,7 @@
 
     <div class="description">
         <p>Know someone who could use a pick-me-up? For just $5, you can send a personalized can of Sunshine to anyone, anywhere in the US. Take that, flowers!</p>
-        <div class="get_started">Get started now<br><small class="coupon_code_prompt">(<a href="#coupon_code" class="coupon_code_reveal">Got a coupon code?</a>)</small></div>
+        <div class="get_started">Get started now<br><span class="coupon_code_prompt">(<a href="#coupon_code" class="coupon_code_reveal">Got a coupon code?</a>)</span></div>
         <span class="glyphicon glyphicon-chevron-down"></span>
     </div>
 </div>
@@ -31,11 +31,17 @@
 <div class="content_order">
 
     <div id="coupon_code">
-        <h3>Coupon code:</h3>
-        <p class="validation_response"></p>
         <form method='POST' action='/code_validate' id="couponcode_form">
-            {{ couponcode_form.coupon_code(class_="form-control", maxLength='250') }}
-            {{ couponcode_form.submit }}
+            <div class="field_grouper" id="coupon_code_fields">
+                <p class="validation_response"></p>
+                <div class="form-group{% if couponcode_form.coupon_code.errors %} has-error{% endif %}">
+                    {{ couponcode_form.coupon_code(class_="form-control", maxLength='250') }}
+                    <span class="help_text">{{ couponcode_form.coupon_code.description|safe }}</span> <span class="required">*</span>
+                </div>
+            </div>
+            <div class="field_grouper submit">
+                {{ couponcode_form.submit }}
+            </div>
         </form>
     </div>
 
@@ -162,21 +168,19 @@
             <div class="form-group{% if form.purchaser_name.errors %} has-error{% endif %}">
                 {{ form.purchaser_name.label }}
                 {{ form.purchaser_name(class_='form-control', maxlength='250') }}
-                <span class="help_text">{{ form.purchaser_name.description|safe }}</span>
+                <span class="help_text">Name ({{ form.purchaser_name.description|safe }})</span>
             </div>
 
             <div class="form-group{% if form.purchaser_email.errors %} has-error{% endif %}">
                 {{ form.purchaser_email.label }}
                 {{ form.purchaser_email(class_='form-control', maxLength='100', required='required') }}
-                <span class="help_text">{{ form.purchaser_email.description|safe }}</span> <span class="required">*</span>
+                <span class="help_text">Email ({{ form.purchaser_email.description|safe }})</span> <span class="required">*</span>
             </div>
         </div>
 
         <div class="form_step">
             <h2>4. Pay</h2>
         </div>
-
-        <span class="code_redemption"></span>
 
         <div class="field_grouper" id="payment">
 
@@ -202,8 +206,8 @@
 
         </div>
 
-        <div class="field_grouper" id="submit">
-            <button type="submit">Submit Payment</button>
+        <div class="field_grouper submit">
+            <button type="submit">SHARE THE SUNSHINE</button>
         </div>
     </form>
 

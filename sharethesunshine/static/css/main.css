@@ -1110,7 +1110,7 @@ mark,
 .text-right, nav[role="navigation"] .nav {
   text-align: right; }
 
-.text-center, .content_main .get_started, .content_main .intro .lead, .content_main .intro .description, .content_main .testimonials h3, .content_order .form_step h2, .content_order form #prefilled_messages h3, .content_order form #submit, footer p, #auth .intro .lead, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #thanks .intro .lead, #thanks #share_purchase, #error .intro .lead {
+.text-center, .content_main .get_started, .content_main .intro .lead, .content_main .intro .description, .content_main .testimonials h3, .content_order .form_step h2, .content_order form #prefilled_messages h3, .content_order form .submit, .content_order form .coupon_form_submit, footer p, #auth .intro .lead, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #thanks .intro .lead, #thanks #share_purchase, #error .intro .lead {
   text-align: center; }
 
 .text-justify {
@@ -1143,7 +1143,7 @@ a.text-info:hover {
 a.text-warning:hover {
   color: #66512c; }
 
-.text-danger {
+.text-danger, .content_order form .parsley-errors-list li {
   color: #a94442; }
 
 a.text-danger:hover {
@@ -1197,7 +1197,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .list-inline, footer .refers, #thanks #share_purchase ul, .content_order form #prefilled_messages #prefilled_message_list {
+.list-unstyled, .list-inline, footer .refers, #thanks #share_purchase ul, .content_order form .parsley-errors-list, .content_order form #prefilled_messages #prefilled_message_list {
   padding-left: 0;
   list-style: none; }
 
@@ -1419,7 +1419,7 @@ pre {
   .row:after, #form_errors:after, .content_main:after, .content_order .form_step:after, .content_order form .field_grouper:after, footer:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-xs-5, .col-sm-5, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, .content_order form #prefilled_messages .prefilled_message, footer .refers, .col-lg-6, .content_main .intro .product_spotlight, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, footer .refers li, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, .col-xs-5, .col-sm-5, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-xs-6, footer .refers li.drinkthesunshine, .col-sm-6, .content_order form .submit, .content_order form .coupon_form_submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth .content_order form #payment, .content_order #auth form #payment, #auth .content_order form #coupon_code_fields, .content_order #auth form #coupon_code_fields, #auth form #auth_fields, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, .content_order form #prefilled_messages .prefilled_message, footer .refers, .col-lg-6, .content_main .intro .product_spotlight, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1582,7 +1582,7 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .content_order form .submit, .content_order form .coupon_form_submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth .content_order form #payment, .content_order #auth form #payment, #auth .content_order form #coupon_code_fields, .content_order #auth form #coupon_code_fields, #auth form #auth_fields, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
 
   .col-sm-1 {
@@ -1600,7 +1600,7 @@ pre {
   .col-sm-5 {
     width: 41.66667%; }
 
-  .col-sm-6, .content_order form #submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth form #auth_fields {
+  .col-sm-6, .content_order form .submit, .content_order form .coupon_form_submit, footer .refers, #auth .content_order form #prefilled_messages, .content_order #auth form #prefilled_messages, #auth .content_order form #recipient, .content_order #auth form #recipient, #auth .content_order form #recipient_address, .content_order #auth form #recipient_address, #auth .content_order form #message, .content_order #auth form #message, #auth .content_order form #purchaser, .content_order #auth form #purchaser, #auth .content_order form #payment, .content_order #auth form #payment, #auth .content_order form #coupon_code_fields, .content_order #auth form #coupon_code_fields, #auth form #auth_fields {
     width: 50%; }
 
   .col-sm-7 {
@@ -1708,7 +1708,7 @@ pre {
   .col-sm-offset-2 {
     margin-left: 16.66667%; }
 
-  .col-sm-offset-3, .content_order form #submit, footer .refers {
+  .col-sm-offset-3, .content_order form .submit, .content_order form .coupon_form_submit, footer .refers {
     margin-left: 25%; }
 
   .col-sm-offset-4 {
@@ -1738,7 +1738,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, .content_order form #prefilled_messages .prefilled_message, footer .refers, .col-md-7, .col-md-8, .col-md-9, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-md-11, .col-md-12 {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, .content_order form #prefilled_messages .prefilled_message, footer .refers, .col-md-7, .col-md-8, .col-md-9, .col-md-10, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-md-11, .col-md-12 {
     float: left; }
 
   .col-md-1 {
@@ -1753,7 +1753,7 @@ pre {
   .col-md-4 {
     width: 33.33333%; }
 
-  .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
+  .col-md-5, .content_main .intro .lead, .content_main .intro .description, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit {
     width: 41.66667%; }
 
   .col-md-6, .content_main .intro .product_spotlight, .content_main .testimonials, .content_order form #prefilled_messages .prefilled_message, footer .refers {
@@ -1858,7 +1858,7 @@ pre {
   .col-md-offset-0, #auth .intro, #sales-export .intro, #terms .intro, #thanks .intro, #error .intro {
     margin-left: 0%; }
 
-  .col-md-offset-1, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description {
+  .col-md-offset-1, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description {
     margin-left: 8.33333%; }
 
   .col-md-offset-2 {
@@ -1894,7 +1894,7 @@ pre {
   .col-md-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 1200px) {
-  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-lg-6, .content_main .intro .product_spotlight, .col-lg-7, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, .col-lg-5, .content_main .intro .lead, .content_main .intro .description, .col-lg-6, .content_main .intro .product_spotlight, .col-lg-7, .col-lg-8, nav[role="navigation"] .content_wrap, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left; }
 
   .col-lg-1 {
@@ -1906,7 +1906,7 @@ pre {
   .col-lg-3 {
     width: 25%; }
 
-  .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit {
+  .col-lg-4, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit {
     width: 33.33333%; }
 
   .col-lg-5, .content_main .intro .lead, .content_main .intro .description {
@@ -2017,7 +2017,7 @@ pre {
   .col-lg-offset-1 {
     margin-left: 8.33333%; }
 
-  .col-lg-offset-2, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form #submit, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description {
+  .col-lg-offset-2, nav[role="navigation"] .content_wrap, .content_main .intro, .content_order .form_step h2, .content_order #form_error_messages, .content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields, .content_order form .submit, .content_order form .coupon_form_submit, #auth .intro .lead, #auth .intro .description, #auth #flash_messages, #sales-export .intro .lead, #sales-export .description, #terms .intro .lead, #terms .description, #thanks .intro .lead, #thanks .description, #thanks #share_purchase, #error .intro .lead, #error .description {
     margin-left: 16.66667%; }
 
   .col-lg-offset-3 {
@@ -5374,6 +5374,12 @@ nav[role="navigation"] {
     text-transform: uppercase;
     font-family: a_love_of_thunder-webfont;
     letter-spacing: 3px; }
+    .content_main .get_started .coupon_code_prompt {
+      font-size: 13px; }
+      .content_main .get_started .coupon_code_prompt a {
+        color: #86754d; }
+        .content_main .get_started .coupon_code_prompt a:hover {
+          color: #86754d; }
   .content_main .intro {
     margin-top: 100px;
     position: relative; }
@@ -5508,6 +5514,15 @@ nav[role="navigation"] {
     line-height: 1.8em;
     margin-bottom: 10px;
     margin-left: 15px; }
+.content_order #coupon_code {
+  margin-top: 40px; }
+.content_order form .parsley-errors-list {
+  padding-left: 0px; }
+  .content_order form .parsley-errors-list li {
+    padding-top: 10px;
+    font-family: courier, serif;
+    font-weight: bold;
+    font-size: 15px; }
 .content_order form .required {
   color: #b20f0f; }
 .content_order form .help_text {
@@ -5519,7 +5534,7 @@ nav[role="navigation"] {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 0px; }
-.content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields {
+.content_order form #prefilled_messages, .content_order form #recipient, .content_order form #recipient_address, .content_order form #message, .content_order form #purchaser, .content_order form #payment, .content_order form #coupon_code_fields, .content_order #auth form #auth_fields, #auth .content_order form #auth_fields {
   clear: both; }
 .content_order form #prefilled_messages h3 {
   margin-top: 25px; }
@@ -5573,16 +5588,12 @@ nav[role="navigation"] {
 @media (min-width: 992px) {
   .content_order form #recipient_address {
     margin-bottom: 50px; } }
-.content_order form #submit {
+.content_order form .submit, .content_order form .coupon_form_submit {
   margin-top: 25px;
   clear: both; }
-.content_order form .stripe-button-el {
-  background-image: none;
-  background: #121211;
-  border-radius: 0px;
-  text-shadow: none; }
-  .content_order form .stripe-button-el span {
-    color: courier, serif;
+  .content_order form .submit button, .content_order form .submit input[type='submit'], .content_order form .coupon_form_submit button, .content_order form .coupon_form_submit input[type='submit'] {
+    text-shadow: none;
+    color: white;
     background: #121211;
     font-family: a_love_of_thunder-webfont;
     text-transform: uppercase;
@@ -5596,6 +5607,8 @@ nav[role="navigation"] {
     padding: 10px 15px;
     background-image: -webkit-linear-gradient(#333333 0, black 50%, transparent 50%);
     background-image: linear-gradient(to   , black 50%, transparent 50%); }
+  .content_order form .submit input[type='submit'], .content_order form .coupon_form_submit input[type='submit'] {
+    margin-bottom: 25px; }
 
 footer {
   margin-top: 75px;
