@@ -330,11 +330,24 @@ nav[role="navigation"] {
         }
     }
 
-    #coupon_code {
-        margin-top: 40px;
+    #coupon_code_wrapper {
+
+        @media (min-width: $screen-md-min) {
+            margin-top: 40px;
+        }
 
         .validation_response {
-            // @extend .text-info;
+            font-family: $sts_body;
+            font-size: 15px;
+            margin-top: 25px;
+
+            &.invalid {
+                @extend .text-danger;
+            }
+
+            &.valid {
+                @extend .text-info;
+            }
         }
     }
 

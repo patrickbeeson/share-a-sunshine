@@ -164,7 +164,7 @@ def buy():
     # Try and validate the form on submission
     if form.validate_on_submit():
         # Try to charge the card via Stripe if token exists
-        if token:
+        if request.form.get('stripeToken'):
             try:
                 charge = stripe.Charge.create(
                     amount=amount,

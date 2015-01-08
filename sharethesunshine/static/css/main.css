@@ -1131,10 +1131,10 @@ a.text-primary:hover {
 a.text-success:hover {
   color: #2b542c; }
 
-.text-info {
+.text-info, .content_order #coupon_code_wrapper .validation_response.valid {
   color: #31708f; }
 
-a.text-info:hover {
+a.text-info:hover, .content_order #coupon_code_wrapper a.validation_response.valid:hover {
   color: #245269; }
 
 .text-warning {
@@ -1143,10 +1143,10 @@ a.text-info:hover {
 a.text-warning:hover {
   color: #66512c; }
 
-.text-danger, .content_order form .parsley-errors-list li {
+.text-danger, .content_order #coupon_code_wrapper .validation_response.invalid, .content_order form .parsley-errors-list li {
   color: #a94442; }
 
-a.text-danger:hover {
+a.text-danger:hover, .content_order #coupon_code_wrapper a.validation_response.invalid:hover {
   color: #843534; }
 
 .bg-primary {
@@ -5514,8 +5514,13 @@ nav[role="navigation"] {
     line-height: 1.8em;
     margin-bottom: 10px;
     margin-left: 15px; }
-.content_order #coupon_code {
-  margin-top: 40px; }
+@media (min-width: 992px) {
+  .content_order #coupon_code_wrapper {
+    margin-top: 40px; } }
+.content_order #coupon_code_wrapper .validation_response {
+  font-family: courier, serif;
+  font-size: 15px;
+  margin-top: 25px; }
 .content_order form .parsley-errors-list {
   padding-left: 0px; }
   .content_order form .parsley-errors-list li {

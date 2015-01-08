@@ -31,7 +31,7 @@ var stripeResponseHandler = function(status, response) {
 $( document ).ready(function() {
 
     // Hide coupon code form on load
-    var couponCodeForm = $('#coupon_code').hide();
+    var couponCodeForm = $('#coupon_code_wrapper').hide();
 
     // Reveal the coupon code form if link is clicked
     $('.coupon_code_reveal').click(function(e) {
@@ -99,6 +99,12 @@ $( document ).ready(function() {
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             success: function(json) {
+                // Add classes for styling based on response
+                if (json.response.toLowerCase() == 'code accepted!') {
+                    $(".validation_response").addClass('valid');
+                } else if (json.response.toLowerCase() == 'code already used!' || json.response.toLowerCase() == 'invalid or missing code!') {
+                    $(".validation_response").addClass('invalid');
+                }
                 $(".validation_response").text(json.response);
                 $(".code_redemption").text(json.price);
                 // Set codeApplied variable if coupon is redeemed

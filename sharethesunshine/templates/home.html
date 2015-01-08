@@ -30,7 +30,7 @@
 
 <div class="content_order">
 
-    <div id="coupon_code">
+    <div id="coupon_code_wrapper">
         <form method='POST' action='/code_validate' id="couponcode_form">
             <div class="field_grouper" id="coupon_code_fields">
                 <p class="validation_response"></p>
@@ -103,7 +103,7 @@
 
             <div class="form-group{% if form.recipient_email.errors %} has-error{% endif %}">
                     {{ form.recipient_email.label }}
-                    {{ form.recipient_email(class_='form-control', maxlength='100') }}
+                    {{ form.recipient_email(class_='form-control', maxlength='100', pattern='/^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm') }}
                     <span class="help_text">{{ form.recipient_email.description|safe }}</span>
             </div>
 
@@ -141,7 +141,7 @@
 
             <div class="form-group{% if form.shipping_zip.errors %} has-error{% endif %}">
                 {{ form.shipping_zip.label }}
-                {{ form.shipping_zip(class_='form-control', maxlength='9', required='required') }}
+                {{ form.shipping_zip(class_='form-control', maxlength='9', required='required', pattern='[\d]{9}') }}
                 <span class="help_text">{{ form.shipping_zip.description|safe }}</span> <span class="required">*</span>
             </div>
         </div>
@@ -173,7 +173,7 @@
 
             <div class="form-group{% if form.purchaser_email.errors %} has-error{% endif %}">
                 {{ form.purchaser_email.label }}
-                {{ form.purchaser_email(class_='form-control', maxLength='100', required='required') }}
+                {{ form.purchaser_email(class_='form-control', maxLength='100', required='required', pattern='/^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm') }}
                 <span class="help_text">Email ({{ form.purchaser_email.description|safe }})</span> <span class="required">*</span>
             </div>
         </div>
