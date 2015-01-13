@@ -96,20 +96,20 @@ def home():
                            testimonials=testimonials)
 
 
-@app.route('/parents-weekend')
-def parents_weekend():
-    "A special landing page for parent's weekend"
-    form = PurchaseForm()
-
-    testimonials = Testimonial.query.order_by(
-        desc(Testimonial.id)).limit(5).all()
-
-    message_categories = MessageCategory.query.all()
-    return render_template('home_parents_weekend.html',
-                           form=form,
-                           testimonials=testimonials,
-                           message_categories=message_categories,
-                           key=stripe_keys['publishable_key'])
+# @app.route('/parents-weekend')
+# def parents_weekend():
+#     "A special landing page for parent's weekend"
+#     form = PurchaseForm()
+#
+#     testimonials = Testimonial.query.order_by(
+#         desc(Testimonial.id)).limit(5).all()
+#
+#     message_categories = MessageCategory.query.all()
+#     return render_template('home_parents_weekend.html',
+#                            form=form,
+#                            testimonials=testimonials,
+#                            message_categories=message_categories,
+#                            key=stripe_keys['publishable_key'])
 
 
 @app.route('/code_validate', methods=['POST'])
@@ -127,7 +127,7 @@ def code_validate():
             validated_code.redeem()
             db.session.merge(validated_code)
             db.session.commit()
-            response_data['response'] = 'Code accepted!'
+            response_data['response'] = 'Code accepted. This one\'s on us!'
             response_data['price'] = 'Free'
             response_data['code_applied'] = True
             return jsonify(response_data)

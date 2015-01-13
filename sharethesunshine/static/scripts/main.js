@@ -111,7 +111,7 @@ $( document ).ready(function() {
                 if (json.code_applied === true) {
                     couponApplied = true;
                     $("#coupon_used").val(couponApplied);
-                    $("#payment").remove();
+                    $("#payment, .payment_step").remove();
                 }
             },
             error: function(request, errorType, errorMessage) {
