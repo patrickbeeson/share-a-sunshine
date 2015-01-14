@@ -55,6 +55,7 @@ def login():
     For GET requests, display the login form. For POSTS, login the current
     user by processing the form
     """
+    user = current_user
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.get(form.email.data)

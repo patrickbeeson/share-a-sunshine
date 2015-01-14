@@ -236,3 +236,15 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block homepage_js %}
+<script type="text/javascript">
+$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
+<script>
+$('#personal_message').limit('140','#charsleft');
+$('.prefilled_message').responsiveEqualHeightGrid();
+$('.message_content').responsiveEqualHeightGrid();
+</script>
+{% endblock homepage_js %}

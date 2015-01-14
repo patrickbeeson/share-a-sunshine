@@ -18,6 +18,12 @@
 {% endwith %}
 {% endblock flash_messages %}
 
+{% block user_greeting %}
+    <div class="user_greeting">
+
+    </div>
+{% endblock %}
+
 {% block content %}
 <div class="intro">
     <h2 class="lead">Administrative Login</h2>
@@ -34,7 +40,7 @@
         {% endfor %}
         </ul>
         {% endif %}
-        <form method="POST" action="/login">
+        <form method="POST" action="/login" class="login_form">
             {{ form.csrf_token }}
             <div class="field_grouper" id="auth_fields">
                 <div class="form-group{% if form.email.errors %} has-error{% endif %}">
