@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Wanna make someone's day? Send 'em a can of Sunshine, pronto! To say good luck, thanks, miss your pretty smile, or just because.">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{% block title %}{% endblock title %}</title>
         {% assets "css_all" %}
         <link href="{{ ASSET_URL }}" media="screen, projection" rel="stylesheet" type="text/css">
@@ -91,22 +92,20 @@
                     <li class="twitter"><a href="https://twitter.com/sunshinedrink"><img src="{{ url_for('static', filename='images/twitter_icon.png') }}" alt="Twitter"></a></li>
                     <li class="drinkthesunshine"><a href="http://drinkthesunshine.com"><img src="{{ url_for('static', filename='images/footer_logo.png') }}" alt="Share the Sunshine"></a></li>
                     <li class="facebook"><a href="https://www.facebook.com/DrinkSunshine"><img src="{{ url_for('static', filename='images/facebook_icon.png') }}" alt="Facebook"></a></li>
-                    
+
                 </ul>
                 <p><a href="/terms">Terms and Conditions</a> &copy; <a href="http://drinkthesunshine.com">Sunshine Beverages, LLC</a>. All rights reserved.</p>
             </footer>
-            
-        </div>
 
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     {% assets "js_all" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
-    <script>
-        $('#personal_message').limit('140','#charsleft');
-        $('.prefilled_message').responsiveEqualHeightGrid();
-        $('.message_content').responsiveEqualHeightGrid();
-    </script>
-    
+    {% block homepage_js %}
+    {% endblock homepage_js %}
+    {% block extra_js %}
+    {% endblock extra_js %}
     </body>
 </html>

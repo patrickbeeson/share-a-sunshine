@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}API Access login | Share the Sunshine{% endblock title %}
+{% block title %}Administrative login | Share the Sunshine{% endblock title %}
 
 {% block meta_indexing %}<meta name="robots" content="noindex">{% endblock meta_indexing %}
 
@@ -18,9 +18,15 @@
 {% endwith %}
 {% endblock flash_messages %}
 
+{% block user_greeting %}
+    <div class="user_greeting">
+
+    </div>
+{% endblock %}
+
 {% block content %}
 <div class="intro">
-    <h2 class="lead">API Access Login</h2>
+    <h2 class="lead">Administrative Login</h2>
 
     <div class="description">
         {% if form.errors %}
@@ -34,7 +40,7 @@
         {% endfor %}
         </ul>
         {% endif %}
-        <form method="POST" action="/login">
+        <form method="POST" action="/login" class="login_form">
             {{ form.csrf_token }}
             <div class="field_grouper" id="auth_fields">
                 <div class="form-group{% if form.email.errors %} has-error{% endif %}">

@@ -8,7 +8,7 @@
 // Main styles
 
 body {
-    background: $sts_canvas url("../images/bg_texture.png") repeat; 
+    background: $sts_canvas url("../images/bg_texture.png") repeat;
 }
 
 .content_wrap {
@@ -114,6 +114,18 @@ nav[role="navigation"] {
         text-transform: uppercase;
         font-family: a_love_of_thunder-webfont;
         letter-spacing: 3px;
+
+        .coupon_code_prompt {
+            font-size: 13px;
+
+            a {
+                color: $sts_dk_canvas;
+
+                &:hover {
+                    color: $sts_dk_canvas;
+                }
+            }
+        }
     }
 
     .intro {
@@ -123,7 +135,7 @@ nav[role="navigation"] {
 
         @media (min-width: $screen-md-min) {
             margin-bottom: 100px;
-        } 
+        }
 
         .lead {
             @extend .text-center, .col-md-5, .col-lg-5;
@@ -185,7 +197,7 @@ nav[role="navigation"] {
                     margin-top: 50px;
                 }
             }
-           
+
         }
 
         .product_spotlight {
@@ -318,7 +330,41 @@ nav[role="navigation"] {
         }
     }
 
+    #coupon_code_wrapper {
+
+        @media (min-width: $screen-md-min) {
+            margin-top: 40px;
+        }
+
+        .validation_response {
+            font-family: $sts_body;
+            font-size: 15px;
+            margin-top: 25px;
+
+            &.invalid {
+                @extend .text-danger;
+            }
+
+            &.valid {
+                @extend .text-info;
+            }
+        }
+    }
+
     form {
+
+        .parsley-errors-list {
+            @extend .list-unstyled;
+            padding-left: 0px;
+
+            li {
+                @extend .text-danger;
+                padding-top: 10px;
+                font-family: $sts_body;
+                font-weight: bold;
+                font-size: 15px;
+            }
+        }
 
         label {
             @extend .text-hide;
@@ -406,7 +452,7 @@ nav[role="navigation"] {
 
                 @media (min-width: $screen-md-min) {
                     border-bottom: 1px solid $sts_light_gray;
-                    
+
                     &:nth-child(odd) {
                         padding-left: 0px;
                         border-right: 1px solid $sts_light_gray;
@@ -458,20 +504,22 @@ nav[role="navigation"] {
             @extend %field_grouper;
         }
 
-        #submit {
+        #payment {
+            @extend %field_grouper;
+        }
+
+        #coupon_code_fields {
+            @extend %field_grouper;
+        }
+
+        .submit, .coupon_form_submit {
             @extend .col-sm-6, .col-sm-offset-3, .text-center, .col-md-5, .col-md-offset-1, .col-lg-offset-2, .col-lg-4;
             margin-top: 25px;
             clear: both;
-        }
 
-        .stripe-button-el {
-            background-image: none;
-            background: $sts_black;
-            border-radius: 0px;
-            text-shadow: none;
-
-            span {
-                color: $sts_body;
+            button, input[type='submit'] {
+                text-shadow: none;
+                color: white;
                 background: $sts_black;
                 font-family: a_love_of_thunder-webfont;
                 text-transform: uppercase;
@@ -484,6 +532,10 @@ nav[role="navigation"] {
                 height: auto;
                 padding: 10px 15px;
                 @include background-image(linear-gradient(#333 0, black 50%, transparent 50%));
+            }
+
+            input[type='submit'] {
+                margin-bottom: 25px;
             }
         }
     }
@@ -585,7 +637,7 @@ footer {
         @media (min-width: $screen-sm-min) {
             height: 675px;
         }
-        
+
     }
 
     .intro {
@@ -652,6 +704,49 @@ footer {
 
         &:hover {
             color: $sts_dk_canvas;
+        }
+    }
+}
+
+// Sales export
+// Terms and Conditions
+#sales-export {
+
+    .content_main {
+        @media (min-width: $screen-sm-min) {
+            margin-bottom: 200px;
+        }
+    }
+
+    .intro {
+        @extend .col-md-offset-0;
+
+        .lead {
+            @extend .text-center, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+        }
+
+        .glyphicon {
+            animation: none;
+            display: inline;
+            font-size: 19px;
+        }
+    }
+
+    .description {
+        @extend .text-center, .col-md-10, .col-md-offset-1, .col-lg-8, .col-lg-offset-2;
+
+        @media (min-width: $screen-md-min) {
+            position: none;
+            top: 0px;
+            margin-top: 0px;
+        }
+
+        a {
+            color: $sts_dk_canvas;
+
+            &:hover {
+                color: $sts_dk_canvas;
+            }
         }
     }
 }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Sales Export | Share the Sunshine{% endblock title %}
+
+{% block page %}sales-export{% endblock page %}
+
+{% block content %}
+<div class="intro">
+    <h2 class="lead">Sales Export</h2>
+
+    <div class="description">
+        <p><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> <a href="/download">Export sales data</a></p>
+        <p><small><i>Note: Data accounts for sales made {{ start_date }} to {{ end_date }}</i></small></p>
+    </div>
+</div>
+{% endblock content %}
