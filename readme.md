@@ -8,9 +8,9 @@ This Flask application drives the Share a Sunshine website and ecommerce functio
 
 This application is laid out using the following conventions:
 
-* `forms.py`: Contains the "share" form and authentication form for API access
-* `models.py`: Contains the database models for Products, Purchases and Users
-* `views.py`: Contains the view logic for the homepage, payment processing, thanks, terms and error pages as well as the API access
+* `forms.py`: Contains the "share" form and authentication form for reporting access
+* `models.py`: Contains the database models for CouponCodes, Products, Purchases, Users, Testimonials and Messages
+* `views.py`: Contains the view logic for the homepage, payment processing, thanks, terms and error pages as well as admin access for reporting
 * `config.py`: Contains app configuration information
 * `util/assets.py`: Contains the asset minifaction directives for CSS and JS files
 * `runserver.py`: Is used in development to fire up the development server (not used in production)

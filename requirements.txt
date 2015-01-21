@@ -14,7 +14,7 @@ Mako==1.0.0
 MarkupSafe==0.23
 SQLAlchemy==0.9.4
 WTForms==1.0.5
-Werkzeug==0.9.4
+Werkzeug==0.9.6
 alembic==0.6.5
 astroid==1.2.1
 bcrypt==1.0.2
